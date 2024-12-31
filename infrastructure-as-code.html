@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infrastructure as Code Implementation - Saad Mansoor Minhas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .nav-blur {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .gradient-bg {
+            background: linear-gradient(90deg, #4F46E5 0%, #7C3AED 100%);
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 nav-blur bg-black bg-opacity-50">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold text-white">SM.</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html#about" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">About</a>
+                    <a href="index.html#skills" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Skills</a>
+                    <a href="index.html#experience" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Experience</a>
+                    <a href="index.html#projects" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Projects</a>
+                    <a href="index.html#connect" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Connect</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" alt="Infrastructure as Code" class="w-full h-full object-cover object-center">
+            <div class="absolute inset-0 bg-black opacity-75"></div>
+        </div>
+        <div class="relative z-10 text-center px-6">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">Infrastructure as Code Implementation</h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">Automating infrastructure provisioning and management for consistency and efficiency</p>
+            <a href="#project-details" class="inline-block px-8 py-3 bg-white text-black rounded-full hover:bg-opacity-90 transition-colors text-lg font-semibold">
+                Explore Project
+            </a>
+        </div>
+    </section>
+
+    <!-- Project Details -->
+    <section id="project-details" class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="bg-white bg-opacity-10 rounded-lg shadow-xl p-8 backdrop-blur-lg mb-12">
+                <h2 class="text-3xl font-semibold mb-6 text-center">Project Overview</h2>
+                <p class="text-gray-300 mb-4">
+                    This project focused on implementing Infrastructure as Code (IaC) solutions using Terraform for standardized and version-controlled infrastructure provisioning. The goal was to automate the creation, modification, and management of cloud resources, ensuring consistency across environments and reducing manual errors.
+                </p>
+                <p class="text-gray-300">
+                    By leveraging IaC principles and tools, we were able to significantly improve deployment speed, infrastructure consistency, and overall operational efficiency.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white bg-opacity-10 rounded-lg shadow-xl p-8 backdrop-blur-lg">
+                    <h2 class="text-2xl font-semibold mb-4">Key Features</h2>
+                    <ul class="list-disc list-inside space-y-2 text-gray-300">
+                        <li>Version-controlled infrastructure</li>
+                        <li>Modular and reusable code</li>
+                        <li>Multi-environment support</li>
+                        <li>Automated provisioning and updates</li>
+                        <li>Integration with CI/CD pipelines</li>
+                        <li>Infrastructure documentation as code</li>
+                    </ul>
+                </div>
+                <div class="bg-white bg-opacity-10 rounded-lg shadow-xl p-8 backdrop-blur-lg">
+                    <h2 class="text-2xl font-semibold mb-4">Technologies Used</h2>
+                    <div class="flex flex-wrap gap-4">
+                        <span class="px-4 py-2 bg-blue-500 bg-opacity-20 text-blue-300 rounded-full">Terraform</span>
+                        <span class="px-4 py-2 bg-green-500 bg-opacity-20 text-green-300 rounded-full">AWS</span>
+                        <span class="px-4 py-2 bg-red-500 bg-opacity-20 text-red-300 rounded-full">Azure</span>
+                        <span class="px-4 py-2 bg-yellow-500 bg-opacity-20 text-yellow-300 rounded-full">GitLab CI/CD</span>
+                        <span class="px-4 py-2 bg-purple-500 bg-opacity-20 text-purple-300 rounded-full">Ansible</span>
+                        <span class="px-4 py-2 bg-indigo-500 bg-opacity-20 text-indigo-300 rounded-full">Packer</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white bg-opacity-10 rounded-lg shadow-xl p-8 backdrop-blur-lg mb-12">
+                <h2 class="text-3xl font-semibold mb-6">Challenges and Solutions</h2>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-100 mb-2">Managing state across multiple environments</h3>
+                        <p class="text-gray-300 mb-2">Challenge: Maintaining consistent state information across development, staging, and production environments.</p>
+                        <p class="text-gray-300"><strong>Solution:</strong> Implemented remote state storage using S3 and DynamoDB for state locking. Created separate workspaces for each environment to isolate state and reduce the risk of conflicts.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-100 mb-2">Handling sensitive information</h3>
+                        <p class="text-gray-300 mb-2">Challenge: Securely managing and distributing sensitive data such as API keys and passwords.</p>
+                        <p class="text-gray-300"><strong>Solution:</strong> Utilized Terraform's built-in encryption for state files and integrated with HashiCorp Vault for secure secret management. Implemented strict access controls and audit logging for sensitive operations.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-100 mb-2">Ensuring consistency across teams</h3>
+                        <p class="text-gray-300 mb-2">Challenge: Maintaining consistent practices and standards across multiple development teams.</p>
+                        <p class="text-gray-300"><strong>Solution:</strong> Developed a set of reusable Terraform modules and implemented a centralized module registry. Created comprehensive documentation and conducted regular training sessions to ensure all teams followed best practices.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white bg-opacity-10 rounded-lg shadow-xl p-8 backdrop-blur-lg mb-12">
+                <h2 class="text-3xl font-semibold mb-6">Results and Impact</h2>
+                <ul class="list-disc list-inside space-y-2 text-gray-300">
+                    <li>Reduced infrastructure provisioning time from days to minutes</li>
+                    <li>Achieved 100% consistency between development, staging, and production environments</li>
+                    <li>Decreased manual configuration errors by 90%</li>
+                    <li>Improved audit compliance with version-controlled infrastructure changes</li>
+                    <li>Enabled rapid experimentation and testing of infrastructure changes</li>
+                    <li>Facilitated easier onboarding of new team members to infrastructure management</li>
+                </ul>
+            </div>
+
+            <div class="text-center">
+                <a href="index.html#projects" class="inline-block px-8 py-3 bg-white text-black rounded-full hover:bg-opacity-90 transition-colors text-lg font-semibold">
+                    Back to Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-white bg-opacity-5">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="text-2xl font-bold mb-6">SM.</div>
+            <div class="flex justify-center space-x-8 mb-8">
+                <a href="https://www.linkedin.com/in/saad-mansoor-minhas/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fab fa-linkedin text-xl"></i>
+                </a>
+                <a href="https://github.com/Saad-Mansoor-Minhas" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fab fa-github text-xl"></i>
+                </a>
+            </div>
+            <p class="text-gray-400">&copy; 2024 Saad Mansoor Minhas. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
