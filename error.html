@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Saad Mansoor Minhas</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <style>
+        .dark {
+            --bg-primary: #1a1a1a;
+            --text-primary: #ffffff;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .spinning-gear {
+            animation: spin 10s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 min-h-screen flex flex-col transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="bg-white dark:bg-gray-800 shadow-lg w-full z-10 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <div>
+                    <a href="index.html" class="flex items-center py-4">
+                        <span class="font-semibold text-gray-800 dark:text-white text-lg">SM.</span>
+                    </a>
+                </div>
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">
+                    <i class="fas fa-moon dark:text-white"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Error Content -->
+    <main class="flex-grow flex items-center justify-center p-4">
+        <div class="max-w-2xl mx-auto text-center">
+            <div class="mb-8 relative">
+                <i class="fas fa-cog text-8xl text-blue-500 spinning-gear"></i>
+                <i class="fas fa-exclamation-triangle text-6xl text-yellow-500 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 floating"></i>
+            </div>
+            
+            <h1 class="text-6xl font-bold text-gray-800 dark:text-white mb-4">404</h1>
+            <h2 class="text-3xl font-semibold text-gray-700 dark:text-gray-300 mb-6">Page Not Found</h2>
+            <p class="text-gray-600 dark:text-gray-400 mb-8">
+                Oops! It seems like the page you're looking for has been moved, deleted, or never existed. 
+                Don't worry though, you can always go back to the homepage.
+            </p>
+            
+            <div class="space-y-4">
+                <a href="index.html" class="inline-block bg-blue-500 text-white px-8 py-3 rounded-full hover:bg-blue-600 transition duration-300">
+                    <i class="fas fa-home mr-2"></i>Return Home
+                </a>
+                <div class="block text-gray-500 dark:text-gray-400">or</div>
+                <a href="javascript:history.back()" class="inline-block border-2 border-blue-500 text-blue-500 dark:text-white px-8 py-3 rounded-full hover:bg-blue-500 hover:text-white transition duration-300">
+                    <i class="fas fa-arrow-left mr-2"></i>Go Back
+                </a>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="mt-12">
+                <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-4">Quick Links</h3>
+                <div class="flex justify-center space-x-6">
+                    <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition duration-300">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition duration-300">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition duration-300">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-800 py-6 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-gray-600 dark:text-gray-400">&copy; 2024 Saad Mansoor Minhas. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        const icon = themeToggle.querySelector('i');
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('fa-sun');
+        });
+    </script>
+</body>
+</html>
