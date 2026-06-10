@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>High-availability AWS architecture — Saad Mansoor Minhas</title>
+    <title>High-availability AWS architecture | Saad Mansoor Minhas</title>
     <meta name="description" content="Case study: an ECR → EC2 → ASG → ALB → Route53 architecture provisioned with Terraform and automated with Bitbucket Pipelines.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,8 +34,8 @@
             <a href="index.html#work" class="crumb">← Back to work</a>
             <h1 class="rise rise-1">An AWS stack built to <span class="grad-text">survive its own failures.</span></h1>
             <p class="lede rise rise-2">
-                A production container-hosting architecture — ECR through EC2, auto scaling, load balancing,
-                and DNS — provisioned entirely with Terraform and deployed automatically through Bitbucket
+                A production container-hosting architecture (ECR through EC2, auto scaling, load balancing,
+                and DNS) provisioned entirely with Terraform and deployed automatically through Bitbucket
                 Pipelines. Releases cost nothing; instance failures fix themselves.
             </p>
             <div class="study-meta rise rise-3">
@@ -49,7 +49,7 @@
                 </div>
                 <div>
                     <p class="k">Year</p>
-                    <p class="v">2023 — 2024</p>
+                    <p class="v">2023 - 2024</p>
                 </div>
             </div>
             <p class="flow rise rise-4">ECR <span class="sep">→</span> EC2 <span class="sep">→</span> Auto Scaling Group <span class="sep">→</span> Application Load Balancer <span class="sep">→</span> Route53</p>
@@ -62,7 +62,7 @@
             <h2>No ops team, no downtime budget</h2>
             <p>
                 The client ran containerized workloads that needed to survive instance failures, absorb
-                traffic spikes, and take new versions without downtime — with no dedicated ops team to
+                traffic spikes, and take new versions without downtime, with no dedicated ops team to
                 babysit any of it.
             </p>
             <p>
@@ -78,7 +78,7 @@
             <span class="kicker">What I built</span>
             <h2>The work</h2>
             <ul>
-                <li><strong>Modular Terraform</strong> — reusable modules for networking, compute, and DNS, parameterized per environment.</li>
+                <li><strong>Modular Terraform</strong>: reusable modules for networking, compute, and DNS, parameterized per environment.</li>
                 <li><strong>Auto Scaling Group</strong> with health-check-driven instance replacement and load-based scaling policies.</li>
                 <li><strong>ALB target groups</strong> with health checks for graceful, rolling instance turnover.</li>
                 <li><strong>Bitbucket Pipelines</strong> building images, pushing to ECR, and rolling out via launch-template refresh.</li>
@@ -98,17 +98,17 @@
                 <div class="challenge reveal">
                     <h3>Deploys dropped requests</h3>
                     <p>Replacing instances naively cut off in-flight requests during every release.</p>
-                    <p><strong>Fixed:</strong> ALB connection draining plus ASG instance refresh gated on health checks — new instances must pass before old ones terminate. Deploys became genuinely zero-downtime.</p>
+                    <p><strong>Fixed:</strong> ALB connection draining plus ASG instance refresh gated on health checks, so new instances must pass before old ones terminate. Deploys became genuinely zero-downtime.</p>
                 </div>
                 <div class="challenge reveal">
                     <h3>Environments kept drifting</h3>
                     <p>Manually-created dev and prod diverged constantly, producing "works in dev" failures.</p>
-                    <p><strong>Fixed:</strong> one set of Terraform modules with per-environment variable files over remote state — identical infrastructure stamped out per environment, changed only through pull requests.</p>
+                    <p><strong>Fixed:</strong> one set of Terraform modules with per-environment variable files over remote state, so identical infrastructure is stamped out per environment, changed only through pull requests.</p>
                 </div>
                 <div class="challenge reveal">
                     <h3>Auto scaling thrashed</h3>
                     <p>Inherited scaling policies scaled up and down repeatedly under perfectly steady load.</p>
-                    <p><strong>Fixed:</strong> re-tuned CloudWatch alarms with proper cooldowns and target-tracking policies based on real traffic patterns — a stable fleet and fewer wasted instance-hours.</p>
+                    <p><strong>Fixed:</strong> re-tuned CloudWatch alarms with proper cooldowns and target-tracking policies based on real traffic patterns, giving a stable fleet and fewer wasted instance-hours.</p>
                 </div>
             </div>
         </div>

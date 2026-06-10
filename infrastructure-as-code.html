@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modular Terraform platform — Saad Mansoor Minhas</title>
+    <title>Modular Terraform platform | Saad Mansoor Minhas</title>
     <meta name="description" content="Case study: reusable, version-controlled Terraform modules provisioning AWS infrastructure across environments, with Ansible configuration management.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,7 +35,7 @@
             <h1 class="rise rise-1">Infrastructure you can <span class="grad-text">read, review &amp; reproduce.</span></h1>
             <p class="lede rise rise-2">
                 Reusable, version-controlled Terraform modules provisioning EC2, VPC, RDS, S3, and DynamoDB
-                across environments — with Ansible handling everything inside the instances. New environments
+                across environments, with Ansible handling everything inside the instances. New environments
                 went from days of console clicking to minutes and a pull request.
             </p>
             <div class="study-meta rise rise-3">
@@ -66,8 +66,8 @@
                 that surfaced later as production bugs.
             </p>
             <p>
-                I codified the entire AWS footprint as modular Terraform — networking, compute, databases,
-                storage — so a complete, consistent environment became a pull request and an apply. Ansible
+                I codified the entire AWS footprint as modular Terraform (networking, compute, databases,
+                storage) so a complete, consistent environment became a pull request and an apply. Ansible
                 playbooks take over from there, configuring instances idempotently with community-backed roles.
             </p>
         </div>
@@ -79,10 +79,10 @@
             <h2>The work</h2>
             <ul>
                 <li><strong>Reusable Terraform modules</strong> for EC2, VPC, RDS, S3, and DynamoDB with sensible, overridable defaults.</li>
-                <li><strong>Per-environment composition</strong> — dev and prod assembled from the same modules with different variable files.</li>
+                <li><strong>Per-environment composition</strong>: dev and prod assembled from the same modules with different variable files.</li>
                 <li><strong>Remote state with locking</strong> for safe, collaborative changes.</li>
                 <li><strong>Ansible playbooks</strong> automating system configuration and provisioning after Terraform finishes.</li>
-                <li><strong>Pipeline-driven applies</strong> — infrastructure changes go through the same review-and-deploy discipline as application code.</li>
+                <li><strong>Pipeline-driven applies</strong>: infrastructure changes go through the same review-and-deploy discipline as application code.</li>
             </ul>
         </div>
     </section>
@@ -97,7 +97,7 @@
                 <div class="challenge reveal">
                     <h3>Copy-pasted Terraform diverged</h3>
                     <p>Early configurations were duplicated between projects, so fixes never propagated.</p>
-                    <p><strong>Fixed:</strong> shared modules behind versioned interfaces — one fix, and every environment picks it up on the next apply.</p>
+                    <p><strong>Fixed:</strong> shared modules behind versioned interfaces, so one fix reaches every environment on the next apply.</p>
                 </div>
                 <div class="challenge reveal">
                     <h3>State conflicts between engineers</h3>
@@ -107,7 +107,7 @@
                 <div class="challenge reveal">
                     <h3>Created ≠ ready</h3>
                     <p>Terraform produced the instances, but packages, users, and services were still configured by hand.</p>
-                    <p><strong>Fixed:</strong> Ansible playbooks run post-provision against inventory generated from Terraform outputs — closing the gap between "created" and "ready".</p>
+                    <p><strong>Fixed:</strong> Ansible playbooks run post-provision against inventory generated from Terraform outputs, closing the gap between "created" and "ready".</p>
                 </div>
             </div>
         </div>

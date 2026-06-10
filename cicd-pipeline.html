@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>End-to-end CI/CD pipelines — Saad Mansoor Minhas</title>
-    <meta name="description" content="Case study: multi-stage CI/CD pipelines with GitHub Actions and GitLab CI — automated builds, tests, encrypted secrets, and stage-gated deploys.">
+    <title>End-to-end CI/CD pipelines | Saad Mansoor Minhas</title>
+    <meta name="description" content="Case study: multi-stage CI/CD pipelines with GitHub Actions and GitLab CI: automated builds, tests, encrypted secrets, and stage-gated deploys.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -35,7 +35,7 @@
             <h1 class="rise rise-1">From calendar-event releases to <span class="grad-text">an approval click.</span></h1>
             <p class="lede rise rise-2">
                 Multi-stage CI/CD pipelines for .NET and MSSQL workloads, built with GitHub Actions and
-                GitLab CI — automated builds, tests, encrypted secrets, and the same repeatable path to
+                GitLab CI: automated builds, tests, encrypted secrets, and the same repeatable path to
                 dev and production for every single commit.
             </p>
             <div class="study-meta rise rise-3">
@@ -49,7 +49,7 @@
                 </div>
                 <div>
                     <p class="k">Year</p>
-                    <p class="v">2024 — 2025</p>
+                    <p class="v">2024 - 2025</p>
                 </div>
             </div>
             <p class="flow rise rise-4">push <span class="sep">→</span> build <span class="sep">→</span> test <span class="sep">→</span> inject secrets <span class="sep">→</span> deploy dev <span class="sep">→</span> approve <span class="sep">→</span> production</p>
@@ -66,7 +66,7 @@
                 you scheduled and braced for.
             </p>
             <p>
-                I built pipelines that take every commit from push to production automatically — compiled,
+                I built pipelines that take every commit from push to production automatically: compiled,
                 tested, containerized, and deployed to AWS with an identical process for dev and production.
             </p>
         </div>
@@ -81,8 +81,8 @@
                 <li><strong>GitLab CI pipelines</strong> with stage-gated promotion from dev to production.</li>
                 <li><strong>Multi-stage Jenkins pipelines</strong> (at Emumba) with encrypted secrets management built in.</li>
                 <li><strong>Dockerized build outputs</strong> so every stage runs the same artifact in the same environment.</li>
-                <li><strong>Environment-scoped secrets</strong> injected at deploy time — nothing sensitive ever committed.</li>
-                <li><strong>Deployments wired to AWS</strong> — EC2, ECS, RDS — for high availability and rapid recovery.</li>
+                <li><strong>Environment-scoped secrets</strong> injected at deploy time, so nothing sensitive is ever committed.</li>
+                <li><strong>Deployments wired to AWS</strong> (EC2, ECS, RDS) for high availability and rapid recovery.</li>
             </ul>
         </div>
     </section>
@@ -97,7 +97,7 @@
                 <div class="challenge reveal">
                     <h3>"Works on my machine" builds</h3>
                     <p>Local builds produced inconsistent artifacts with untracked dependencies.</p>
-                    <p><strong>Fixed:</strong> all builds moved to pipeline runners using pinned toolchains and Docker images — every artifact reproducible from a commit SHA.</p>
+                    <p><strong>Fixed:</strong> all builds moved to pipeline runners using pinned toolchains and Docker images, making every artifact reproducible from a commit SHA.</p>
                 </div>
                 <div class="challenge reveal">
                     <h3>Credentials scattered everywhere</h3>
@@ -107,7 +107,7 @@
                 <div class="challenge reveal">
                     <h3>Production deploys were high-risk</h3>
                     <p>Manual multi-step releases meant long change windows and regular human error.</p>
-                    <p><strong>Fixed:</strong> stage-gated pipelines where production reuses the exact artifact already validated in dev — a release became an approval click.</p>
+                    <p><strong>Fixed:</strong> stage-gated pipelines where production reuses the exact artifact already validated in dev, so a release became an approval click.</p>
                 </div>
             </div>
         </div>

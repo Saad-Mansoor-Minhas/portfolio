@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canary deployments on AKS — Saad Mansoor Minhas</title>
+    <title>Canary deployments on AKS | Saad Mansoor Minhas</title>
     <meta name="description" content="Case study: canary releases with percentage-based traffic splitting for containerized workloads on Azure Kubernetes Service.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,7 +36,7 @@
             <p class="lede rise rise-2">
                 A canary release strategy with percentage-based traffic splitting for containerized
                 production workloads on Azure Kubernetes Service. The previous version stays deployed
-                and warm — rolling back is a traffic switch measured in seconds, not a redeploy.
+                and warm, so rolling back is a traffic switch measured in seconds, not a redeploy.
             </p>
             <div class="study-meta rise rise-3">
                 <div>
@@ -49,7 +49,7 @@
                 </div>
                 <div>
                     <p class="k">Year</p>
-                    <p class="v">2025 — present</p>
+                    <p class="v">2025 - present</p>
                 </div>
             </div>
             <p class="flow rise rise-4">release vN+1 <span class="sep">→</span> canary at 10% <span class="sep">→</span> observe <span class="sep">→</span> promote to 100% <span class="sep">·</span> vN kept on standby</p>
@@ -67,7 +67,7 @@
             </p>
             <p>
                 I introduced canary releases on AKS. Each new version takes a small, configurable slice
-                of live traffic first, and only takes over fully after proving itself against real users —
+                of live traffic first, and only takes over fully after proving itself against real users,
                 with the outgoing version held warm the entire time.
             </p>
         </div>
@@ -79,9 +79,9 @@
             <h2>The work</h2>
             <ul>
                 <li><strong>Percentage-based traffic splitting</strong> between stable and canary deployments on AKS.</li>
-                <li><strong>Parallel versioned deployments</strong> — the prior release stays scaled and ready for instant rollback.</li>
+                <li><strong>Parallel versioned deployments</strong>: the prior release stays scaled and ready for instant rollback.</li>
                 <li><strong>Azure DevOps pipelines</strong> driving image builds to ACR and progressive rollout stages.</li>
-                <li><strong>Health-gated promotion</strong> — canaries watched through Azure Monitor before taking full traffic.</li>
+                <li><strong>Health-gated promotion</strong>: canaries watched through Azure Monitor before taking full traffic.</li>
                 <li><strong>RBAC governance and automated secret rotation</strong> across the cluster and surrounding Azure resources.</li>
             </ul>
         </div>
@@ -97,17 +97,17 @@
                 <div class="challenge reveal">
                     <h3>Full blast radius on day one</h3>
                     <p>Rolling updates replaced every pod regardless of how the new version behaved under real traffic.</p>
-                    <p><strong>Fixed:</strong> weighted traffic splitting — new versions serve ~10% of requests first, promoted only once error rates and latency hold within thresholds.</p>
+                    <p><strong>Fixed:</strong> weighted traffic splitting, so new versions serve ~10% of requests first, promoted only once error rates and latency hold within thresholds.</p>
                 </div>
                 <div class="challenge reveal">
                     <h3>Rollbacks were slow and manual</h3>
-                    <p>Reverting meant redeploying the previous image — minutes of degraded service every time.</p>
+                    <p>Reverting meant redeploying the previous image, which cost minutes of degraded service every time.</p>
                     <p><strong>Fixed:</strong> the prior version stays deployed and scaled; rollback became an immediate traffic-weight change measured in seconds.</p>
                 </div>
                 <div class="challenge reveal">
                     <h3>Secrets and access sprawl</h3>
                     <p>Long-lived credentials and broad access made security incidents slow to contain.</p>
-                    <p><strong>Fixed:</strong> RBAC governance and automated secret rotation via Key Vault — cutting security-incident response time by 30%.</p>
+                    <p><strong>Fixed:</strong> RBAC governance and automated secret rotation via Key Vault, cutting security-incident response time by 30%.</p>
                 </div>
             </div>
         </div>
