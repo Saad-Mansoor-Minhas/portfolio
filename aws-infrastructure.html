@@ -4,157 +4,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>High-Availability AWS Architecture — Saad Mansoor Minhas</title>
-    <meta name="description" content="Case study: ECR → EC2 → ASG → ALB → Route53 architecture provisioned with Terraform and automated with Bitbucket Pipelines.">
+    <title>High-availability AWS architecture — Saad Mansoor Minhas</title>
+    <meta name="description" content="Case study: an ECR → EC2 → ASG → ALB → Route53 architecture provisioned with Terraform and automated with Bitbucket Pipelines.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="scroll-progress"></div>
-    <div class="bg-orbs">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
-    </div>
-    <div class="bg-grid"></div>
-
     <nav class="nav scrolled">
         <div class="nav-inner">
-            <a href="index.html" class="nav-logo"><span class="prompt">~/</span>saad-minhas<span class="cursor-blink"></span></a>
-            <button class="nav-toggle" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
-            </button>
+            <a href="index.html" class="nav-name">Saad Minhas</a>
+            <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
             <div class="nav-links">
                 <a href="index.html#about">About</a>
                 <a href="index.html#experience">Experience</a>
                 <a href="index.html#skills">Skills</a>
-                <a href="index.html#projects">Projects</a>
-                <a href="index.html#contact" class="nav-cta">./contact.sh</a>
+                <a href="index.html#work">Work</a>
+                <a href="index.html#contact">Contact</a>
             </div>
         </div>
     </nav>
 
-    <header class="project-hero">
+    <header class="study-hero">
         <div class="container">
-            <div class="breadcrumb">
-                <a href="index.html#projects"><i class="fas fa-arrow-left"></i> ~/projects</a> / aws-infrastructure
-            </div>
-            <h1>High-Availability <span class="gradient-text">AWS Architecture</span></h1>
+            <a href="index.html#work" class="crumb">← Selected work</a>
+            <h1>An AWS stack built to <em>survive its own failures.</em></h1>
             <p class="lede">
-                A production container-hosting stack — ECR → EC2 → ASG → ALB → Route53 — provisioned entirely
-                with Terraform and deployed automatically through Bitbucket Pipelines. Designed for zero-downtime
-                releases and self-healing scale.
+                A production container-hosting architecture — ECR through EC2, auto scaling, load balancing,
+                and DNS — provisioned entirely with Terraform and deployed automatically through Bitbucket
+                Pipelines. Designed so releases cost nothing and instance failures fix themselves.
             </p>
-            <div class="tl-tags">
-                <span class="tag">AWS</span><span class="tag">Terraform</span><span class="tag">ECR</span>
-                <span class="tag">Auto Scaling</span><span class="tag">ALB</span><span class="tag">Route53</span>
-                <span class="tag">Bitbucket Pipelines</span>
+            <div class="study-meta">
+                <div>
+                    <p class="k">Context</p>
+                    <p class="v">Freelance client engagement, live production workload</p>
+                </div>
+                <div>
+                    <p class="k">Stack</p>
+                    <p class="v">AWS · Terraform · Bitbucket Pipelines · Docker</p>
+                </div>
+                <div>
+                    <p class="k">Year</p>
+                    <p class="v">2023 — 2024</p>
+                </div>
             </div>
-
-            <div class="arch-flow reveal">
-                <span class="arch-node"><i class="fab fa-docker"></i> ECR</span>
-                <span class="arch-arrow"><i class="fas fa-arrow-right"></i></span>
-                <span class="arch-node"><i class="fas fa-server"></i> EC2</span>
-                <span class="arch-arrow"><i class="fas fa-arrow-right"></i></span>
-                <span class="arch-node"><i class="fas fa-arrows-up-down"></i> ASG</span>
-                <span class="arch-arrow"><i class="fas fa-arrow-right"></i></span>
-                <span class="arch-node"><i class="fas fa-scale-balanced"></i> ALB</span>
-                <span class="arch-arrow"><i class="fas fa-arrow-right"></i></span>
-                <span class="arch-node"><i class="fas fa-globe"></i> Route53</span>
-            </div>
+            <p class="flow">ECR <span class="sep">→</span> EC2 <span class="sep">→</span> Auto Scaling Group <span class="sep">→</span> Application Load Balancer <span class="sep">→</span> Route53</p>
         </div>
     </header>
 
-    <section class="detail-section">
-        <div class="container detail-grid">
-            <div class="detail-card reveal">
-                <h2><i class="fas fa-bullseye"></i>The Mission</h2>
-                <p>
-                    A client running containerized workloads needed infrastructure that could survive instance
-                    failures, absorb traffic spikes, and deploy new versions without downtime — all without a
-                    dedicated ops team babysitting it.
-                </p>
-                <p>
-                    The answer: a fully codified AWS stack where Docker images flow from ECR onto EC2 instances
-                    managed by an Auto Scaling Group, fronted by an Application Load Balancer with DNS managed
-                    in Route53. Every resource defined in Terraform, every deploy triggered by a git push.
-                </p>
-            </div>
-            <div class="detail-card reveal">
-                <h2><i class="fas fa-list-check"></i>What I Built</h2>
-                <ul>
-                    <li><b>Modular Terraform</b> — reusable modules for networking, compute, and DNS, parameterized per environment.</li>
-                    <li><b>Auto Scaling Group</b> with health-check-driven instance replacement and scaling policies tied to load.</li>
-                    <li><b>ALB with target groups</b> and health checks for graceful rolling instance turnover.</li>
-                    <li><b>Bitbucket Pipelines</b> building images, pushing to ECR, and rolling out via launch template refresh.</li>
-                    <li><b>Route53 records</b> aliased to the ALB for clean, zone-managed DNS.</li>
-                    <li>A parallel <b>ECS (EC2 launch type)</b> variant with ALB + ASG for teams preferring managed orchestration.</li>
-                </ul>
-            </div>
+    <section class="study-section">
+        <div class="container prose reveal">
+            <span class="kicker">The brief</span>
+            <h2>No ops team, no downtime budget</h2>
+            <p>
+                The client ran containerized workloads that needed to survive instance failures, absorb
+                traffic spikes, and take new versions without downtime — and there was no dedicated ops
+                team to babysit any of it.
+            </p>
+            <p>
+                The answer was a fully codified stack: Docker images flow from ECR onto EC2 instances
+                managed by an Auto Scaling Group, fronted by an Application Load Balancer, with DNS in
+                Route53. Every resource lives in Terraform; every deploy starts with a git push.
+            </p>
         </div>
     </section>
 
-    <section class="detail-section">
+    <section class="study-section">
+        <div class="container prose reveal">
+            <span class="kicker">What I built</span>
+            <h2>The work</h2>
+            <ul>
+                <li><strong>Modular Terraform</strong> — reusable modules for networking, compute, and DNS, parameterized per environment.</li>
+                <li><strong>Auto Scaling Group</strong> with health-check-driven instance replacement and load-based scaling policies.</li>
+                <li><strong>ALB target groups</strong> with health checks for graceful, rolling instance turnover.</li>
+                <li><strong>Bitbucket Pipelines</strong> building images, pushing to ECR, and rolling out via launch-template refresh.</li>
+                <li><strong>Route53 alias records</strong> pointed at the ALB for clean, zone-managed DNS.</li>
+                <li>A parallel <strong>ECS (EC2 launch type)</strong> variant with ALB and ASG, for teams preferring managed orchestration.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="study-section">
         <div class="container">
-            <div class="detail-card reveal">
-                <h2><i class="fas fa-triangle-exclamation"></i>Challenges & Solutions</h2>
-                <div class="challenge">
-                    <h3>Deployments caused brief outages</h3>
-                    <p>Replacing instances naively dropped in-flight requests during releases.</p>
-                    <p class="sol"><b>Solution:</b> ALB connection draining plus ASG instance refresh with health-check gating — new instances must pass checks before old ones terminate, making deploys zero-downtime.</p>
+            <div class="reveal" style="margin-bottom: 36px;">
+                <span class="kicker">Problems along the way</span>
+                <h2 style="font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2rem); margin-top: 18px;">Challenges</h2>
+            </div>
+            <div class="challenge reveal">
+                <h3>Deploys dropped requests</h3>
+                <div class="body">
+                    <p>Replacing instances naively cut off in-flight requests during every release.</p>
+                    <p><strong>Fixed with</strong> ALB connection draining plus ASG instance refresh gated on health checks — new instances must pass before old ones terminate, making deploys genuinely zero-downtime.</p>
                 </div>
-                <div class="challenge">
-                    <h3>Configuration drift across environments</h3>
-                    <p>Manually-created dev and prod environments kept diverging, causing "works in dev" failures.</p>
-                    <p class="sol"><b>Solution:</b> Single set of Terraform modules with per-environment variable files and remote state — identical infrastructure stamped out per environment, reviewed via pull requests.</p>
+            </div>
+            <div class="challenge reveal">
+                <h3>Environments kept drifting</h3>
+                <div class="body">
+                    <p>Manually-created dev and prod diverged constantly, producing "works in dev" failures.</p>
+                    <p><strong>Fixed with</strong> one set of Terraform modules and per-environment variable files over remote state — identical infrastructure stamped out per environment, changed only through pull requests.</p>
                 </div>
-                <div class="challenge">
-                    <h3>Auto-scaling misconfigurations in production</h3>
-                    <p>Inherited scaling policies thrashed — scaling up and down repeatedly under steady load.</p>
-                    <p class="sol"><b>Solution:</b> Re-tuned CloudWatch alarms with proper cooldowns and target-tracking policies based on real traffic patterns, stabilizing the fleet and cutting wasted instance-hours.</p>
+            </div>
+            <div class="challenge reveal">
+                <h3>Auto scaling thrashed</h3>
+                <div class="body">
+                    <p>Inherited scaling policies scaled up and down repeatedly under perfectly steady load.</p>
+                    <p><strong>Fixed with</strong> re-tuned CloudWatch alarms — proper cooldowns and target-tracking policies based on real traffic patterns — stabilizing the fleet and cutting wasted instance-hours.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="detail-section">
+    <section class="study-section">
         <div class="container">
-            <div class="section-label">impact</div>
-            <h2 class="section-title">Results</h2>
-            <div class="results-grid stagger">
-                <div class="result-item reveal"><div class="num">0</div><div class="lbl">Downtime deployments after rollout</div></div>
-                <div class="result-item reveal"><div class="num">100%</div><div class="lbl">Infrastructure defined in Terraform</div></div>
-                <div class="result-item reveal"><div class="num">~min</div><div class="lbl">Push-to-production lead time</div></div>
-                <div class="result-item reveal"><div class="num">24/7</div><div class="lbl">Self-healing via ASG health checks</div></div>
+            <div class="reveal" style="margin-bottom: 28px;">
+                <span class="kicker">Outcome</span>
+            </div>
+            <div class="results-row reveal">
+                <div class="result"><p class="num">Zero</p><p class="lbl">downtime deployments after rollout</p></div>
+                <div class="result"><p class="num">100%</p><p class="lbl">of infrastructure defined in Terraform</p></div>
+                <div class="result"><p class="num">Minutes</p><p class="lbl">from push to production</p></div>
+                <div class="result"><p class="num">Self-healing</p><p class="lbl">fleet via ASG health checks</p></div>
             </div>
         </div>
     </section>
 
-    <div class="detail-cta">
-        <a href="index.html#projects" class="btn btn-ghost"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+    <div class="study-end">
+        <div class="container">
+            <a href="index.html#work" class="tlink">← Back to selected work</a>
+        </div>
     </div>
 
     <footer class="footer">
         <div class="container footer-inner">
-            <a href="index.html" class="nav-logo"><span class="prompt">~/</span>saad-minhas</a>
-            <p>&copy; <span class="year">2026</span> Saad Mansoor Minhas · Deployed with <span class="heart">♥</span> on GitHub Pages</p>
-            <div class="footer-socials">
-                <a href="https://github.com/Saad-Mansoor-Minhas" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/saad-mansoor-minhas/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="mailto:saadr8840@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-            </div>
+            <span class="nav-name">Saad Minhas</span>
+            <p>© <span class="year">2026</span> · Islamabad, Pakistan</p>
         </div>
     </footer>
-
-    <button class="back-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-        <i class="fas fa-arrow-up"></i>
-    </button>
 
     <script src="script.js"></script>
 </body>

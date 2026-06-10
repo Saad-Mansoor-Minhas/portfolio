@@ -14,100 +14,60 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="scroll-progress"></div>
-    <div class="bg-orbs">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
-    </div>
-    <div class="bg-grid"></div>
-
-    <!-- Navigation -->
     <nav class="nav">
         <div class="nav-inner">
-            <a href="#" class="nav-logo"><span class="prompt">~/</span>saad-minhas<span class="cursor-blink"></span></a>
-            <button class="nav-toggle" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
-            </button>
+            <a href="#" class="nav-name">Saad Minhas</a>
+            <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
             <div class="nav-links">
                 <a href="#about">About</a>
                 <a href="#experience">Experience</a>
                 <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#certifications">Certifications</a>
-                <a href="#contact" class="nav-cta">./contact.sh</a>
+                <a href="#work">Work</a>
+                <a href="#contact">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero -->
-    <section class="hero">
+    <header class="hero">
         <div class="container">
-            <div class="hero-grid">
-                <div>
-                    <div class="hero-status">
-                        <span class="status-dot"></span>
-                        Open to remote & relocation opportunities
-                    </div>
-                    <h1>Saad Mansoor<br><span class="gradient-text">Minhas</span></h1>
-                    <div class="hero-role">$ <span class="typed-text"></span><span class="typed-cursor"></span></div>
-                    <p class="hero-desc">
-                        I build and run <strong>cloud infrastructure that doesn't page you at 3 AM</strong> —
-                        2+ years automating AWS &amp; Azure platforms, shipping CI/CD pipelines, orchestrating
-                        Kubernetes workloads, and cutting cloud bills. Currently keeping production green for
-                        <strong>NextGen Technologies</strong> (Arlington, TX — remote).
-                    </p>
-                    <div class="hero-actions">
-                        <a href="#projects" class="btn btn-primary">View My Work <i class="fas fa-arrow-right"></i></a>
-                        <a href="mailto:saadr8840@gmail.com" class="btn btn-ghost"><i class="fas fa-envelope"></i> Get In Touch</a>
-                    </div>
-                    <div class="hero-socials">
-                        <a href="https://github.com/Saad-Mansoor-Minhas" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/saad-mansoor-minhas/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="mailto:saadr8840@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                        <span class="divider"></span>
-                        <span class="loc"><i class="fas fa-location-dot"></i> Islamabad, PK · UTC+5</span>
-                    </div>
-                </div>
-                <div class="terminal">
-                    <div class="terminal-bar">
-                        <span class="t-dot red"></span>
-                        <span class="t-dot yellow"></span>
-                        <span class="t-dot green"></span>
-                        <span class="terminal-title">saad@production: ~/infra</span>
-                    </div>
-                    <div class="terminal-body"></div>
-                </div>
+            <p class="kicker"><span class="dot"></span>Available for remote &amp; relocation roles</p>
+            <h1>DevOps engineer who keeps production <em>boring.</em></h1>
+            <p class="hero-intro">
+                Two years running AWS and Azure platforms — pipelines that ship themselves, Kubernetes
+                that rolls back in seconds, and cloud bills that trend down instead of up. Currently at
+                NextGen Technologies in Arlington, Texas, working remotely from Islamabad.
+            </p>
+            <div class="hero-links">
+                <a class="tlink" href="#work">Selected work</a>
+                <a class="tlink" href="mailto:saadr8840@gmail.com">saadr8840@gmail.com</a>
+                <a class="tlink" href="https://github.com/Saad-Mansoor-Minhas" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a class="tlink" href="https://www.linkedin.com/in/saad-mansoor-minhas/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
         </div>
-    </section>
+    </header>
 
     <!-- Stats -->
     <section class="stats">
         <div class="container">
             <div class="stats-grid">
-                <div class="reveal">
-                    <div class="stat-value" data-count="18" data-suffix="%">0</div>
-                    <div class="stat-label">Cloud Cost Reduction</div>
+                <div class="stat reveal">
+                    <div class="stat-value"><span data-count="18" data-suffix="%">0</span></div>
+                    <div class="stat-label">reduction in monthly cloud spend, with SLAs intact</div>
                 </div>
-                <div class="reveal" data-delay="100">
-                    <div class="stat-value" data-count="30" data-suffix="%">0</div>
-                    <div class="stat-label">Faster Incident Response</div>
+                <div class="stat reveal">
+                    <div class="stat-value"><span data-count="30" data-suffix="%">0</span></div>
+                    <div class="stat-label">faster security-incident response after RBAC &amp; secret-rotation work</div>
                 </div>
-                <div class="reveal" data-delay="200">
-                    <div class="stat-value" data-count="2" data-prefix="" data-suffix="+">0</div>
-                    <div class="stat-label">Years of Experience</div>
-                </div>
-                <div class="reveal" data-delay="300">
-                    <div class="stat-value" data-count="2" data-suffix="">0</div>
-                    <div class="stat-label">Clouds — AWS & Azure</div>
+                <div class="stat reveal">
+                    <div class="stat-value"><span data-count="2" data-suffix="">0</span> clouds</div>
+                    <div class="stat-label">production experience across both AWS and Azure</div>
                 </div>
             </div>
         </div>
@@ -116,51 +76,34 @@
     <!-- About -->
     <section id="about" class="section">
         <div class="container">
-            <div class="section-label">01 · whoami</div>
-            <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+            <div class="section-head reveal">
+                <span class="num">01</span>
+                <h2>About</h2>
+            </div>
             <div class="about-grid">
-                <div class="about-photo-wrap reveal-left reveal">
-                    <div class="about-photo">
-                        <img src="profile2.png" alt="Saad Mansoor Minhas">
-                    </div>
-                    <div class="about-badge"><i class="fas fa-circle-check"></i> available_for_hire=true</div>
+                <div class="about-photo reveal">
+                    <img src="profile2.png" alt="Saad Mansoor Minhas">
+                    <p class="about-caption">Islamabad, Pakistan — UTC+5</p>
                 </div>
-                <div class="about-text reveal-right reveal">
+                <div class="about-text reveal">
                     <p>
-                        I'm a <strong>DevOps &amp; Cloud Engineer</strong> with hands-on experience across
-                        <strong>AWS and Azure</strong>, spanning infrastructure automation, CI/CD pipelines,
-                        container orchestration, and cost optimization.
+                        I'm a DevOps and cloud engineer who believes the best infrastructure is the kind
+                        nobody has to think about. If it's hand-built, undocumented, or only one person
+                        understands it, I consider that a bug.
                     </p>
                     <p>
-                        At <strong>NextGen Technologies</strong> (Arlington, TX — remote) I lead Azure VDI migrations
-                        to Microsoft 365, run canary deployments on AKS with percentage-based traffic splitting, and
-                        own RBAC governance and automated secret rotation at scale. Before that, I built end-to-end
-                        AWS infrastructure and pipelines at <strong>Cyberoide Tech</strong> and cut my teeth on
-                        Terraform, Ansible, and Kubernetes at <strong>Emumba</strong>.
+                        At <strong>NextGen Technologies</strong> I manage Azure infrastructure end-to-end — leading a
+                        VDI-to-Microsoft 365 migration, running canary deployments on AKS with traffic
+                        splitting, and owning RBAC governance and automated secret rotation across the estate.
+                        Before that, I built AWS platforms and CI/CD pipelines for client workloads at
+                        <strong>Cyberoide Tech</strong>, and learned the fundamentals properly — Terraform, Ansible,
+                        Kubernetes — at <strong>Emumba</strong>.
                     </p>
                     <p>
-                        I care about measurable outcomes: <strong>18% lower monthly cloud spend</strong>,
-                        <strong>30% faster security-incident response</strong>, and infrastructure that's
-                        version-controlled, repeatable, and boring — in the best way.
+                        I started out doing emergency on-call work for Fiverr clients: broken DNS, failed
+                        deploys, runaway auto-scaling, usually at the worst possible hour. It taught me to
+                        design systems so that the 3 AM call never happens in the first place.
                     </p>
-                    <div class="about-highlights stagger">
-                        <div class="highlight-item reveal">
-                            <i class="fas fa-cloud"></i>
-                            <span><b>Multi-Cloud</b>Production experience on both AWS &amp; Azure</span>
-                        </div>
-                        <div class="highlight-item reveal">
-                            <i class="fas fa-code-branch"></i>
-                            <span><b>CI/CD Everything</b>GitHub Actions, GitLab CI, Jenkins, Azure DevOps, Argo CD</span>
-                        </div>
-                        <div class="highlight-item reveal">
-                            <i class="fas fa-cubes"></i>
-                            <span><b>IaC First</b>Terraform / OpenTofu, Ansible — no click-ops</span>
-                        </div>
-                        <div class="highlight-item reveal">
-                            <i class="fas fa-shield-halved"></i>
-                            <span><b>Security-Minded</b>RBAC governance, secret rotation, network hardening</span>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -169,96 +112,67 @@
     <!-- Experience -->
     <section id="experience" class="section">
         <div class="container">
-            <div class="section-label">02 · git log --career</div>
-            <h2 class="section-title">Professional <span class="gradient-text">Experience</span></h2>
-            <p class="section-sub">From freelance firefighting to managing enterprise cloud platforms — a track record of shipping reliable infrastructure.</p>
+            <div class="section-head reveal">
+                <span class="num">02</span>
+                <h2>Experience</h2>
+            </div>
 
-            <div class="timeline">
-                <div class="tl-item current reveal">
-                    <span class="tl-dot"></span>
-                    <div class="tl-card">
-                        <div class="tl-head">
-                            <div class="tl-role">DevOps Engineer L1</div>
-                            <span class="tl-date">May 2025 — Present</span>
-                        </div>
-                        <div class="tl-company"><i class="fas fa-building"></i>NextGen Technologies · Arlington, TX, USA (Remote)</div>
-                        <ul>
-                            <li>Manage Azure infrastructure end-to-end: CI/CD pipelines, VMs, VMSS, Key Vaults, and Managed SQL instances.</li>
-                            <li><b>Leading the migration of Azure Virtual Desktop Infrastructure (VDI) to Microsoft 365</b>, improving user access and reducing operational overhead.</li>
-                            <li>Implemented <b>canary release strategies with percentage-based traffic splitting</b> on AKS, keeping prior versions hot for rapid rollback.</li>
-                            <li>Established RBAC governance and automated secret rotation — <b>cut security-incident response time by 30%</b>.</li>
-                            <li>Optimized cloud resource usage across projects, <b>reducing monthly spend by 18%</b> while holding performance SLAs.</li>
-                            <li>Provide infrastructure escalation support for Azure VMs and cross-functional reliability work.</li>
-                        </ul>
-                        <div class="tl-tags">
-                            <span class="tag">Azure</span><span class="tag">AKS</span><span class="tag">VMSS</span>
-                            <span class="tag">Key Vault</span><span class="tag">Azure DevOps</span><span class="tag">RBAC</span>
-                        </div>
-                    </div>
+            <div class="xp-item reveal">
+                <div class="xp-when">May 2025 —<br><span class="now">present</span></div>
+                <div class="xp-body">
+                    <h3 class="xp-role">DevOps Engineer L1</h3>
+                    <p class="xp-org">NextGen Technologies · Arlington, TX (remote)</p>
+                    <ul>
+                        <li>Manage Azure infrastructure end-to-end: CI/CD pipelines, VMs, VMSS, Key Vaults, and Managed SQL instances.</li>
+                        <li>Leading the migration of Azure Virtual Desktop Infrastructure to Microsoft 365, improving user access and cutting operational overhead.</li>
+                        <li>Implemented <strong>canary releases with percentage-based traffic splitting on AKS</strong>, keeping prior versions warm for instant rollback.</li>
+                        <li>Established RBAC governance and automated secret rotation — <strong>30% faster security-incident response</strong>.</li>
+                        <li>Optimized resource usage across projects, <strong>reducing monthly spend by 18%</strong> while holding performance SLAs.</li>
+                    </ul>
+                    <p class="xp-stack">Azure · AKS · VMSS · Key Vault · Azure DevOps · Azure Monitor</p>
                 </div>
+            </div>
 
-                <div class="tl-item reveal">
-                    <span class="tl-dot"></span>
-                    <div class="tl-card">
-                        <div class="tl-head">
-                            <div class="tl-role">Junior DevOps Engineer</div>
-                            <span class="tl-date">Aug 2024 — Apr 2025</span>
-                        </div>
-                        <div class="tl-company"><i class="fas fa-building"></i>Cyberoide Tech · Islamabad, Pakistan (Remote)</div>
-                        <ul>
-                            <li>Deployed and maintained AWS infrastructure for <b>.NET and MSSQL applications</b>, improving scalability and reliability.</li>
-                            <li>Built end-to-end CI/CD pipelines with <b>GitHub Actions and GitLab CI/CD</b> for automated builds, tests, and deployments across dev and production.</li>
-                            <li>Provisioned Infrastructure as Code with <b>Terraform</b> — repeatable, version-controlled deployments.</li>
-                            <li>Integrated EC2, RDS, S3, IAM, VPC, and ECS into existing application ecosystems for high availability and rapid recovery.</li>
-                            <li>Worked directly with clients to evaluate, optimize, and modernize AWS architectures.</li>
-                        </ul>
-                        <div class="tl-tags">
-                            <span class="tag">AWS</span><span class="tag">Terraform</span><span class="tag">GitHub Actions</span>
-                            <span class="tag">GitLab CI</span><span class="tag">ECS</span><span class="tag">RDS</span>
-                        </div>
-                    </div>
+            <div class="xp-item reveal">
+                <div class="xp-when">Aug 2024 —<br>Apr 2025</div>
+                <div class="xp-body">
+                    <h3 class="xp-role">Junior DevOps Engineer</h3>
+                    <p class="xp-org">Cyberoide Tech · Islamabad (remote)</p>
+                    <ul>
+                        <li>Deployed and maintained AWS infrastructure for .NET and MSSQL applications, improving scalability and reliability.</li>
+                        <li>Built end-to-end CI/CD pipelines with GitHub Actions and GitLab CI for automated builds, tests, and deployments across dev and production.</li>
+                        <li>Provisioned everything as code with Terraform — repeatable, reviewed, version-controlled.</li>
+                        <li>Worked directly with clients to evaluate and modernize their AWS architectures.</li>
+                    </ul>
+                    <p class="xp-stack">AWS · Terraform · GitHub Actions · GitLab CI · ECS · RDS</p>
                 </div>
+            </div>
 
-                <div class="tl-item reveal">
-                    <span class="tl-dot"></span>
-                    <div class="tl-card">
-                        <div class="tl-head">
-                            <div class="tl-role">DevOps Intern</div>
-                            <span class="tl-date">Jun 2024 — Aug 2024</span>
-                        </div>
-                        <div class="tl-company"><i class="fas fa-building"></i>Emumba Private Limited · Islamabad, Pakistan (Hybrid)</div>
-                        <ul>
-                            <li>Automated cloud-native infrastructure with <b>Terraform</b> — EC2, VPCs, RDS, S3, DynamoDB.</li>
-                            <li>Wrote <b>Ansible playbooks</b> for automated configuration and provisioning using community roles.</li>
-                            <li>Designed multi-stage CI/CD pipelines with GitHub Actions and Jenkins, including encrypted secrets management.</li>
-                            <li>Built Docker images and multi-container environments with Docker Compose.</li>
-                            <li>Deployed Kubernetes clusters; configured iptables/ufw firewalls and load balancers with HAProxy and NGINX.</li>
-                        </ul>
-                        <div class="tl-tags">
-                            <span class="tag">Terraform</span><span class="tag">Ansible</span><span class="tag">Jenkins</span>
-                            <span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">HAProxy</span>
-                        </div>
-                    </div>
+            <div class="xp-item reveal">
+                <div class="xp-when">Jun 2024 —<br>Aug 2024</div>
+                <div class="xp-body">
+                    <h3 class="xp-role">DevOps Intern</h3>
+                    <p class="xp-org">Emumba · Islamabad (hybrid)</p>
+                    <ul>
+                        <li>Automated cloud infrastructure with Terraform — EC2, VPCs, RDS, S3, DynamoDB.</li>
+                        <li>Wrote Ansible playbooks for system configuration; built multi-stage pipelines with GitHub Actions and Jenkins, including encrypted secrets.</li>
+                        <li>Deployed Kubernetes clusters and configured firewalls and load balancers with HAProxy and NGINX.</li>
+                    </ul>
+                    <p class="xp-stack">Terraform · Ansible · Jenkins · Docker · Kubernetes · HAProxy</p>
                 </div>
+            </div>
 
-                <div class="tl-item reveal">
-                    <span class="tl-dot"></span>
-                    <div class="tl-card">
-                        <div class="tl-head">
-                            <div class="tl-role">Freelance DevOps Engineer</div>
-                            <span class="tl-date">May 2023 — Aug 2024</span>
-                        </div>
-                        <div class="tl-company"><i class="fas fa-building"></i>Fiverr · Remote</div>
-                        <ul>
-                            <li><b>Emergency AWS on-call support</b> — resolved urgent DNS issues, deployment failures, and auto-scaling misconfigurations in live production environments.</li>
-                            <li>Designed an <b>ECR → EC2 → ASG → ALB → Route53</b> architecture provisioned via Terraform and automated with Bitbucket Pipelines.</li>
-                            <li>Built AWS ECS (EC2 launch type) infrastructure with ALB and ASG for high availability using modular, reusable Terraform code.</li>
-                        </ul>
-                        <div class="tl-tags">
-                            <span class="tag">AWS</span><span class="tag">Terraform</span><span class="tag">Bitbucket Pipelines</span>
-                            <span class="tag">Route53</span><span class="tag">Incident Response</span>
-                        </div>
-                    </div>
+            <div class="xp-item reveal">
+                <div class="xp-when">May 2023 —<br>Aug 2024</div>
+                <div class="xp-body">
+                    <h3 class="xp-role">Freelance DevOps Engineer</h3>
+                    <p class="xp-org">Fiverr · remote</p>
+                    <ul>
+                        <li>Emergency AWS support for live production systems — DNS failures, broken deploys, misconfigured auto-scaling.</li>
+                        <li>Designed an ECR → EC2 → ASG → ALB → Route53 architecture, provisioned with Terraform and automated through Bitbucket Pipelines.</li>
+                        <li>Built ECS infrastructure with ALB and ASG for high availability, from modular and reusable Terraform.</li>
+                    </ul>
+                    <p class="xp-stack">AWS · Terraform · Bitbucket Pipelines · Route53</p>
                 </div>
             </div>
         </div>
@@ -267,263 +181,160 @@
     <!-- Skills -->
     <section id="skills" class="section">
         <div class="container">
-            <div class="section-label">03 · cat skills.yaml</div>
-            <h2 class="section-title">Technical <span class="gradient-text">Arsenal</span></h2>
-            <p class="section-sub">The tools I reach for to build, ship, and run production systems.</p>
-
-            <div class="skills-grid stagger">
-                <div class="skill-card reveal">
-                    <div class="skill-card-head">
-                        <div class="skill-icon"><i class="fab fa-aws"></i></div>
-                        <div><h3>AWS</h3><span>cloud_provider: primary</span></div>
-                    </div>
-                    <div class="skill-chips">
-                        <span class="tag">EC2</span><span class="tag">Lambda</span><span class="tag">S3</span>
-                        <span class="tag">VPC</span><span class="tag">IAM</span><span class="tag">ECS</span>
-                        <span class="tag">EKS</span><span class="tag">ECR</span><span class="tag">RDS</span>
-                        <span class="tag">ASG</span><span class="tag">ALB</span><span class="tag">Route53</span>
-                        <span class="tag">SNS</span><span class="tag">CodePipeline</span><span class="tag">CloudFormation</span>
-                    </div>
+            <div class="section-head reveal">
+                <span class="num">03</span>
+                <h2>Skills</h2>
+            </div>
+            <div class="skills-list reveal">
+                <div class="skill-row">
+                    <h3>Cloud</h3>
+                    <p>AWS (EC2, Lambda, S3, VPC, IAM, ECS, EKS, ECR, RDS, ALB, Route53, CodePipeline) · Azure (AKS, ACR, VMs, VMSS, VDI, Key Vaults, Managed SQL, Azure Monitor)</p>
                 </div>
-                <div class="skill-card reveal">
-                    <div class="skill-card-head">
-                        <div class="skill-icon"><i class="fab fa-microsoft"></i></div>
-                        <div><h3>Azure</h3><span>cloud_provider: current</span></div>
-                    </div>
-                    <div class="skill-chips">
-                        <span class="tag">Azure DevOps</span><span class="tag">AKS</span><span class="tag">ACR</span>
-                        <span class="tag">Azure VMs</span><span class="tag">VMSS</span><span class="tag">VDI</span>
-                        <span class="tag">Key Vaults</span><span class="tag">Managed SQL</span>
-                        <span class="tag">Classic Pipelines</span><span class="tag">Azure Monitor</span>
-                    </div>
+                <div class="skill-row">
+                    <h3>Infrastructure as code</h3>
+                    <p>Terraform, OpenTofu, CloudFormation, Ansible</p>
                 </div>
-                <div class="skill-card reveal">
-                    <div class="skill-card-head">
-                        <div class="skill-icon"><i class="fas fa-cubes"></i></div>
-                        <div><h3>Containers & Orchestration</h3><span>runtime: containerized</span></div>
-                    </div>
-                    <div class="skill-chips">
-                        <span class="tag">Docker</span><span class="tag">Docker Compose</span>
-                        <span class="tag">Kubernetes</span><span class="tag">kubectl</span>
-                        <span class="tag">Helm</span><span class="tag">Argo CD</span>
-                    </div>
+                <div class="skill-row">
+                    <h3>Containers &amp; orchestration</h3>
+                    <p>Docker, Docker Compose, Kubernetes, Helm, Argo CD</p>
                 </div>
-                <div class="skill-card reveal">
-                    <div class="skill-card-head">
-                        <div class="skill-icon"><i class="fas fa-rocket"></i></div>
-                        <div><h3>CI/CD</h3><span>deploy: automated</span></div>
-                    </div>
-                    <div class="skill-chips">
-                        <span class="tag">GitHub Actions</span><span class="tag">GitLab CI/CD</span>
-                        <span class="tag">Jenkins</span><span class="tag">Bitbucket Pipelines</span>
-                        <span class="tag">Argo CD</span><span class="tag">Azure Pipelines</span>
-                    </div>
+                <div class="skill-row">
+                    <h3>CI/CD</h3>
+                    <p>GitHub Actions, GitLab CI/CD, Jenkins, Azure DevOps, Bitbucket Pipelines</p>
                 </div>
-                <div class="skill-card reveal">
-                    <div class="skill-card-head">
-                        <div class="skill-icon"><i class="fas fa-layer-group"></i></div>
-                        <div><h3>IaC & Config Management</h3><span>state: version_controlled</span></div>
-                    </div>
-                    <div class="skill-chips">
-                        <span class="tag">Terraform</span><span class="tag">OpenTofu</span>
-                        <span class="tag">Ansible</span><span class="tag">CloudFormation</span>
-                    </div>
+                <div class="skill-row">
+                    <h3>Observability</h3>
+                    <p>Prometheus, Grafana, Kibana, SonarQube, CloudWatch, Azure Monitor</p>
                 </div>
-                <div class="skill-card reveal">
-                    <div class="skill-card-head">
-                        <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
-                        <div><h3>Observability</h3><span>alerts: actionable</span></div>
-                    </div>
-                    <div class="skill-chips">
-                        <span class="tag">Prometheus</span><span class="tag">Grafana</span>
-                        <span class="tag">Kibana</span><span class="tag">SonarQube</span>
-                        <span class="tag">Azure Monitor</span><span class="tag">CloudWatch</span>
-                    </div>
+                <div class="skill-row">
+                    <h3>Networking &amp; security</h3>
+                    <p>NGINX, HAProxy, iptables/ufw, DNS, TLS, VPNs, RBAC, secret rotation</p>
                 </div>
-                <div class="skill-card reveal">
-                    <div class="skill-card-head">
-                        <div class="skill-icon"><i class="fas fa-network-wired"></i></div>
-                        <div><h3>Networking & Security</h3><span>posture: hardened</span></div>
-                    </div>
-                    <div class="skill-chips">
-                        <span class="tag">iptables</span><span class="tag">ufw</span><span class="tag">HAProxy</span>
-                        <span class="tag">NGINX</span><span class="tag">VPNs</span><span class="tag">DNS</span>
-                        <span class="tag">TLS/SSL</span><span class="tag">RBAC</span>
-                    </div>
-                </div>
-                <div class="skill-card reveal">
-                    <div class="skill-card-head">
-                        <div class="skill-icon"><i class="fas fa-terminal"></i></div>
-                        <div><h3>Systems & Scripting</h3><span>shell: bash</span></div>
-                    </div>
-                    <div class="skill-chips">
-                        <span class="tag">Linux (Ubuntu, RHEL)</span><span class="tag">Windows Server</span>
-                        <span class="tag">Bash</span><span class="tag">YAML</span><span class="tag">Python</span>
-                        <span class="tag">Git</span>
-                    </div>
+                <div class="skill-row">
+                    <h3>Systems &amp; scripting</h3>
+                    <p>Linux (Ubuntu, RHEL), Windows Server, Bash, YAML, Python, Git</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects -->
-    <section id="projects" class="section">
+    <!-- Work -->
+    <section id="work" class="section">
         <div class="container">
-            <div class="section-label">04 · ls ~/projects</div>
-            <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
-            <p class="section-sub">Real production work — architectures designed, built, and operated end-to-end.</p>
-
-            <div class="projects-grid stagger">
-                <a href="aws-infrastructure.html" class="project-card reveal">
-                    <div class="project-visual pv-aws">
-                        <i class="fab fa-aws"></i>
-                        <span class="project-flow">ECR <span class="arrow">→</span> EC2 <span class="arrow">→</span> ASG <span class="arrow">→</span> ALB <span class="arrow">→</span> Route53</span>
-                    </div>
-                    <div class="project-body">
-                        <h3>High-Availability AWS Architecture</h3>
-                        <p>Production ECR → EC2 → ASG → ALB → Route53 stack provisioned entirely with Terraform and automated via Bitbucket Pipelines — built for zero-downtime deploys and self-healing scale.</p>
-                        <div class="project-tags">
-                            <span class="tag">AWS</span><span class="tag">Terraform</span>
-                            <span class="tag">Bitbucket Pipelines</span><span class="tag">Auto Scaling</span>
-                        </div>
-                        <span class="project-link">cat case-study.md <i class="fas fa-arrow-right"></i></span>
-                    </div>
-                </a>
-
-                <a href="kubernetes-cluster.html" class="project-card reveal">
-                    <div class="project-visual pv-k8s">
-                        <i class="fas fa-dharmachakra"></i>
-                        <span class="project-flow">stable 90% <span class="arrow">⇄</span> canary 10% <span class="arrow">→</span> promote</span>
-                    </div>
-                    <div class="project-body">
-                        <h3>Canary Deployments on AKS</h3>
-                        <p>Percentage-based traffic splitting for containerized workloads on Azure Kubernetes Service — prior versions kept hot for instant rollback, making risky releases routine.</p>
-                        <div class="project-tags">
-                            <span class="tag">AKS</span><span class="tag">Kubernetes</span>
-                            <span class="tag">Canary Releases</span><span class="tag">Azure DevOps</span>
-                        </div>
-                        <span class="project-link">cat case-study.md <i class="fas fa-arrow-right"></i></span>
-                    </div>
-                </a>
-
-                <a href="cicd-pipeline.html" class="project-card reveal">
-                    <div class="project-visual pv-cicd">
-                        <i class="fas fa-code-branch"></i>
-                        <span class="project-flow">build <span class="arrow">→</span> test <span class="arrow">→</span> scan <span class="arrow">→</span> deploy</span>
-                    </div>
-                    <div class="project-body">
-                        <h3>End-to-End CI/CD Pipelines</h3>
-                        <p>Multi-stage pipelines with GitHub Actions and GitLab CI/CD for .NET workloads — automated builds, testing, encrypted secrets, and push-button deployments to dev and production.</p>
-                        <div class="project-tags">
-                            <span class="tag">GitHub Actions</span><span class="tag">GitLab CI</span>
-                            <span class="tag">Jenkins</span><span class="tag">Secrets Mgmt</span>
-                        </div>
-                        <span class="project-link">cat case-study.md <i class="fas fa-arrow-right"></i></span>
-                    </div>
-                </a>
-
-                <a href="infrastructure-as-code.html" class="project-card reveal">
-                    <div class="project-visual pv-iac">
-                        <i class="fas fa-layer-group"></i>
-                        <span class="project-flow">plan <span class="arrow">→</span> review <span class="arrow">→</span> apply <span class="arrow">→</span> verify</span>
-                    </div>
-                    <div class="project-body">
-                        <h3>Modular Terraform IaC Platform</h3>
-                        <p>Reusable, version-controlled Terraform modules provisioning EC2, VPC, RDS, S3, and DynamoDB across environments — paired with Ansible for configuration management.</p>
-                        <div class="project-tags">
-                            <span class="tag">Terraform</span><span class="tag">Ansible</span>
-                            <span class="tag">AWS</span><span class="tag">Multi-Env</span>
-                        </div>
-                        <span class="project-link">cat case-study.md <i class="fas fa-arrow-right"></i></span>
-                    </div>
-                </a>
+            <div class="section-head reveal">
+                <span class="num">04</span>
+                <h2>Selected work</h2>
             </div>
+
+            <a href="aws-infrastructure.html" class="project-row reveal">
+                <div class="project-row-inner">
+                    <span class="project-num">01</span>
+                    <div>
+                        <h3>High-availability AWS architecture</h3>
+                        <p class="desc">A container-hosting stack — ECR through EC2, auto scaling, load balancing, and DNS — provisioned entirely with Terraform and deployed on every push. Zero-downtime releases, self-healing fleet.</p>
+                        <p class="meta">Terraform · AWS · Bitbucket Pipelines</p>
+                    </div>
+                    <span class="project-arrow">→</span>
+                </div>
+            </a>
+
+            <a href="kubernetes-cluster.html" class="project-row reveal">
+                <div class="project-row-inner">
+                    <span class="project-num">02</span>
+                    <div>
+                        <h3>Canary deployments on AKS</h3>
+                        <p class="desc">Percentage-based traffic splitting for production workloads, with the previous version kept warm. Rollback became a traffic switch measured in seconds, not a redeploy.</p>
+                        <p class="meta">AKS · Kubernetes · Azure DevOps</p>
+                    </div>
+                    <span class="project-arrow">→</span>
+                </div>
+            </a>
+
+            <a href="cicd-pipeline.html" class="project-row reveal">
+                <div class="project-row-inner">
+                    <span class="project-num">03</span>
+                    <div>
+                        <h3>End-to-end CI/CD pipelines</h3>
+                        <p class="desc">Multi-stage pipelines for .NET workloads — automated builds, tests, encrypted secrets, and stage-gated deploys that turned production releases into an approval click.</p>
+                        <p class="meta">GitHub Actions · GitLab CI · Jenkins</p>
+                    </div>
+                    <span class="project-arrow">→</span>
+                </div>
+            </a>
+
+            <a href="infrastructure-as-code.html" class="project-row reveal">
+                <div class="project-row-inner">
+                    <span class="project-num">04</span>
+                    <div>
+                        <h3>Modular Terraform platform</h3>
+                        <p class="desc">Reusable, version-controlled modules for EC2, VPC, RDS, S3, and DynamoDB — new environments stamped out in minutes instead of days, configured by Ansible.</p>
+                        <p class="meta">Terraform · Ansible · AWS</p>
+                    </div>
+                    <span class="project-arrow">→</span>
+                </div>
+            </a>
         </div>
     </section>
 
-    <!-- Certifications & Education -->
-    <section id="certifications" class="section">
+    <!-- Credentials -->
+    <section id="credentials" class="section">
         <div class="container">
-            <div class="section-label">05 · ls ~/credentials</div>
-            <h2 class="section-title">Certifications & <span class="gradient-text">Education</span></h2>
-
-            <div class="certs-grid stagger" style="margin-bottom: 26px;">
-                <div class="cert-card reveal">
-                    <div class="cert-icon"><i class="fab fa-aws"></i></div>
-                    <div>
-                        <h3>AWS Cloud Technical Essentials</h3>
-                        <p>Core AWS services, compute, storage, and cloud fundamentals.</p>
-                        <span class="cert-issuer">Coursera / Amazon Web Services</span>
-                    </div>
-                </div>
-                <div class="cert-card reveal">
-                    <div class="cert-icon"><i class="fas fa-cloud"></i></div>
-                    <div>
-                        <h3>AWS Fundamentals Specialization</h3>
-                        <p>Core services, networking, security, and databases on AWS.</p>
-                        <span class="cert-issuer">Coursera</span>
-                    </div>
-                </div>
-                <div class="cert-card reveal">
-                    <div class="cert-icon"><i class="fas fa-infinity"></i></div>
-                    <div>
-                        <h3>DevOps on AWS Specialization</h3>
-                        <p>CI/CD, Infrastructure as Code, monitoring, and microservices.</p>
-                        <span class="cert-issuer">Coursera</span>
-                    </div>
-                </div>
+            <div class="section-head reveal">
+                <span class="num">05</span>
+                <h2>Education &amp; certifications</h2>
             </div>
-
-            <div class="edu-card reveal">
-                <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
-                <div>
-                    <h3>B.S. Computer Science</h3>
-                    <p>Air University Islamabad — Islamabad, Pakistan</p>
-                    <span class="edu-date">Sep 2021 — Jun 2025</span>
+            <div class="cred-grid">
+                <div class="cred-col reveal">
+                    <h3>Education</h3>
+                    <div class="cred-item">
+                        <p class="t">B.S. Computer Science</p>
+                        <p class="s">Air University Islamabad</p>
+                        <p class="d">2021 — 2025</p>
+                    </div>
+                </div>
+                <div class="cred-col reveal">
+                    <h3>Certifications</h3>
+                    <div class="cred-item">
+                        <p class="t">AWS Cloud Technical Essentials</p>
+                        <p class="s">Coursera / Amazon Web Services</p>
+                    </div>
+                    <div class="cred-item">
+                        <p class="t">AWS Fundamentals Specialization</p>
+                        <p class="s">Coursera — core services, networking, security, databases</p>
+                    </div>
+                    <div class="cred-item">
+                        <p class="t">DevOps on AWS Specialization</p>
+                        <p class="s">Coursera — CI/CD, IaC, monitoring, microservices</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="section">
+    <section id="contact" class="contact">
         <div class="container">
-            <div class="contact-wrap reveal">
-                <div class="section-label" style="justify-content: center;">06 · ./contact.sh</div>
-                <h2 class="section-title">Let's Build Something <span class="gradient-text">Reliable</span></h2>
+            <div class="reveal">
+                <h2>Have something that needs to <em>just work?</em></h2>
                 <p>
-                    Whether you need someone to tame your cloud bill, harden your pipelines, or own your
-                    infrastructure end-to-end — I'm actively seeking international remote and relocation
-                    opportunities. Let's talk.
+                    I'm actively looking for international remote or relocation opportunities —
+                    DevOps, platform, or site reliability roles. If that sounds like your team, say hello.
                 </p>
-                <div class="contact-methods">
-                    <a href="mailto:saadr8840@gmail.com" class="contact-chip"><i class="fas fa-envelope"></i> saadr8840@gmail.com</a>
-                    <a href="https://www.linkedin.com/in/saad-mansoor-minhas/" target="_blank" rel="noopener noreferrer" class="contact-chip"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-                    <a href="https://github.com/Saad-Mansoor-Minhas" target="_blank" rel="noopener noreferrer" class="contact-chip"><i class="fab fa-github"></i> GitHub</a>
+                <a class="contact-email" href="mailto:saadr8840@gmail.com">saadr8840@gmail.com</a>
+                <div class="contact-alt">
+                    <a class="tlink" href="https://github.com/Saad-Mansoor-Minhas" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a class="tlink" href="https://www.linkedin.com/in/saad-mansoor-minhas/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 </div>
-                <a href="mailto:saadr8840@gmail.com?subject=Opportunity%20for%20Saad%20Minhas" class="btn btn-primary">
-                    Start a Conversation <i class="fas fa-paper-plane"></i>
-                </a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container footer-inner">
-            <a href="#" class="nav-logo"><span class="prompt">~/</span>saad-minhas</a>
-            <p>&copy; <span class="year">2026</span> Saad Mansoor Minhas · Deployed with <span class="heart">♥</span> on GitHub Pages</p>
-            <div class="footer-socials">
-                <a href="https://github.com/Saad-Mansoor-Minhas" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/saad-mansoor-minhas/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="mailto:saadr8840@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-            </div>
+            <span class="nav-name">Saad Minhas</span>
+            <p>© <span class="year">2026</span> · Islamabad, Pakistan</p>
         </div>
     </footer>
-
-    <button class="back-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-        <i class="fas fa-arrow-up"></i>
-    </button>
 
     <script src="script.js"></script>
 </body>

@@ -4,155 +4,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canary Deployments on AKS — Saad Mansoor Minhas</title>
-    <meta name="description" content="Case study: canary release strategy with percentage-based traffic splitting for containerized workloads on Azure Kubernetes Service.">
+    <title>Canary deployments on AKS — Saad Mansoor Minhas</title>
+    <meta name="description" content="Case study: canary releases with percentage-based traffic splitting for containerized workloads on Azure Kubernetes Service.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="scroll-progress"></div>
-    <div class="bg-orbs">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
-    </div>
-    <div class="bg-grid"></div>
-
     <nav class="nav scrolled">
         <div class="nav-inner">
-            <a href="index.html" class="nav-logo"><span class="prompt">~/</span>saad-minhas<span class="cursor-blink"></span></a>
-            <button class="nav-toggle" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
-            </button>
+            <a href="index.html" class="nav-name">Saad Minhas</a>
+            <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
             <div class="nav-links">
                 <a href="index.html#about">About</a>
                 <a href="index.html#experience">Experience</a>
                 <a href="index.html#skills">Skills</a>
-                <a href="index.html#projects">Projects</a>
-                <a href="index.html#contact" class="nav-cta">./contact.sh</a>
+                <a href="index.html#work">Work</a>
+                <a href="index.html#contact">Contact</a>
             </div>
         </div>
     </nav>
 
-    <header class="project-hero">
+    <header class="study-hero">
         <div class="container">
-            <div class="breadcrumb">
-                <a href="index.html#projects"><i class="fas fa-arrow-left"></i> ~/projects</a> / aks-canary-deployments
-            </div>
-            <h1>Canary Deployments <span class="gradient-text">on AKS</span></h1>
+            <a href="index.html#work" class="crumb">← Selected work</a>
+            <h1>Making risky releases <em>routine</em> on AKS.</h1>
             <p class="lede">
-                A canary release strategy with percentage-based traffic splitting for containerized workloads
-                on Azure Kubernetes Service — prior versions kept warm for instant rollback, turning risky
-                releases into routine, low-stress events.
+                A canary release strategy with percentage-based traffic splitting for containerized
+                production workloads on Azure Kubernetes Service. The previous version stays deployed
+                and warm, so rolling back is a traffic switch — seconds, not a redeploy.
             </p>
-            <div class="tl-tags">
-                <span class="tag">AKS</span><span class="tag">Kubernetes</span><span class="tag">Canary Releases</span>
-                <span class="tag">Azure DevOps</span><span class="tag">ACR</span><span class="tag">Traffic Splitting</span>
+            <div class="study-meta">
+                <div>
+                    <p class="k">Context</p>
+                    <p class="v">NextGen Technologies, production workloads</p>
+                </div>
+                <div>
+                    <p class="k">Stack</p>
+                    <p class="v">AKS · Kubernetes · Azure DevOps · ACR · Azure Monitor</p>
+                </div>
+                <div>
+                    <p class="k">Year</p>
+                    <p class="v">2025 — present</p>
+                </div>
             </div>
-
-            <div class="arch-flow reveal">
-                <span class="arch-node"><i class="fas fa-code-merge"></i> Release vN+1</span>
-                <span class="arch-arrow"><i class="fas fa-arrow-right"></i></span>
-                <span class="arch-node"><i class="fas fa-percent"></i> Canary 10%</span>
-                <span class="arch-arrow"><i class="fas fa-arrow-right"></i></span>
-                <span class="arch-node"><i class="fas fa-chart-line"></i> Observe</span>
-                <span class="arch-arrow"><i class="fas fa-arrow-right"></i></span>
-                <span class="arch-node"><i class="fas fa-circle-check"></i> Promote 100%</span>
-                <span class="arch-arrow"><i class="fas fa-rotate-left"></i></span>
-                <span class="arch-node"><i class="fas fa-shield-halved"></i> vN on standby</span>
-            </div>
+            <p class="flow">release vN+1 <span class="sep">→</span> canary at 10% <span class="sep">→</span> observe <span class="sep">→</span> promote to 100% <span class="sep">·</span> vN kept on standby</p>
         </div>
     </header>
 
-    <section class="detail-section">
-        <div class="container detail-grid">
-            <div class="detail-card reveal">
-                <h2><i class="fas fa-bullseye"></i>The Mission</h2>
-                <p>
-                    At NextGen Technologies, releases to containerized production workloads were all-or-nothing:
-                    a bad deploy meant every user felt it at once, and rolling back meant a scramble.
-                </p>
-                <p>
-                    I implemented a canary release strategy on AKS where each new version receives a small,
-                    configurable slice of live traffic first. Only after it proves healthy against real users
-                    does it take over — and the previous version stays deployed and warm so rollback is a
-                    traffic switch, not a redeploy.
-                </p>
-            </div>
-            <div class="detail-card reveal">
-                <h2><i class="fas fa-list-check"></i>What I Built</h2>
-                <ul>
-                    <li><b>Percentage-based traffic splitting</b> between stable and canary deployments on AKS.</li>
-                    <li><b>Parallel versioned deployments</b> — prior release kept running for rapid rollback.</li>
-                    <li><b>Azure DevOps pipelines</b> driving image builds to ACR and progressive rollout stages.</li>
-                    <li><b>Health-gated promotion</b> — canaries observed via Azure Monitor before taking full traffic.</li>
-                    <li><b>RBAC governance</b> over cluster access plus automated secret rotation via Key Vault integration.</li>
-                </ul>
-            </div>
+    <section class="study-section">
+        <div class="container prose reveal">
+            <span class="kicker">The brief</span>
+            <h2>Every release was all-or-nothing</h2>
+            <p>
+                Deploys to containerized production workloads replaced everything at once: a bad release
+                meant every user felt it immediately, and rolling back meant a scramble to rebuild and
+                redeploy the previous version while the incident clock ran.
+            </p>
+            <p>
+                I introduced canary releases on AKS. Each new version takes a small, configurable slice
+                of live traffic first, and only takes over fully after proving itself against real users —
+                with the outgoing version held warm the entire time.
+            </p>
         </div>
     </section>
 
-    <section class="detail-section">
+    <section class="study-section">
+        <div class="container prose reveal">
+            <span class="kicker">What I built</span>
+            <h2>The work</h2>
+            <ul>
+                <li><strong>Percentage-based traffic splitting</strong> between stable and canary deployments on AKS.</li>
+                <li><strong>Parallel versioned deployments</strong> — the prior release stays scaled and ready for instant rollback.</li>
+                <li><strong>Azure DevOps pipelines</strong> driving image builds to ACR and progressive rollout stages.</li>
+                <li><strong>Health-gated promotion</strong> — canaries watched through Azure Monitor before taking full traffic.</li>
+                <li><strong>RBAC governance and automated secret rotation</strong> across the cluster and surrounding Azure resources.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="study-section">
         <div class="container">
-            <div class="detail-card reveal">
-                <h2><i class="fas fa-triangle-exclamation"></i>Challenges & Solutions</h2>
-                <div class="challenge">
-                    <h3>Bad releases hit 100% of users instantly</h3>
-                    <p>Standard rolling updates replaced all pods regardless of whether the new version actually behaved under real traffic.</p>
-                    <p class="sol"><b>Solution:</b> Weighted traffic splitting so new versions serve ~10% of requests first, with promotion only after error rates and latency stay within thresholds.</p>
+            <div class="reveal" style="margin-bottom: 36px;">
+                <span class="kicker">Problems along the way</span>
+                <h2 style="font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2rem); margin-top: 18px;">Challenges</h2>
+            </div>
+            <div class="challenge reveal">
+                <h3>Full blast radius on day one</h3>
+                <div class="body">
+                    <p>Rolling updates replaced every pod regardless of how the new version behaved under real traffic.</p>
+                    <p><strong>Fixed with</strong> weighted traffic splitting — new versions serve roughly 10% of requests first, promoted only once error rates and latency hold within thresholds.</p>
                 </div>
-                <div class="challenge">
-                    <h3>Rollbacks were slow and manual</h3>
-                    <p>Reverting required rebuilding or redeploying the previous image — minutes of degraded service.</p>
-                    <p class="sol"><b>Solution:</b> Keep the prior version's deployment scaled and ready; rollback became an immediate traffic-weight change measured in seconds.</p>
+            </div>
+            <div class="challenge reveal">
+                <h3>Rollbacks were slow and manual</h3>
+                <div class="body">
+                    <p>Reverting meant redeploying the previous image — minutes of degraded service every time.</p>
+                    <p><strong>Fixed with</strong> the prior version kept deployed and scaled; rollback became an immediate traffic-weight change measured in seconds.</p>
                 </div>
-                <div class="challenge">
-                    <h3>Secrets and access sprawl across the cluster</h3>
+            </div>
+            <div class="challenge reveal">
+                <h3>Secrets and access sprawl</h3>
+                <div class="body">
                     <p>Long-lived credentials and broad access made security incidents slow to contain.</p>
-                    <p class="sol"><b>Solution:</b> Established RBAC governance and automated secret rotation across Azure resources — cutting security-incident response time by 30%.</p>
+                    <p><strong>Fixed with</strong> RBAC governance and automated secret rotation via Key Vault — cutting security-incident response time by 30%.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="detail-section">
+    <section class="study-section">
         <div class="container">
-            <div class="section-label">impact</div>
-            <h2 class="section-title">Results</h2>
-            <div class="results-grid stagger">
-                <div class="result-item reveal"><div class="num">10%</div><div class="lbl">Initial blast radius for new releases</div></div>
-                <div class="result-item reveal"><div class="num">sec</div><div class="lbl">Rollback time via traffic switch</div></div>
-                <div class="result-item reveal"><div class="num">30%</div><div class="lbl">Faster security-incident response</div></div>
-                <div class="result-item reveal"><div class="num">SLA✓</div><div class="lbl">Performance held while cutting spend 18%</div></div>
+            <div class="reveal" style="margin-bottom: 28px;">
+                <span class="kicker">Outcome</span>
+            </div>
+            <div class="results-row reveal">
+                <div class="result"><p class="num">10%</p><p class="lbl">initial blast radius for new releases</p></div>
+                <div class="result"><p class="num">Seconds</p><p class="lbl">to roll back via traffic switch</p></div>
+                <div class="result"><p class="num">30%</p><p class="lbl">faster security-incident response</p></div>
+                <div class="result"><p class="num">18%</p><p class="lbl">lower monthly spend, SLAs intact</p></div>
             </div>
         </div>
     </section>
 
-    <div class="detail-cta">
-        <a href="index.html#projects" class="btn btn-ghost"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+    <div class="study-end">
+        <div class="container">
+            <a href="index.html#work" class="tlink">← Back to selected work</a>
+        </div>
     </div>
 
     <footer class="footer">
         <div class="container footer-inner">
-            <a href="index.html" class="nav-logo"><span class="prompt">~/</span>saad-minhas</a>
-            <p>&copy; <span class="year">2026</span> Saad Mansoor Minhas · Deployed with <span class="heart">♥</span> on GitHub Pages</p>
-            <div class="footer-socials">
-                <a href="https://github.com/Saad-Mansoor-Minhas" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/saad-mansoor-minhas/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="mailto:saadr8840@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-            </div>
+            <span class="nav-name">Saad Minhas</span>
+            <p>© <span class="year">2026</span> · Islamabad, Pakistan</p>
         </div>
     </footer>
-
-    <button class="back-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-        <i class="fas fa-arrow-up"></i>
-    </button>
 
     <script src="script.js"></script>
 </body>

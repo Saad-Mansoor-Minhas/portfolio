@@ -4,158 +4,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>End-to-End CI/CD Pipelines — Saad Mansoor Minhas</title>
-    <meta name="description" content="Case study: multi-stage CI/CD pipelines with GitHub Actions and GitLab CI/CD — automated builds, testing, encrypted secrets, and deployments to dev and production.">
+    <title>End-to-end CI/CD pipelines — Saad Mansoor Minhas</title>
+    <meta name="description" content="Case study: multi-stage CI/CD pipelines with GitHub Actions and GitLab CI — automated builds, tests, encrypted secrets, and stage-gated deploys.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="scroll-progress"></div>
-    <div class="bg-orbs">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
-    </div>
-    <div class="bg-grid"></div>
-
     <nav class="nav scrolled">
         <div class="nav-inner">
-            <a href="index.html" class="nav-logo"><span class="prompt">~/</span>saad-minhas<span class="cursor-blink"></span></a>
-            <button class="nav-toggle" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
-            </button>
+            <a href="index.html" class="nav-name">Saad Minhas</a>
+            <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
             <div class="nav-links">
                 <a href="index.html#about">About</a>
                 <a href="index.html#experience">Experience</a>
                 <a href="index.html#skills">Skills</a>
-                <a href="index.html#projects">Projects</a>
-                <a href="index.html#contact" class="nav-cta">./contact.sh</a>
+                <a href="index.html#work">Work</a>
+                <a href="index.html#contact">Contact</a>
             </div>
         </div>
     </nav>
 
-    <header class="project-hero">
+    <header class="study-hero">
         <div class="container">
-            <div class="breadcrumb">
-                <a href="index.html#projects"><i class="fas fa-arrow-left"></i> ~/projects</a> / cicd-pipelines
-            </div>
-            <h1>End-to-End <span class="gradient-text">CI/CD Pipelines</span></h1>
+            <a href="index.html#work" class="crumb">← Selected work</a>
+            <h1>From calendar-event releases to <em>an approval click.</em></h1>
             <p class="lede">
-                Multi-stage pipelines built with GitHub Actions and GitLab CI/CD for .NET and MSSQL workloads —
-                automated builds, testing, encrypted secrets management, and push-button deployments to dev
-                and production environments.
+                Multi-stage CI/CD pipelines for .NET and MSSQL workloads, built with GitHub Actions and
+                GitLab CI — automated builds, tests, encrypted secrets, and the same repeatable path to
+                dev and production for every single commit.
             </p>
-            <div class="tl-tags">
-                <span class="tag">GitHub Actions</span><span class="tag">GitLab CI/CD</span><span class="tag">Jenkins</span>
-                <span class="tag">Docker</span><span class="tag">.NET</span><span class="tag">Secrets Management</span>
+            <div class="study-meta">
+                <div>
+                    <p class="k">Context</p>
+                    <p class="v">Cyberoide Tech, client production systems</p>
+                </div>
+                <div>
+                    <p class="k">Stack</p>
+                    <p class="v">GitHub Actions · GitLab CI · Jenkins · Docker · AWS</p>
+                </div>
+                <div>
+                    <p class="k">Year</p>
+                    <p class="v">2024 — 2025</p>
+                </div>
             </div>
-
-            <div class="arch-flow reveal">
-                <span class="arch-node"><i class="fas fa-code-commit"></i> Push</span>
-                <span class="arch-arrow"><i class="fas fa-arrow-right"></i></span>
-                <span class="arch-node"><i class="fas fa-hammer"></i> Build</span>
-                <span class="arch-arrow"><i class="fas fa-arrow-right"></i></span>
-                <span class="arch-node"><i class="fas fa-vial-circle-check"></i> Test</span>
-                <span class="arch-arrow"><i class="fas fa-arrow-right"></i></span>
-                <span class="arch-node"><i class="fas fa-key"></i> Secrets</span>
-                <span class="arch-arrow"><i class="fas fa-arrow-right"></i></span>
-                <span class="arch-node"><i class="fas fa-flask"></i> Deploy dev</span>
-                <span class="arch-arrow"><i class="fas fa-arrow-right"></i></span>
-                <span class="arch-node"><i class="fas fa-rocket"></i> Deploy prod</span>
-            </div>
+            <p class="flow">push <span class="sep">→</span> build <span class="sep">→</span> test <span class="sep">→</span> inject secrets <span class="sep">→</span> deploy dev <span class="sep">→</span> approve <span class="sep">→</span> deploy production</p>
         </div>
     </header>
 
-    <section class="detail-section">
-        <div class="container detail-grid">
-            <div class="detail-card reveal">
-                <h2><i class="fas fa-bullseye"></i>The Mission</h2>
-                <p>
-                    At Cyberoide Tech, deployments of .NET applications were manual, slow, and error-prone —
-                    builds happened on developer machines, configuration lived in people's heads, and a
-                    production release was a calendar event.
-                </p>
-                <p>
-                    I built end-to-end CI/CD pipelines that take every commit from push to production
-                    automatically: compiled, tested, containerized, and deployed to AWS with the same
-                    repeatable process for dev and production.
-                </p>
-            </div>
-            <div class="detail-card reveal">
-                <h2><i class="fas fa-list-check"></i>What I Built</h2>
-                <ul>
-                    <li><b>GitHub Actions workflows</b> for automated builds, test runs, and artifact publishing on every push and PR.</li>
-                    <li><b>GitLab CI/CD pipelines</b> with stage-gated promotion from dev to production.</li>
-                    <li><b>Multi-stage Jenkins pipelines</b> (at Emumba) with encrypted secrets management baked in.</li>
-                    <li><b>Dockerized build outputs</b> for consistent runtime environments across every stage.</li>
-                    <li><b>Environment-scoped secrets</b> — credentials injected at deploy time, never committed.</li>
-                    <li><b>Deployments wired to AWS</b> (EC2, ECS, RDS) for high availability and rapid recovery.</li>
-                </ul>
-            </div>
+    <section class="study-section">
+        <div class="container prose reveal">
+            <span class="kicker">The brief</span>
+            <h2>Releases were events, not routine</h2>
+            <p>
+                Deployments of .NET applications were manual and slow: builds happened on developer
+                machines, configuration lived in people's heads, and a production release was something
+                you scheduled and braced for.
+            </p>
+            <p>
+                I built pipelines that take every commit from push to production automatically — compiled,
+                tested, containerized, and deployed to AWS with an identical process for dev and production.
+            </p>
         </div>
     </section>
 
-    <section class="detail-section">
+    <section class="study-section">
+        <div class="container prose reveal">
+            <span class="kicker">What I built</span>
+            <h2>The work</h2>
+            <ul>
+                <li><strong>GitHub Actions workflows</strong> running builds, tests, and artifact publishing on every push and pull request.</li>
+                <li><strong>GitLab CI pipelines</strong> with stage-gated promotion from dev to production.</li>
+                <li><strong>Multi-stage Jenkins pipelines</strong> (at Emumba) with encrypted secrets management built in.</li>
+                <li><strong>Dockerized build outputs</strong> so every stage runs the same artifact in the same environment.</li>
+                <li><strong>Environment-scoped secrets</strong> injected at deploy time — nothing sensitive ever committed.</li>
+                <li><strong>Deployments wired to AWS</strong> — EC2, ECS, RDS — for high availability and rapid recovery.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="study-section">
         <div class="container">
-            <div class="detail-card reveal">
-                <h2><i class="fas fa-triangle-exclamation"></i>Challenges & Solutions</h2>
-                <div class="challenge">
-                    <h3>"Works on my machine" builds</h3>
-                    <p>Builds done locally produced inconsistent artifacts and untracked dependencies.</p>
-                    <p class="sol"><b>Solution:</b> All builds moved into pipeline runners with pinned toolchains and Docker images — every artifact reproducible from a commit SHA.</p>
+            <div class="reveal" style="margin-bottom: 36px;">
+                <span class="kicker">Problems along the way</span>
+                <h2 style="font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2rem); margin-top: 18px;">Challenges</h2>
+            </div>
+            <div class="challenge reveal">
+                <h3>"Works on my machine" builds</h3>
+                <div class="body">
+                    <p>Local builds produced inconsistent artifacts with untracked dependencies.</p>
+                    <p><strong>Fixed with</strong> all builds moved to pipeline runners using pinned toolchains and Docker images — every artifact reproducible from a commit SHA.</p>
                 </div>
-                <div class="challenge">
-                    <h3>Credentials scattered across scripts and machines</h3>
+            </div>
+            <div class="challenge reveal">
+                <h3>Credentials scattered everywhere</h3>
+                <div class="body">
                     <p>Connection strings and API keys lived in plaintext config files and shell history.</p>
-                    <p class="sol"><b>Solution:</b> Centralized encrypted secrets in GitHub/GitLab secret stores with environment-level scoping, injected only at runtime — nothing sensitive in the repo.</p>
+                    <p><strong>Fixed with</strong> centralized encrypted secrets in GitHub and GitLab secret stores, scoped per environment and injected only at runtime.</p>
                 </div>
-                <div class="challenge">
-                    <h3>Production deploys were high-risk events</h3>
-                    <p>Manual multi-step releases meant long change windows and frequent human error.</p>
-                    <p class="sol"><b>Solution:</b> Stage-gated pipelines where production deploys reuse the exact artifact validated in dev, reducing releases to an approval click.</p>
+            </div>
+            <div class="challenge reveal">
+                <h3>Production deploys were high-risk</h3>
+                <div class="body">
+                    <p>Manual multi-step releases meant long change windows and regular human error.</p>
+                    <p><strong>Fixed with</strong> stage-gated pipelines where production reuses the exact artifact already validated in dev — a release became an approval click.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="detail-section">
+    <section class="study-section">
         <div class="container">
-            <div class="section-label">impact</div>
-            <h2 class="section-title">Results</h2>
-            <div class="results-grid stagger">
-                <div class="result-item reveal"><div class="num">100%</div><div class="lbl">Builds & tests automated on every commit</div></div>
-                <div class="result-item reveal"><div class="num">2</div><div class="lbl">Environments deployed from one pipeline</div></div>
-                <div class="result-item reveal"><div class="num">0</div><div class="lbl">Secrets stored in repositories</div></div>
-                <div class="result-item reveal"><div class="num">min</div><div class="lbl">Commit-to-deploy lead time</div></div>
+            <div class="reveal" style="margin-bottom: 28px;">
+                <span class="kicker">Outcome</span>
+            </div>
+            <div class="results-row reveal">
+                <div class="result"><p class="num">Every</p><p class="lbl">commit built and tested automatically</p></div>
+                <div class="result"><p class="num">One</p><p class="lbl">pipeline serving dev and production</p></div>
+                <div class="result"><p class="num">Zero</p><p class="lbl">secrets stored in repositories</p></div>
+                <div class="result"><p class="num">Minutes</p><p class="lbl">from commit to deploy</p></div>
             </div>
         </div>
     </section>
 
-    <div class="detail-cta">
-        <a href="index.html#projects" class="btn btn-ghost"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+    <div class="study-end">
+        <div class="container">
+            <a href="index.html#work" class="tlink">← Back to selected work</a>
+        </div>
     </div>
 
     <footer class="footer">
         <div class="container footer-inner">
-            <a href="index.html" class="nav-logo"><span class="prompt">~/</span>saad-minhas</a>
-            <p>&copy; <span class="year">2026</span> Saad Mansoor Minhas · Deployed with <span class="heart">♥</span> on GitHub Pages</p>
-            <div class="footer-socials">
-                <a href="https://github.com/Saad-Mansoor-Minhas" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/saad-mansoor-minhas/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="mailto:saadr8840@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-            </div>
+            <span class="nav-name">Saad Minhas</span>
+            <p>© <span class="year">2026</span> · Islamabad, Pakistan</p>
         </div>
     </footer>
-
-    <button class="back-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-        <i class="fas fa-arrow-up"></i>
-    </button>
 
     <script src="script.js"></script>
 </body>

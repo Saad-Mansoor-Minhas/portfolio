@@ -4,156 +4,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modular Terraform IaC Platform — Saad Mansoor Minhas</title>
-    <meta name="description" content="Case study: reusable, version-controlled Terraform modules provisioning AWS infrastructure across environments, paired with Ansible configuration management.">
+    <title>Modular Terraform platform — Saad Mansoor Minhas</title>
+    <meta name="description" content="Case study: reusable, version-controlled Terraform modules provisioning AWS infrastructure across environments, with Ansible configuration management.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="scroll-progress"></div>
-    <div class="bg-orbs">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
-    </div>
-    <div class="bg-grid"></div>
-
     <nav class="nav scrolled">
         <div class="nav-inner">
-            <a href="index.html" class="nav-logo"><span class="prompt">~/</span>saad-minhas<span class="cursor-blink"></span></a>
-            <button class="nav-toggle" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
-            </button>
+            <a href="index.html" class="nav-name">Saad Minhas</a>
+            <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
             <div class="nav-links">
                 <a href="index.html#about">About</a>
                 <a href="index.html#experience">Experience</a>
                 <a href="index.html#skills">Skills</a>
-                <a href="index.html#projects">Projects</a>
-                <a href="index.html#contact" class="nav-cta">./contact.sh</a>
+                <a href="index.html#work">Work</a>
+                <a href="index.html#contact">Contact</a>
             </div>
         </div>
     </nav>
 
-    <header class="project-hero">
+    <header class="study-hero">
         <div class="container">
-            <div class="breadcrumb">
-                <a href="index.html#projects"><i class="fas fa-arrow-left"></i> ~/projects</a> / terraform-iac-platform
-            </div>
-            <h1>Modular Terraform <span class="gradient-text">IaC Platform</span></h1>
+            <a href="index.html#work" class="crumb">← Selected work</a>
+            <h1>Infrastructure you can <em>read, review, and reproduce.</em></h1>
             <p class="lede">
                 Reusable, version-controlled Terraform modules provisioning EC2, VPC, RDS, S3, and DynamoDB
-                across environments — paired with Ansible playbooks for configuration management. Infrastructure
-                you can read, review, and reproduce.
+                across environments — with Ansible handling everything inside the instances. New environments
+                went from days of console clicking to minutes and a pull request.
             </p>
-            <div class="tl-tags">
-                <span class="tag">Terraform</span><span class="tag">OpenTofu</span><span class="tag">Ansible</span>
-                <span class="tag">AWS</span><span class="tag">Remote State</span><span class="tag">Multi-Environment</span>
+            <div class="study-meta">
+                <div>
+                    <p class="k">Context</p>
+                    <p class="v">Emumba & client work, multi-environment AWS</p>
+                </div>
+                <div>
+                    <p class="k">Stack</p>
+                    <p class="v">Terraform · OpenTofu · Ansible · AWS</p>
+                </div>
+                <div>
+                    <p class="k">Year</p>
+                    <p class="v">2024</p>
+                </div>
             </div>
-
-            <div class="arch-flow reveal">
-                <span class="arch-node"><i class="fas fa-file-code"></i> terraform plan</span>
-                <span class="arch-arrow"><i class="fas fa-arrow-right"></i></span>
-                <span class="arch-node"><i class="fas fa-code-pull-request"></i> PR review</span>
-                <span class="arch-arrow"><i class="fas fa-arrow-right"></i></span>
-                <span class="arch-node"><i class="fas fa-bolt"></i> apply</span>
-                <span class="arch-arrow"><i class="fas fa-arrow-right"></i></span>
-                <span class="arch-node"><i class="fas fa-gears"></i> ansible-playbook</span>
-                <span class="arch-arrow"><i class="fas fa-arrow-right"></i></span>
-                <span class="arch-node"><i class="fas fa-circle-check"></i> verified env</span>
-            </div>
+            <p class="flow">terraform plan <span class="sep">→</span> pull-request review <span class="sep">→</span> apply <span class="sep">→</span> ansible-playbook <span class="sep">→</span> verified environment</p>
         </div>
     </header>
 
-    <section class="detail-section">
-        <div class="container detail-grid">
-            <div class="detail-card reveal">
-                <h2><i class="fas fa-bullseye"></i>The Mission</h2>
-                <p>
-                    Hand-built cloud environments are snowflakes: undocumented, unrepeatable, and impossible to
-                    review. Every new environment meant days of console clicking and a fresh batch of subtle
-                    differences.
-                </p>
-                <p>
-                    I codified the entire AWS footprint as modular Terraform — networking, compute, databases,
-                    and storage — so spinning up a complete, consistent environment became a pull request and
-                    a <code style="font-family: var(--mono); color: var(--accent);">terraform apply</code>.
-                    Ansible then handles in-instance configuration with community-backed roles.
-                </p>
-            </div>
-            <div class="detail-card reveal">
-                <h2><i class="fas fa-list-check"></i>What I Built</h2>
-                <ul>
-                    <li><b>Reusable Terraform modules</b> for EC2, VPC, RDS, S3, and DynamoDB with sane, overridable defaults.</li>
-                    <li><b>Per-environment composition</b> — dev and prod assembled from the same modules with different variable files.</li>
-                    <li><b>Remote state with locking</b> for safe, collaborative changes.</li>
-                    <li><b>Ansible playbooks</b> automating system configuration and provisioning via community roles.</li>
-                    <li><b>Pipeline-driven applies</b> — infrastructure changes flow through the same review-and-deploy discipline as application code.</li>
-                </ul>
-            </div>
+    <section class="study-section">
+        <div class="container prose reveal">
+            <span class="kicker">The brief</span>
+            <h2>Every environment was a snowflake</h2>
+            <p>
+                Hand-built cloud environments are undocumented, unrepeatable, and impossible to review.
+                Standing up a new one meant days in the AWS console and a fresh batch of subtle differences
+                that surfaced later as production bugs.
+            </p>
+            <p>
+                I codified the entire AWS footprint as modular Terraform — networking, compute, databases,
+                storage — so a complete, consistent environment became a pull request and an apply. Ansible
+                playbooks take over from there, configuring instances idempotently with community-backed roles.
+            </p>
         </div>
     </section>
 
-    <section class="detail-section">
+    <section class="study-section">
+        <div class="container prose reveal">
+            <span class="kicker">What I built</span>
+            <h2>The work</h2>
+            <ul>
+                <li><strong>Reusable Terraform modules</strong> for EC2, VPC, RDS, S3, and DynamoDB with sensible, overridable defaults.</li>
+                <li><strong>Per-environment composition</strong> — dev and prod assembled from the same modules with different variable files.</li>
+                <li><strong>Remote state with locking</strong> for safe, collaborative changes.</li>
+                <li><strong>Ansible playbooks</strong> automating system configuration and provisioning after Terraform finishes.</li>
+                <li><strong>Pipeline-driven applies</strong> — infrastructure changes go through the same review-and-deploy discipline as application code.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="study-section">
         <div class="container">
-            <div class="detail-card reveal">
-                <h2><i class="fas fa-triangle-exclamation"></i>Challenges & Solutions</h2>
-                <div class="challenge">
-                    <h3>Copy-pasted Terraform diverging per project</h3>
+            <div class="reveal" style="margin-bottom: 36px;">
+                <span class="kicker">Problems along the way</span>
+                <h2 style="font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2rem); margin-top: 18px;">Challenges</h2>
+            </div>
+            <div class="challenge reveal">
+                <h3>Copy-pasted Terraform diverged</h3>
+                <div class="body">
                     <p>Early configurations were duplicated between projects, so fixes never propagated.</p>
-                    <p class="sol"><b>Solution:</b> Extracted shared modules with versioned interfaces — one fix, every environment benefits on the next apply.</p>
+                    <p><strong>Fixed with</strong> shared modules behind versioned interfaces — one fix, and every environment picks it up on the next apply.</p>
                 </div>
-                <div class="challenge">
-                    <h3>State conflicts between engineers</h3>
-                    <p>Local state files caused overwritten resources and "who changed this?" mysteries.</p>
-                    <p class="sol"><b>Solution:</b> Remote backend with state locking and workspaces per environment, making concurrent work safe and auditable.</p>
+            </div>
+            <div class="challenge reveal">
+                <h3>State conflicts between engineers</h3>
+                <div class="body">
+                    <p>Local state files led to overwritten resources and "who changed this?" mysteries.</p>
+                    <p><strong>Fixed with</strong> a remote backend with state locking and per-environment workspaces, making concurrent work safe and auditable.</p>
                 </div>
-                <div class="challenge">
-                    <h3>Provisioned servers still needed manual setup</h3>
-                    <p>Terraform created instances, but packages, users, and services were configured by hand.</p>
-                    <p class="sol"><b>Solution:</b> Ansible playbooks run post-provision — idempotent configuration from inventory generated by Terraform outputs, closing the gap between "created" and "ready".</p>
+            </div>
+            <div class="challenge reveal">
+                <h3>Created ≠ ready</h3>
+                <div class="body">
+                    <p>Terraform produced the instances, but packages, users, and services were still configured by hand.</p>
+                    <p><strong>Fixed with</strong> Ansible playbooks run post-provision against inventory generated from Terraform outputs — closing the gap between "created" and "ready".</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="detail-section">
+    <section class="study-section">
         <div class="container">
-            <div class="section-label">impact</div>
-            <h2 class="section-title">Results</h2>
-            <div class="results-grid stagger">
-                <div class="result-item reveal"><div class="num">100%</div><div class="lbl">Infrastructure under version control</div></div>
-                <div class="result-item reveal"><div class="num">5+</div><div class="lbl">AWS services fully modularized</div></div>
-                <div class="result-item reveal"><div class="num">days→min</div><div class="lbl">New environment provisioning time</div></div>
-                <div class="result-item reveal"><div class="num">0</div><div class="lbl">Console click-ops in the workflow</div></div>
+            <div class="reveal" style="margin-bottom: 28px;">
+                <span class="kicker">Outcome</span>
+            </div>
+            <div class="results-row reveal">
+                <div class="result"><p class="num">100%</p><p class="lbl">of infrastructure under version control</p></div>
+                <div class="result"><p class="num">5+</p><p class="lbl">AWS services fully modularized</p></div>
+                <div class="result"><p class="num">Minutes</p><p class="lbl">to provision a new environment, down from days</p></div>
+                <div class="result"><p class="num">Zero</p><p class="lbl">console click-ops in the workflow</p></div>
             </div>
         </div>
     </section>
 
-    <div class="detail-cta">
-        <a href="index.html#projects" class="btn btn-ghost"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+    <div class="study-end">
+        <div class="container">
+            <a href="index.html#work" class="tlink">← Back to selected work</a>
+        </div>
     </div>
 
     <footer class="footer">
         <div class="container footer-inner">
-            <a href="index.html" class="nav-logo"><span class="prompt">~/</span>saad-minhas</a>
-            <p>&copy; <span class="year">2026</span> Saad Mansoor Minhas · Deployed with <span class="heart">♥</span> on GitHub Pages</p>
-            <div class="footer-socials">
-                <a href="https://github.com/Saad-Mansoor-Minhas" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/saad-mansoor-minhas/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="mailto:saadr8840@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-            </div>
+            <span class="nav-name">Saad Minhas</span>
+            <p>© <span class="year">2026</span> · Islamabad, Pakistan</p>
         </div>
     </footer>
-
-    <button class="back-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-        <i class="fas fa-arrow-up"></i>
-    </button>
 
     <script src="script.js"></script>
 </body>
