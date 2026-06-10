@@ -9,36 +9,36 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <nav class="nav scrolled">
-        <div class="nav-inner">
-            <a href="index.html" class="nav-name">Saad Minhas</a>
-            <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-            <div class="nav-links">
-                <a href="index.html#about">About</a>
-                <a href="index.html#experience">Experience</a>
-                <a href="index.html#skills">Skills</a>
-                <a href="index.html#work">Work</a>
-                <a href="index.html#contact">Contact</a>
-            </div>
+        <a href="index.html" class="nav-logo"><span class="spark"></span>Saad Minhas</a>
+        <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        <div class="nav-links">
+            <a href="index.html#about">About</a>
+            <a href="index.html#experience">Experience</a>
+            <a href="index.html#work">Work</a>
+            <a href="index.html#skills">Skills</a>
+            <a href="index.html#contact" class="nav-hire">Hire me</a>
         </div>
     </nav>
 
     <header class="study-hero">
+        <div class="blob blob-violet" style="background: rgba(163, 230, 53, 0.18);"></div>
+        <div class="blob blob-pink"></div>
         <div class="container">
-            <a href="index.html#work" class="crumb">← Selected work</a>
-            <h1>Making risky releases <em>routine</em> on AKS.</h1>
-            <p class="lede">
+            <a href="index.html#work" class="crumb">← Back to work</a>
+            <h1 class="rise rise-1">Making risky releases <span class="grad-text">boringly routine</span> on AKS.</h1>
+            <p class="lede rise rise-2">
                 A canary release strategy with percentage-based traffic splitting for containerized
                 production workloads on Azure Kubernetes Service. The previous version stays deployed
-                and warm, so rolling back is a traffic switch — seconds, not a redeploy.
+                and warm — rolling back is a traffic switch measured in seconds, not a redeploy.
             </p>
-            <div class="study-meta">
+            <div class="study-meta rise rise-3">
                 <div>
                     <p class="k">Context</p>
                     <p class="v">NextGen Technologies, production workloads</p>
@@ -52,13 +52,13 @@
                     <p class="v">2025 — present</p>
                 </div>
             </div>
-            <p class="flow">release vN+1 <span class="sep">→</span> canary at 10% <span class="sep">→</span> observe <span class="sep">→</span> promote to 100% <span class="sep">·</span> vN kept on standby</p>
+            <p class="flow rise rise-4">release vN+1 <span class="sep">→</span> canary at 10% <span class="sep">→</span> observe <span class="sep">→</span> promote to 100% <span class="sep">·</span> vN kept on standby</p>
         </div>
     </header>
 
     <section class="study-section">
         <div class="container prose reveal">
-            <span class="kicker">The brief</span>
+            <span class="kicker">The mission</span>
             <h2>Every release was all-or-nothing</h2>
             <p>
                 Deploys to containerized production workloads replaced everything at once: a bad release
@@ -89,29 +89,25 @@
 
     <section class="study-section">
         <div class="container">
-            <div class="reveal" style="margin-bottom: 36px;">
-                <span class="kicker">Problems along the way</span>
-                <h2 style="font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2rem); margin-top: 18px;">Challenges</h2>
+            <div class="reveal" style="margin-bottom: 32px;">
+                <span class="kicker">Challenges</span>
+                <h2 class="display" style="font-size: clamp(1.6rem, 3.4vw, 2.3rem); font-weight: 700; margin-top: 14px;">Problems along the way</h2>
             </div>
-            <div class="challenge reveal">
-                <h3>Full blast radius on day one</h3>
-                <div class="body">
+            <div class="challenge-grid" data-stagger>
+                <div class="challenge reveal">
+                    <h3>Full blast radius on day one</h3>
                     <p>Rolling updates replaced every pod regardless of how the new version behaved under real traffic.</p>
-                    <p><strong>Fixed with</strong> weighted traffic splitting — new versions serve roughly 10% of requests first, promoted only once error rates and latency hold within thresholds.</p>
+                    <p><strong>Fixed:</strong> weighted traffic splitting — new versions serve ~10% of requests first, promoted only once error rates and latency hold within thresholds.</p>
                 </div>
-            </div>
-            <div class="challenge reveal">
-                <h3>Rollbacks were slow and manual</h3>
-                <div class="body">
+                <div class="challenge reveal">
+                    <h3>Rollbacks were slow and manual</h3>
                     <p>Reverting meant redeploying the previous image — minutes of degraded service every time.</p>
-                    <p><strong>Fixed with</strong> the prior version kept deployed and scaled; rollback became an immediate traffic-weight change measured in seconds.</p>
+                    <p><strong>Fixed:</strong> the prior version stays deployed and scaled; rollback became an immediate traffic-weight change measured in seconds.</p>
                 </div>
-            </div>
-            <div class="challenge reveal">
-                <h3>Secrets and access sprawl</h3>
-                <div class="body">
+                <div class="challenge reveal">
+                    <h3>Secrets and access sprawl</h3>
                     <p>Long-lived credentials and broad access made security incidents slow to contain.</p>
-                    <p><strong>Fixed with</strong> RBAC governance and automated secret rotation via Key Vault — cutting security-incident response time by 30%.</p>
+                    <p><strong>Fixed:</strong> RBAC governance and automated secret rotation via Key Vault — cutting security-incident response time by 30%.</p>
                 </div>
             </div>
         </div>
@@ -119,28 +115,31 @@
 
     <section class="study-section">
         <div class="container">
-            <div class="reveal" style="margin-bottom: 28px;">
+            <div class="reveal" style="margin-bottom: 32px;">
                 <span class="kicker">Outcome</span>
             </div>
-            <div class="results-row reveal">
-                <div class="result"><p class="num">10%</p><p class="lbl">initial blast radius for new releases</p></div>
-                <div class="result"><p class="num">Seconds</p><p class="lbl">to roll back via traffic switch</p></div>
-                <div class="result"><p class="num">30%</p><p class="lbl">faster security-incident response</p></div>
-                <div class="result"><p class="num">18%</p><p class="lbl">lower monthly spend, SLAs intact</p></div>
+            <div class="results-row" data-stagger>
+                <div class="result reveal"><p class="num">10%</p><p class="lbl">initial blast radius for new releases</p></div>
+                <div class="result reveal"><p class="num">Seconds</p><p class="lbl">to roll back via traffic switch</p></div>
+                <div class="result reveal"><p class="num">30%</p><p class="lbl">faster security-incident response</p></div>
+                <div class="result reveal"><p class="num">18%</p><p class="lbl">lower monthly spend, SLAs intact</p></div>
             </div>
         </div>
     </section>
 
-    <div class="study-end">
-        <div class="container">
-            <a href="index.html#work" class="tlink">← Back to selected work</a>
-        </div>
+    <div class="study-end container">
+        <a href="index.html#work" class="btn btn-ghost">← Back to work</a>
+        <a href="cicd-pipeline.html" class="btn btn-primary">Next: End-to-end CI/CD pipelines <span class="arr">→</span></a>
     </div>
 
     <footer class="footer">
         <div class="container footer-inner">
-            <span class="nav-name">Saad Minhas</span>
-            <p>© <span class="year">2026</span> · Islamabad, Pakistan</p>
+            <p>© <span class="year">2026</span> Saad Mansoor Minhas</p>
+            <div class="footer-links">
+                <a href="https://github.com/Saad-Mansoor-Minhas" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/saad-mansoor-minhas/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="mailto:saadr8840@gmail.com">Email</a>
+            </div>
         </div>
     </footer>
 

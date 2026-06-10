@@ -9,36 +9,36 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <nav class="nav scrolled">
-        <div class="nav-inner">
-            <a href="index.html" class="nav-name">Saad Minhas</a>
-            <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-            <div class="nav-links">
-                <a href="index.html#about">About</a>
-                <a href="index.html#experience">Experience</a>
-                <a href="index.html#skills">Skills</a>
-                <a href="index.html#work">Work</a>
-                <a href="index.html#contact">Contact</a>
-            </div>
+        <a href="index.html" class="nav-logo"><span class="spark"></span>Saad Minhas</a>
+        <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        <div class="nav-links">
+            <a href="index.html#about">About</a>
+            <a href="index.html#experience">Experience</a>
+            <a href="index.html#work">Work</a>
+            <a href="index.html#skills">Skills</a>
+            <a href="index.html#contact" class="nav-hire">Hire me</a>
         </div>
     </nav>
 
     <header class="study-hero">
+        <div class="blob blob-orange" style="top: -120px; left: -100px; bottom: auto;"></div>
+        <div class="blob blob-pink"></div>
         <div class="container">
-            <a href="index.html#work" class="crumb">← Selected work</a>
-            <h1>From calendar-event releases to <em>an approval click.</em></h1>
-            <p class="lede">
+            <a href="index.html#work" class="crumb">← Back to work</a>
+            <h1 class="rise rise-1">From calendar-event releases to <span class="grad-text">an approval click.</span></h1>
+            <p class="lede rise rise-2">
                 Multi-stage CI/CD pipelines for .NET and MSSQL workloads, built with GitHub Actions and
                 GitLab CI — automated builds, tests, encrypted secrets, and the same repeatable path to
                 dev and production for every single commit.
             </p>
-            <div class="study-meta">
+            <div class="study-meta rise rise-3">
                 <div>
                     <p class="k">Context</p>
                     <p class="v">Cyberoide Tech, client production systems</p>
@@ -52,13 +52,13 @@
                     <p class="v">2024 — 2025</p>
                 </div>
             </div>
-            <p class="flow">push <span class="sep">→</span> build <span class="sep">→</span> test <span class="sep">→</span> inject secrets <span class="sep">→</span> deploy dev <span class="sep">→</span> approve <span class="sep">→</span> deploy production</p>
+            <p class="flow rise rise-4">push <span class="sep">→</span> build <span class="sep">→</span> test <span class="sep">→</span> inject secrets <span class="sep">→</span> deploy dev <span class="sep">→</span> approve <span class="sep">→</span> production</p>
         </div>
     </header>
 
     <section class="study-section">
         <div class="container prose reveal">
-            <span class="kicker">The brief</span>
+            <span class="kicker">The mission</span>
             <h2>Releases were events, not routine</h2>
             <p>
                 Deployments of .NET applications were manual and slow: builds happened on developer
@@ -89,29 +89,25 @@
 
     <section class="study-section">
         <div class="container">
-            <div class="reveal" style="margin-bottom: 36px;">
-                <span class="kicker">Problems along the way</span>
-                <h2 style="font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2rem); margin-top: 18px;">Challenges</h2>
+            <div class="reveal" style="margin-bottom: 32px;">
+                <span class="kicker">Challenges</span>
+                <h2 class="display" style="font-size: clamp(1.6rem, 3.4vw, 2.3rem); font-weight: 700; margin-top: 14px;">Problems along the way</h2>
             </div>
-            <div class="challenge reveal">
-                <h3>"Works on my machine" builds</h3>
-                <div class="body">
+            <div class="challenge-grid" data-stagger>
+                <div class="challenge reveal">
+                    <h3>"Works on my machine" builds</h3>
                     <p>Local builds produced inconsistent artifacts with untracked dependencies.</p>
-                    <p><strong>Fixed with</strong> all builds moved to pipeline runners using pinned toolchains and Docker images — every artifact reproducible from a commit SHA.</p>
+                    <p><strong>Fixed:</strong> all builds moved to pipeline runners using pinned toolchains and Docker images — every artifact reproducible from a commit SHA.</p>
                 </div>
-            </div>
-            <div class="challenge reveal">
-                <h3>Credentials scattered everywhere</h3>
-                <div class="body">
+                <div class="challenge reveal">
+                    <h3>Credentials scattered everywhere</h3>
                     <p>Connection strings and API keys lived in plaintext config files and shell history.</p>
-                    <p><strong>Fixed with</strong> centralized encrypted secrets in GitHub and GitLab secret stores, scoped per environment and injected only at runtime.</p>
+                    <p><strong>Fixed:</strong> centralized encrypted secrets in GitHub and GitLab secret stores, scoped per environment and injected only at runtime.</p>
                 </div>
-            </div>
-            <div class="challenge reveal">
-                <h3>Production deploys were high-risk</h3>
-                <div class="body">
+                <div class="challenge reveal">
+                    <h3>Production deploys were high-risk</h3>
                     <p>Manual multi-step releases meant long change windows and regular human error.</p>
-                    <p><strong>Fixed with</strong> stage-gated pipelines where production reuses the exact artifact already validated in dev — a release became an approval click.</p>
+                    <p><strong>Fixed:</strong> stage-gated pipelines where production reuses the exact artifact already validated in dev — a release became an approval click.</p>
                 </div>
             </div>
         </div>
@@ -119,28 +115,31 @@
 
     <section class="study-section">
         <div class="container">
-            <div class="reveal" style="margin-bottom: 28px;">
+            <div class="reveal" style="margin-bottom: 32px;">
                 <span class="kicker">Outcome</span>
             </div>
-            <div class="results-row reveal">
-                <div class="result"><p class="num">Every</p><p class="lbl">commit built and tested automatically</p></div>
-                <div class="result"><p class="num">One</p><p class="lbl">pipeline serving dev and production</p></div>
-                <div class="result"><p class="num">Zero</p><p class="lbl">secrets stored in repositories</p></div>
-                <div class="result"><p class="num">Minutes</p><p class="lbl">from commit to deploy</p></div>
+            <div class="results-row" data-stagger>
+                <div class="result reveal"><p class="num">Every</p><p class="lbl">commit built and tested automatically</p></div>
+                <div class="result reveal"><p class="num">One</p><p class="lbl">pipeline serving dev and production</p></div>
+                <div class="result reveal"><p class="num">Zero</p><p class="lbl">secrets stored in repositories</p></div>
+                <div class="result reveal"><p class="num">Minutes</p><p class="lbl">from commit to deploy</p></div>
             </div>
         </div>
     </section>
 
-    <div class="study-end">
-        <div class="container">
-            <a href="index.html#work" class="tlink">← Back to selected work</a>
-        </div>
+    <div class="study-end container">
+        <a href="index.html#work" class="btn btn-ghost">← Back to work</a>
+        <a href="infrastructure-as-code.html" class="btn btn-primary">Next: Modular Terraform platform <span class="arr">→</span></a>
     </div>
 
     <footer class="footer">
         <div class="container footer-inner">
-            <span class="nav-name">Saad Minhas</span>
-            <p>© <span class="year">2026</span> · Islamabad, Pakistan</p>
+            <p>© <span class="year">2026</span> Saad Mansoor Minhas</p>
+            <div class="footer-links">
+                <a href="https://github.com/Saad-Mansoor-Minhas" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/saad-mansoor-minhas/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="mailto:saadr8840@gmail.com">Email</a>
+            </div>
         </div>
     </footer>
 

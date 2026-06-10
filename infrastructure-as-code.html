@@ -9,39 +9,39 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <nav class="nav scrolled">
-        <div class="nav-inner">
-            <a href="index.html" class="nav-name">Saad Minhas</a>
-            <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-            <div class="nav-links">
-                <a href="index.html#about">About</a>
-                <a href="index.html#experience">Experience</a>
-                <a href="index.html#skills">Skills</a>
-                <a href="index.html#work">Work</a>
-                <a href="index.html#contact">Contact</a>
-            </div>
+        <a href="index.html" class="nav-logo"><span class="spark"></span>Saad Minhas</a>
+        <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        <div class="nav-links">
+            <a href="index.html#about">About</a>
+            <a href="index.html#experience">Experience</a>
+            <a href="index.html#work">Work</a>
+            <a href="index.html#skills">Skills</a>
+            <a href="index.html#contact" class="nav-hire">Hire me</a>
         </div>
     </nav>
 
     <header class="study-hero">
+        <div class="blob blob-pink" style="top: -140px; left: -100px; right: auto;"></div>
+        <div class="blob blob-violet" style="top: 20%; right: -180px; left: auto;"></div>
         <div class="container">
-            <a href="index.html#work" class="crumb">← Selected work</a>
-            <h1>Infrastructure you can <em>read, review, and reproduce.</em></h1>
-            <p class="lede">
+            <a href="index.html#work" class="crumb">← Back to work</a>
+            <h1 class="rise rise-1">Infrastructure you can <span class="grad-text">read, review &amp; reproduce.</span></h1>
+            <p class="lede rise rise-2">
                 Reusable, version-controlled Terraform modules provisioning EC2, VPC, RDS, S3, and DynamoDB
                 across environments — with Ansible handling everything inside the instances. New environments
                 went from days of console clicking to minutes and a pull request.
             </p>
-            <div class="study-meta">
+            <div class="study-meta rise rise-3">
                 <div>
                     <p class="k">Context</p>
-                    <p class="v">Emumba & client work, multi-environment AWS</p>
+                    <p class="v">Emumba &amp; client work, multi-environment AWS</p>
                 </div>
                 <div>
                     <p class="k">Stack</p>
@@ -52,13 +52,13 @@
                     <p class="v">2024</p>
                 </div>
             </div>
-            <p class="flow">terraform plan <span class="sep">→</span> pull-request review <span class="sep">→</span> apply <span class="sep">→</span> ansible-playbook <span class="sep">→</span> verified environment</p>
+            <p class="flow rise rise-4">terraform plan <span class="sep">→</span> PR review <span class="sep">→</span> apply <span class="sep">→</span> ansible-playbook <span class="sep">→</span> verified environment</p>
         </div>
     </header>
 
     <section class="study-section">
         <div class="container prose reveal">
-            <span class="kicker">The brief</span>
+            <span class="kicker">The mission</span>
             <h2>Every environment was a snowflake</h2>
             <p>
                 Hand-built cloud environments are undocumented, unrepeatable, and impossible to review.
@@ -89,29 +89,25 @@
 
     <section class="study-section">
         <div class="container">
-            <div class="reveal" style="margin-bottom: 36px;">
-                <span class="kicker">Problems along the way</span>
-                <h2 style="font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2rem); margin-top: 18px;">Challenges</h2>
+            <div class="reveal" style="margin-bottom: 32px;">
+                <span class="kicker">Challenges</span>
+                <h2 class="display" style="font-size: clamp(1.6rem, 3.4vw, 2.3rem); font-weight: 700; margin-top: 14px;">Problems along the way</h2>
             </div>
-            <div class="challenge reveal">
-                <h3>Copy-pasted Terraform diverged</h3>
-                <div class="body">
+            <div class="challenge-grid" data-stagger>
+                <div class="challenge reveal">
+                    <h3>Copy-pasted Terraform diverged</h3>
                     <p>Early configurations were duplicated between projects, so fixes never propagated.</p>
-                    <p><strong>Fixed with</strong> shared modules behind versioned interfaces — one fix, and every environment picks it up on the next apply.</p>
+                    <p><strong>Fixed:</strong> shared modules behind versioned interfaces — one fix, and every environment picks it up on the next apply.</p>
                 </div>
-            </div>
-            <div class="challenge reveal">
-                <h3>State conflicts between engineers</h3>
-                <div class="body">
+                <div class="challenge reveal">
+                    <h3>State conflicts between engineers</h3>
                     <p>Local state files led to overwritten resources and "who changed this?" mysteries.</p>
-                    <p><strong>Fixed with</strong> a remote backend with state locking and per-environment workspaces, making concurrent work safe and auditable.</p>
+                    <p><strong>Fixed:</strong> a remote backend with state locking and per-environment workspaces, making concurrent work safe and auditable.</p>
                 </div>
-            </div>
-            <div class="challenge reveal">
-                <h3>Created ≠ ready</h3>
-                <div class="body">
+                <div class="challenge reveal">
+                    <h3>Created ≠ ready</h3>
                     <p>Terraform produced the instances, but packages, users, and services were still configured by hand.</p>
-                    <p><strong>Fixed with</strong> Ansible playbooks run post-provision against inventory generated from Terraform outputs — closing the gap between "created" and "ready".</p>
+                    <p><strong>Fixed:</strong> Ansible playbooks run post-provision against inventory generated from Terraform outputs — closing the gap between "created" and "ready".</p>
                 </div>
             </div>
         </div>
@@ -119,28 +115,31 @@
 
     <section class="study-section">
         <div class="container">
-            <div class="reveal" style="margin-bottom: 28px;">
+            <div class="reveal" style="margin-bottom: 32px;">
                 <span class="kicker">Outcome</span>
             </div>
-            <div class="results-row reveal">
-                <div class="result"><p class="num">100%</p><p class="lbl">of infrastructure under version control</p></div>
-                <div class="result"><p class="num">5+</p><p class="lbl">AWS services fully modularized</p></div>
-                <div class="result"><p class="num">Minutes</p><p class="lbl">to provision a new environment, down from days</p></div>
-                <div class="result"><p class="num">Zero</p><p class="lbl">console click-ops in the workflow</p></div>
+            <div class="results-row" data-stagger>
+                <div class="result reveal"><p class="num">100%</p><p class="lbl">of infrastructure under version control</p></div>
+                <div class="result reveal"><p class="num">5+</p><p class="lbl">AWS services fully modularized</p></div>
+                <div class="result reveal"><p class="num">Minutes</p><p class="lbl">to provision a new environment</p></div>
+                <div class="result reveal"><p class="num">Zero</p><p class="lbl">console click-ops in the workflow</p></div>
             </div>
         </div>
     </section>
 
-    <div class="study-end">
-        <div class="container">
-            <a href="index.html#work" class="tlink">← Back to selected work</a>
-        </div>
+    <div class="study-end container">
+        <a href="index.html#work" class="btn btn-ghost">← Back to work</a>
+        <a href="aws-infrastructure.html" class="btn btn-primary">Next: High-availability AWS <span class="arr">→</span></a>
     </div>
 
     <footer class="footer">
         <div class="container footer-inner">
-            <span class="nav-name">Saad Minhas</span>
-            <p>© <span class="year">2026</span> · Islamabad, Pakistan</p>
+            <p>© <span class="year">2026</span> Saad Mansoor Minhas</p>
+            <div class="footer-links">
+                <a href="https://github.com/Saad-Mansoor-Minhas" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/saad-mansoor-minhas/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="mailto:saadr8840@gmail.com">Email</a>
+            </div>
         </div>
     </footer>
 

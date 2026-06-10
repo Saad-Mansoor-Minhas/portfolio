@@ -14,96 +14,137 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <nav class="nav">
-        <div class="nav-inner">
-            <a href="#" class="nav-name">Saad Minhas</a>
-            <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#experience">Experience</a>
-                <a href="#skills">Skills</a>
-                <a href="#work">Work</a>
-                <a href="#contact">Contact</a>
-            </div>
+        <a href="#" class="nav-logo"><span class="spark"></span>Saad Minhas</a>
+        <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#work">Work</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact" class="nav-hire">Hire me</a>
         </div>
     </nav>
 
     <!-- Hero -->
     <header class="hero">
-        <div class="container">
-            <p class="kicker"><span class="dot"></span>Available for remote &amp; relocation roles</p>
-            <h1>DevOps engineer who keeps production <em>boring.</em></h1>
-            <p class="hero-intro">
-                Two years running AWS and Azure platforms — pipelines that ship themselves, Kubernetes
-                that rolls back in seconds, and cloud bills that trend down instead of up. Currently at
-                NextGen Technologies in Arlington, Texas, working remotely from Islamabad.
+        <div class="blob blob-violet"></div>
+        <div class="blob blob-pink"></div>
+        <div class="blob blob-orange"></div>
+        <div class="container hero-inner">
+            <div class="hero-badge rise rise-1">
+                <span class="pulse"></span>
+                Available for remote &amp; relocation roles
+            </div>
+            <h1 class="rise rise-2">
+                I make cloud infrastructure<br>
+                <span class="grad-text">ship faster &amp; cost less.</span>
+            </h1>
+            <p class="hero-sub rise rise-3">
+                DevOps &amp; Cloud Engineer with <strong>2+ years across AWS and Azure</strong> —
+                automated pipelines, Kubernetes at scale, and infrastructure as code.
+                Currently at <strong>NextGen Technologies</strong>, Arlington TX (remote).
             </p>
-            <div class="hero-links">
-                <a class="tlink" href="#work">Selected work</a>
-                <a class="tlink" href="mailto:saadr8840@gmail.com">saadr8840@gmail.com</a>
-                <a class="tlink" href="https://github.com/Saad-Mansoor-Minhas" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a class="tlink" href="https://www.linkedin.com/in/saad-mansoor-minhas/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <div class="hero-cta rise rise-4">
+                <a href="#work" class="btn btn-primary">See my work <span class="arr">→</span></a>
+                <a href="mailto:saadr8840@gmail.com" class="btn btn-ghost">Get in touch</a>
+            </div>
+            <div class="hero-stats rise rise-5">
+                <div class="hstat">
+                    <div class="v"><span data-count="18" data-suffix="%">0</span></div>
+                    <div class="l">lower cloud spend</div>
+                </div>
+                <div class="hstat">
+                    <div class="v"><span data-count="30" data-suffix="%">0</span></div>
+                    <div class="l">faster incident response</div>
+                </div>
+                <div class="hstat">
+                    <div class="v"><span data-count="2" data-suffix="+">0</span></div>
+                    <div class="l">years in production</div>
+                </div>
+                <div class="hstat">
+                    <div class="v">AWS·Azure</div>
+                    <div class="l">multi-cloud experience</div>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Stats -->
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat reveal">
-                    <div class="stat-value"><span data-count="18" data-suffix="%">0</span></div>
-                    <div class="stat-label">reduction in monthly cloud spend, with SLAs intact</div>
-                </div>
-                <div class="stat reveal">
-                    <div class="stat-value"><span data-count="30" data-suffix="%">0</span></div>
-                    <div class="stat-label">faster security-incident response after RBAC &amp; secret-rotation work</div>
-                </div>
-                <div class="stat reveal">
-                    <div class="stat-value"><span data-count="2" data-suffix="">0</span> clouds</div>
-                    <div class="stat-label">production experience across both AWS and Azure</div>
-                </div>
-            </div>
+    <!-- Marquee -->
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+            <span class="marquee-item">AWS</span>
+            <span class="marquee-item">Azure</span>
+            <span class="marquee-item">Kubernetes</span>
+            <span class="marquee-item">Terraform</span>
+            <span class="marquee-item">Docker</span>
+            <span class="marquee-item">GitHub Actions</span>
+            <span class="marquee-item">Argo CD</span>
+            <span class="marquee-item">Ansible</span>
+            <span class="marquee-item">Prometheus</span>
+            <span class="marquee-item">Grafana</span>
+            <span class="marquee-item">Helm</span>
+            <span class="marquee-item">GitLab CI</span>
+            <span class="marquee-item">Jenkins</span>
+            <span class="marquee-item">Linux</span>
         </div>
-    </section>
+    </div>
 
     <!-- About -->
     <section id="about" class="section">
         <div class="container">
             <div class="section-head reveal">
-                <span class="num">01</span>
-                <h2>About</h2>
+                <span class="kicker">About me</span>
+                <h2>The engineer behind the <span class="grad-text">green pipelines</span></h2>
             </div>
-            <div class="about-grid">
-                <div class="about-photo reveal">
+            <div class="bento" data-stagger>
+                <div class="bento-card bento-photo reveal">
                     <img src="profile2.png" alt="Saad Mansoor Minhas">
-                    <p class="about-caption">Islamabad, Pakistan — UTC+5</p>
+                    <span class="tag-loc">📍 Islamabad, PK · UTC+5</span>
                 </div>
-                <div class="about-text reveal">
+                <div class="bento-card bento-bio reveal">
+                    <span class="glow glow-v"></span>
                     <p>
                         I'm a DevOps and cloud engineer who believes the best infrastructure is the kind
                         nobody has to think about. If it's hand-built, undocumented, or only one person
-                        understands it, I consider that a bug.
+                        understands it — I consider that a bug.
                     </p>
                     <p>
-                        At <strong>NextGen Technologies</strong> I manage Azure infrastructure end-to-end — leading a
-                        VDI-to-Microsoft 365 migration, running canary deployments on AKS with traffic
-                        splitting, and owning RBAC governance and automated secret rotation across the estate.
-                        Before that, I built AWS platforms and CI/CD pipelines for client workloads at
-                        <strong>Cyberoide Tech</strong>, and learned the fundamentals properly — Terraform, Ansible,
-                        Kubernetes — at <strong>Emumba</strong>.
+                        At <strong>NextGen Technologies</strong> I run Azure infrastructure end-to-end: leading a
+                        VDI-to-Microsoft 365 migration, shipping canary deployments on AKS with live traffic
+                        splitting, and owning RBAC governance and automated secret rotation. Before that I built
+                        AWS platforms and CI/CD pipelines at <strong>Cyberoide Tech</strong>, and learned the
+                        fundamentals properly — Terraform, Ansible, Kubernetes — at <strong>Emumba</strong>.
                     </p>
                     <p>
-                        I started out doing emergency on-call work for Fiverr clients: broken DNS, failed
-                        deploys, runaway auto-scaling, usually at the worst possible hour. It taught me to
-                        design systems so that the 3 AM call never happens in the first place.
+                        I cut my teeth doing emergency on-call work for Fiverr clients — broken DNS, failed deploys,
+                        runaway auto-scaling at the worst possible hour. It taught me to design systems where
+                        the 3 AM call never happens in the first place.
                     </p>
+                </div>
+                <div class="bento-card bento-mini reveal">
+                    <span class="glow glow-p"></span>
+                    <div class="bento-icon">☁️</div>
+                    <h3>Multi-cloud, for real</h3>
+                    <p class="d">Production experience on both AWS and Azure — not just one console.</p>
+                </div>
+                <div class="bento-card bento-mini reveal">
+                    <span class="glow glow-o"></span>
+                    <div class="bento-icon">💸</div>
+                    <h3>Cost-obsessed</h3>
+                    <p class="d">18% off the monthly cloud bill while holding every performance SLA.</p>
+                </div>
+                <div class="bento-card bento-mini reveal">
+                    <span class="glow glow-l"></span>
+                    <div class="bento-icon">🛡️</div>
+                    <h3>Security-minded</h3>
+                    <p class="d">RBAC governance and automated secret rotation — 30% faster incident response.</p>
                 </div>
             </div>
         </div>
@@ -113,106 +154,89 @@
     <section id="experience" class="section">
         <div class="container">
             <div class="section-head reveal">
-                <span class="num">02</span>
-                <h2>Experience</h2>
+                <span class="kicker">Experience</span>
+                <h2>Where I've shipped</h2>
             </div>
 
-            <div class="xp-item reveal">
-                <div class="xp-when">May 2025 —<br><span class="now">present</span></div>
-                <div class="xp-body">
-                    <h3 class="xp-role">DevOps Engineer L1</h3>
-                    <p class="xp-org">NextGen Technologies · Arlington, TX (remote)</p>
-                    <ul>
-                        <li>Manage Azure infrastructure end-to-end: CI/CD pipelines, VMs, VMSS, Key Vaults, and Managed SQL instances.</li>
-                        <li>Leading the migration of Azure Virtual Desktop Infrastructure to Microsoft 365, improving user access and cutting operational overhead.</li>
-                        <li>Implemented <strong>canary releases with percentage-based traffic splitting on AKS</strong>, keeping prior versions warm for instant rollback.</li>
-                        <li>Established RBAC governance and automated secret rotation — <strong>30% faster security-incident response</strong>.</li>
-                        <li>Optimized resource usage across projects, <strong>reducing monthly spend by 18%</strong> while holding performance SLAs.</li>
-                    </ul>
-                    <p class="xp-stack">Azure · AKS · VMSS · Key Vault · Azure DevOps · Azure Monitor</p>
+            <div data-stagger>
+                <div class="xp-card reveal">
+                    <div class="xp-side">
+                        <div class="when">May 2025 — Present</div>
+                        <span class="now">● Current</span>
+                        <p class="org">NextGen Technologies<br>Arlington, TX · Remote</p>
+                    </div>
+                    <div class="xp-main">
+                        <h3>DevOps Engineer L1</h3>
+                        <ul>
+                            <li>Run Azure infrastructure end-to-end: CI/CD pipelines, VMs, VMSS, Key Vaults, Managed SQL.</li>
+                            <li>Leading the <strong>Azure VDI → Microsoft 365 migration</strong>, improving access and cutting overhead.</li>
+                            <li>Shipped <strong>canary releases on AKS with percentage-based traffic splitting</strong> — prior versions stay warm for instant rollback.</li>
+                            <li>Built RBAC governance + automated secret rotation → <strong>30% faster incident response</strong>.</li>
+                            <li>Optimized resource usage → <strong>18% lower monthly spend</strong>, SLAs intact.</li>
+                        </ul>
+                        <div class="pills">
+                            <span class="pill">Azure</span><span class="pill">AKS</span><span class="pill">VMSS</span>
+                            <span class="pill">Key Vault</span><span class="pill">Azure DevOps</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="xp-item reveal">
-                <div class="xp-when">Aug 2024 —<br>Apr 2025</div>
-                <div class="xp-body">
-                    <h3 class="xp-role">Junior DevOps Engineer</h3>
-                    <p class="xp-org">Cyberoide Tech · Islamabad (remote)</p>
-                    <ul>
-                        <li>Deployed and maintained AWS infrastructure for .NET and MSSQL applications, improving scalability and reliability.</li>
-                        <li>Built end-to-end CI/CD pipelines with GitHub Actions and GitLab CI for automated builds, tests, and deployments across dev and production.</li>
-                        <li>Provisioned everything as code with Terraform — repeatable, reviewed, version-controlled.</li>
-                        <li>Worked directly with clients to evaluate and modernize their AWS architectures.</li>
-                    </ul>
-                    <p class="xp-stack">AWS · Terraform · GitHub Actions · GitLab CI · ECS · RDS</p>
+                <div class="xp-card reveal">
+                    <div class="xp-side">
+                        <div class="when">Aug 2024 — Apr 2025</div>
+                        <p class="org">Cyberoide Tech<br>Islamabad · Remote</p>
+                    </div>
+                    <div class="xp-main">
+                        <h3>Junior DevOps Engineer</h3>
+                        <ul>
+                            <li>Deployed and maintained AWS infrastructure for <strong>.NET and MSSQL applications</strong>.</li>
+                            <li>Built end-to-end CI/CD with <strong>GitHub Actions and GitLab CI</strong> across dev and production.</li>
+                            <li>Provisioned everything as code with Terraform — repeatable, reviewed, version-controlled.</li>
+                            <li>Worked directly with clients to modernize their AWS architectures.</li>
+                        </ul>
+                        <div class="pills">
+                            <span class="pill">AWS</span><span class="pill">Terraform</span><span class="pill">GitHub Actions</span>
+                            <span class="pill">ECS</span><span class="pill">RDS</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="xp-item reveal">
-                <div class="xp-when">Jun 2024 —<br>Aug 2024</div>
-                <div class="xp-body">
-                    <h3 class="xp-role">DevOps Intern</h3>
-                    <p class="xp-org">Emumba · Islamabad (hybrid)</p>
-                    <ul>
-                        <li>Automated cloud infrastructure with Terraform — EC2, VPCs, RDS, S3, DynamoDB.</li>
-                        <li>Wrote Ansible playbooks for system configuration; built multi-stage pipelines with GitHub Actions and Jenkins, including encrypted secrets.</li>
-                        <li>Deployed Kubernetes clusters and configured firewalls and load balancers with HAProxy and NGINX.</li>
-                    </ul>
-                    <p class="xp-stack">Terraform · Ansible · Jenkins · Docker · Kubernetes · HAProxy</p>
+                <div class="xp-card reveal">
+                    <div class="xp-side">
+                        <div class="when">Jun — Aug 2024</div>
+                        <p class="org">Emumba<br>Islamabad · Hybrid</p>
+                    </div>
+                    <div class="xp-main">
+                        <h3>DevOps Intern</h3>
+                        <ul>
+                            <li>Automated cloud infrastructure with Terraform — EC2, VPCs, RDS, S3, DynamoDB.</li>
+                            <li>Wrote Ansible playbooks; built multi-stage pipelines with GitHub Actions and Jenkins.</li>
+                            <li>Deployed Kubernetes clusters; configured HAProxy/NGINX load balancing and firewalls.</li>
+                        </ul>
+                        <div class="pills">
+                            <span class="pill">Terraform</span><span class="pill">Ansible</span><span class="pill">Jenkins</span>
+                            <span class="pill">Kubernetes</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="xp-item reveal">
-                <div class="xp-when">May 2023 —<br>Aug 2024</div>
-                <div class="xp-body">
-                    <h3 class="xp-role">Freelance DevOps Engineer</h3>
-                    <p class="xp-org">Fiverr · remote</p>
-                    <ul>
-                        <li>Emergency AWS support for live production systems — DNS failures, broken deploys, misconfigured auto-scaling.</li>
-                        <li>Designed an ECR → EC2 → ASG → ALB → Route53 architecture, provisioned with Terraform and automated through Bitbucket Pipelines.</li>
-                        <li>Built ECS infrastructure with ALB and ASG for high availability, from modular and reusable Terraform.</li>
-                    </ul>
-                    <p class="xp-stack">AWS · Terraform · Bitbucket Pipelines · Route53</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills" class="section">
-        <div class="container">
-            <div class="section-head reveal">
-                <span class="num">03</span>
-                <h2>Skills</h2>
-            </div>
-            <div class="skills-list reveal">
-                <div class="skill-row">
-                    <h3>Cloud</h3>
-                    <p>AWS (EC2, Lambda, S3, VPC, IAM, ECS, EKS, ECR, RDS, ALB, Route53, CodePipeline) · Azure (AKS, ACR, VMs, VMSS, VDI, Key Vaults, Managed SQL, Azure Monitor)</p>
-                </div>
-                <div class="skill-row">
-                    <h3>Infrastructure as code</h3>
-                    <p>Terraform, OpenTofu, CloudFormation, Ansible</p>
-                </div>
-                <div class="skill-row">
-                    <h3>Containers &amp; orchestration</h3>
-                    <p>Docker, Docker Compose, Kubernetes, Helm, Argo CD</p>
-                </div>
-                <div class="skill-row">
-                    <h3>CI/CD</h3>
-                    <p>GitHub Actions, GitLab CI/CD, Jenkins, Azure DevOps, Bitbucket Pipelines</p>
-                </div>
-                <div class="skill-row">
-                    <h3>Observability</h3>
-                    <p>Prometheus, Grafana, Kibana, SonarQube, CloudWatch, Azure Monitor</p>
-                </div>
-                <div class="skill-row">
-                    <h3>Networking &amp; security</h3>
-                    <p>NGINX, HAProxy, iptables/ufw, DNS, TLS, VPNs, RBAC, secret rotation</p>
-                </div>
-                <div class="skill-row">
-                    <h3>Systems &amp; scripting</h3>
-                    <p>Linux (Ubuntu, RHEL), Windows Server, Bash, YAML, Python, Git</p>
+                <div class="xp-card reveal">
+                    <div class="xp-side">
+                        <div class="when">May 2023 — Aug 2024</div>
+                        <p class="org">Fiverr<br>Remote</p>
+                    </div>
+                    <div class="xp-main">
+                        <h3>Freelance DevOps Engineer</h3>
+                        <ul>
+                            <li><strong>Emergency AWS on-call</strong> — DNS failures, broken deploys, runaway auto-scaling in live production.</li>
+                            <li>Designed an ECR → EC2 → ASG → ALB → Route53 stack, all Terraform, automated with Bitbucket Pipelines.</li>
+                            <li>Built highly-available ECS infrastructure from modular, reusable Terraform.</li>
+                        </ul>
+                        <div class="pills">
+                            <span class="pill">AWS</span><span class="pill">Terraform</span><span class="pill">Route53</span>
+                            <span class="pill">Bitbucket Pipelines</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -222,57 +246,123 @@
     <section id="work" class="section">
         <div class="container">
             <div class="section-head reveal">
-                <span class="num">04</span>
-                <h2>Selected work</h2>
+                <span class="kicker">Selected work</span>
+                <h2>Built, shipped, and <span class="grad-text">running in production</span></h2>
             </div>
 
-            <a href="aws-infrastructure.html" class="project-row reveal">
-                <div class="project-row-inner">
-                    <span class="project-num">01</span>
-                    <div>
-                        <h3>High-availability AWS architecture</h3>
-                        <p class="desc">A container-hosting stack — ECR through EC2, auto scaling, load balancing, and DNS — provisioned entirely with Terraform and deployed on every push. Zero-downtime releases, self-healing fleet.</p>
-                        <p class="meta">Terraform · AWS · Bitbucket Pipelines</p>
+            <div class="projects-grid" data-stagger>
+                <a href="aws-infrastructure.html" class="proj reveal">
+                    <div class="proj-cover cover-violet" data-num="01">
+                        <span class="chip">AWS · Terraform</span>
                     </div>
-                    <span class="project-arrow">→</span>
-                </div>
-            </a>
+                    <div class="proj-body">
+                        <h3>High-availability AWS architecture <span class="arr">↗</span></h3>
+                        <p>ECR → EC2 → ASG → ALB → Route53, fully Terraform-provisioned with push-to-deploy via Bitbucket Pipelines. Zero-downtime releases, self-healing fleet.</p>
+                        <div class="pills">
+                            <span class="pill">Terraform</span><span class="pill">Auto Scaling</span><span class="pill">Route53</span>
+                        </div>
+                    </div>
+                </a>
 
-            <a href="kubernetes-cluster.html" class="project-row reveal">
-                <div class="project-row-inner">
-                    <span class="project-num">02</span>
-                    <div>
-                        <h3>Canary deployments on AKS</h3>
-                        <p class="desc">Percentage-based traffic splitting for production workloads, with the previous version kept warm. Rollback became a traffic switch measured in seconds, not a redeploy.</p>
-                        <p class="meta">AKS · Kubernetes · Azure DevOps</p>
+                <a href="kubernetes-cluster.html" class="proj reveal">
+                    <div class="proj-cover cover-lime" data-num="02">
+                        <span class="chip">AKS · Kubernetes</span>
                     </div>
-                    <span class="project-arrow">→</span>
-                </div>
-            </a>
+                    <div class="proj-body">
+                        <h3>Canary deployments on AKS <span class="arr">↗</span></h3>
+                        <p>Percentage-based traffic splitting for production workloads — previous version kept warm, so rollback is a traffic switch measured in seconds.</p>
+                        <div class="pills">
+                            <span class="pill">AKS</span><span class="pill">Canary</span><span class="pill">Azure DevOps</span>
+                        </div>
+                    </div>
+                </a>
 
-            <a href="cicd-pipeline.html" class="project-row reveal">
-                <div class="project-row-inner">
-                    <span class="project-num">03</span>
-                    <div>
-                        <h3>End-to-end CI/CD pipelines</h3>
-                        <p class="desc">Multi-stage pipelines for .NET workloads — automated builds, tests, encrypted secrets, and stage-gated deploys that turned production releases into an approval click.</p>
-                        <p class="meta">GitHub Actions · GitLab CI · Jenkins</p>
+                <a href="cicd-pipeline.html" class="proj reveal">
+                    <div class="proj-cover cover-orange" data-num="03">
+                        <span class="chip">CI/CD</span>
                     </div>
-                    <span class="project-arrow">→</span>
-                </div>
-            </a>
+                    <div class="proj-body">
+                        <h3>End-to-end CI/CD pipelines <span class="arr">↗</span></h3>
+                        <p>Multi-stage pipelines for .NET workloads — automated builds, tests, encrypted secrets, and stage-gated deploys. Releases became an approval click.</p>
+                        <div class="pills">
+                            <span class="pill">GitHub Actions</span><span class="pill">GitLab CI</span><span class="pill">Jenkins</span>
+                        </div>
+                    </div>
+                </a>
 
-            <a href="infrastructure-as-code.html" class="project-row reveal">
-                <div class="project-row-inner">
-                    <span class="project-num">04</span>
-                    <div>
-                        <h3>Modular Terraform platform</h3>
-                        <p class="desc">Reusable, version-controlled modules for EC2, VPC, RDS, S3, and DynamoDB — new environments stamped out in minutes instead of days, configured by Ansible.</p>
-                        <p class="meta">Terraform · Ansible · AWS</p>
+                <a href="infrastructure-as-code.html" class="proj reveal">
+                    <div class="proj-cover cover-pink" data-num="04">
+                        <span class="chip">IaC · Terraform</span>
                     </div>
-                    <span class="project-arrow">→</span>
+                    <div class="proj-body">
+                        <h3>Modular Terraform platform <span class="arr">↗</span></h3>
+                        <p>Reusable modules for EC2, VPC, RDS, S3, DynamoDB — new environments stamped out in minutes instead of days, configured by Ansible.</p>
+                        <div class="pills">
+                            <span class="pill">Terraform</span><span class="pill">Ansible</span><span class="pill">Multi-env</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="kicker">Skills</span>
+                <h2>My daily drivers</h2>
+            </div>
+            <div class="skill-groups" data-stagger>
+                <div class="skill-group reveal">
+                    <h3><span class="ico">☁️</span>Cloud platforms</h3>
+                    <div class="pills">
+                        <span class="pill">EC2</span><span class="pill">Lambda</span><span class="pill">S3</span>
+                        <span class="pill">VPC</span><span class="pill">IAM</span><span class="pill">ECS</span>
+                        <span class="pill">EKS</span><span class="pill">RDS</span><span class="pill">Route53</span>
+                        <span class="pill">AKS</span><span class="pill">ACR</span><span class="pill">VMSS</span>
+                        <span class="pill">Key Vault</span><span class="pill">Azure Monitor</span>
+                    </div>
                 </div>
-            </a>
+                <div class="skill-group reveal">
+                    <h3><span class="ico">📦</span>Containers &amp; orchestration</h3>
+                    <div class="pills">
+                        <span class="pill">Docker</span><span class="pill">Docker Compose</span>
+                        <span class="pill">Kubernetes</span><span class="pill">Helm</span><span class="pill">Argo CD</span>
+                    </div>
+                </div>
+                <div class="skill-group reveal">
+                    <h3><span class="ico">🚀</span>CI/CD</h3>
+                    <div class="pills">
+                        <span class="pill">GitHub Actions</span><span class="pill">GitLab CI/CD</span>
+                        <span class="pill">Jenkins</span><span class="pill">Azure DevOps</span>
+                        <span class="pill">Bitbucket Pipelines</span>
+                    </div>
+                </div>
+                <div class="skill-group reveal">
+                    <h3><span class="ico">🏗️</span>Infrastructure as code</h3>
+                    <div class="pills">
+                        <span class="pill">Terraform</span><span class="pill">OpenTofu</span>
+                        <span class="pill">CloudFormation</span><span class="pill">Ansible</span>
+                    </div>
+                </div>
+                <div class="skill-group reveal">
+                    <h3><span class="ico">📈</span>Observability</h3>
+                    <div class="pills">
+                        <span class="pill">Prometheus</span><span class="pill">Grafana</span>
+                        <span class="pill">Kibana</span><span class="pill">SonarQube</span>
+                        <span class="pill">CloudWatch</span>
+                    </div>
+                </div>
+                <div class="skill-group reveal">
+                    <h3><span class="ico">🔐</span>Networking &amp; systems</h3>
+                    <div class="pills">
+                        <span class="pill">NGINX</span><span class="pill">HAProxy</span><span class="pill">DNS</span>
+                        <span class="pill">TLS</span><span class="pill">Linux</span><span class="pill">Bash</span>
+                        <span class="pill">Python</span><span class="pill">Git</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -280,59 +370,56 @@
     <section id="credentials" class="section">
         <div class="container">
             <div class="section-head reveal">
-                <span class="num">05</span>
+                <span class="kicker">Credentials</span>
                 <h2>Education &amp; certifications</h2>
             </div>
-            <div class="cred-grid">
-                <div class="cred-col reveal">
-                    <h3>Education</h3>
-                    <div class="cred-item">
-                        <p class="t">B.S. Computer Science</p>
-                        <p class="s">Air University Islamabad</p>
-                        <p class="d">2021 — 2025</p>
-                    </div>
+            <div class="cred-row" data-stagger>
+                <div class="cred-card reveal">
+                    <span class="badge">Degree</span>
+                    <h3>B.S. Computer Science</h3>
+                    <p>Air University Islamabad · 2021 — 2025</p>
                 </div>
-                <div class="cred-col reveal">
-                    <h3>Certifications</h3>
-                    <div class="cred-item">
-                        <p class="t">AWS Cloud Technical Essentials</p>
-                        <p class="s">Coursera / Amazon Web Services</p>
-                    </div>
-                    <div class="cred-item">
-                        <p class="t">AWS Fundamentals Specialization</p>
-                        <p class="s">Coursera — core services, networking, security, databases</p>
-                    </div>
-                    <div class="cred-item">
-                        <p class="t">DevOps on AWS Specialization</p>
-                        <p class="s">Coursera — CI/CD, IaC, monitoring, microservices</p>
-                    </div>
+                <div class="cred-card reveal">
+                    <span class="badge">AWS</span>
+                    <h3>AWS Cloud Technical Essentials + Fundamentals Specialization</h3>
+                    <p>Coursera / Amazon Web Services — core services, networking, security, databases</p>
+                </div>
+                <div class="cred-card reveal">
+                    <span class="badge">DevOps</span>
+                    <h3>DevOps on AWS Specialization</h3>
+                    <p>Coursera — CI/CD, infrastructure as code, monitoring, microservices</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="reveal">
-                <h2>Have something that needs to <em>just work?</em></h2>
-                <p>
-                    I'm actively looking for international remote or relocation opportunities —
-                    DevOps, platform, or site reliability roles. If that sounds like your team, say hello.
-                </p>
-                <a class="contact-email" href="mailto:saadr8840@gmail.com">saadr8840@gmail.com</a>
-                <div class="contact-alt">
-                    <a class="tlink" href="https://github.com/Saad-Mansoor-Minhas" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a class="tlink" href="https://www.linkedin.com/in/saad-mansoor-minhas/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                </div>
+    <!-- CTA -->
+    <section id="contact" class="cta">
+        <div class="blob blob-violet" style="top: 30%; left: -200px;"></div>
+        <div class="blob blob-pink" style="bottom: -120px; right: -120px; top: auto;"></div>
+        <div class="container cta-inner reveal">
+            <span class="kicker" style="justify-content: center;">Contact</span>
+            <h2 style="margin-top: 18px;">Let's build something that <span class="grad-text">doesn't break.</span></h2>
+            <p>
+                I'm actively looking for international remote or relocation opportunities —
+                DevOps, platform, or SRE roles. If your infrastructure needs an owner, let's talk.
+            </p>
+            <div class="cta-actions">
+                <a href="mailto:saadr8840@gmail.com" class="btn btn-primary">saadr8840@gmail.com <span class="arr">→</span></a>
+                <a href="https://www.linkedin.com/in/saad-mansoor-minhas/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">LinkedIn</a>
+                <a href="https://github.com/Saad-Mansoor-Minhas" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">GitHub</a>
             </div>
         </div>
     </section>
 
     <footer class="footer">
         <div class="container footer-inner">
-            <span class="nav-name">Saad Minhas</span>
-            <p>© <span class="year">2026</span> · Islamabad, Pakistan</p>
+            <p>© <span class="year">2026</span> Saad Mansoor Minhas</p>
+            <div class="footer-links">
+                <a href="https://github.com/Saad-Mansoor-Minhas" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/saad-mansoor-minhas/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="mailto:saadr8840@gmail.com">Email</a>
+            </div>
         </div>
     </footer>
 

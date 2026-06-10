@@ -4,22 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page not found — Saad Mansoor Minhas</title>
+    <title>404 — Saad Mansoor Minhas</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <main class="error-page">
-        <p class="kicker">404 — Not found</p>
-        <h1>This page doesn't <em>exist.</em></h1>
-        <p>It may have been moved, renamed, or never shipped in the first place. Either way, there's nothing to see here.</p>
-        <p><a class="tlink" href="index.html">Back to the homepage</a></p>
+        <div class="blob blob-violet"></div>
+        <div class="blob blob-pink"></div>
+        <div style="position: relative; z-index: 2;">
+            <div class="code rise rise-1">404</div>
+            <h1 class="rise rise-2">This page got rolled back.</h1>
+            <p class="rise rise-3">It may have been moved, renamed, or never made it past the canary stage. Let's route you somewhere healthy.</p>
+            <a href="index.html" class="btn btn-primary rise rise-4">Back to home <span class="arr">→</span></a>
+        </div>
     </main>
+    <script src="script.js"></script>
 </body>
 
 </html>
