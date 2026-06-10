@@ -1,164 +1,162 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AWS Infrastructure Deployment - Saad Mansoor Minhas</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'poppins': ['Poppins', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-        
-        * {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .nav-blur {
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-
-        .gradient-bg {
-            background: linear-gradient(90deg, #4F46E5 0%, #7C3AED 100%);
-        }
-    </style>
+    <title>High-Availability AWS Architecture — Saad Mansoor Minhas</title>
+    <meta name="description" content="Case study: ECR → EC2 → ASG → ALB → Route53 architecture provisioned with Terraform and automated with Bitbucket Pipelines.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-black text-white">
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 nav-blur bg-black bg-opacity-50">
-        <div class="max-w-7xl mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <a href="index.html" class="text-2xl font-bold text-white">SM.</a>
-                <div class="hidden md:flex space-x-8">
-                    <a href="index.html#about" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">About</a>
-                    <a href="index.html#skills" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Skills</a>
-                    <a href="index.html#experience" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Experience</a>
-                    <a href="index.html#projects" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Projects</a>
-                    <a href="index.html#connect" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Connect</a>
-                </div>
+
+<body>
+    <div class="scroll-progress"></div>
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    <div class="bg-grid"></div>
+
+    <nav class="nav scrolled">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo"><span class="prompt">~/</span>saad-minhas<span class="cursor-blink"></span></a>
+            <button class="nav-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav-links">
+                <a href="index.html#about">About</a>
+                <a href="index.html#experience">Experience</a>
+                <a href="index.html#skills">Skills</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="index.html#contact" class="nav-cta">./contact.sh</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative h-screen flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" alt="AWS Infrastructure" class="w-full h-full object-cover object-center">
-            <div class="absolute inset-0 bg-black opacity-75"></div>
+    <header class="project-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html#projects"><i class="fas fa-arrow-left"></i> ~/projects</a> / aws-infrastructure
+            </div>
+            <h1>High-Availability <span class="gradient-text">AWS Architecture</span></h1>
+            <p class="lede">
+                A production container-hosting stack — ECR → EC2 → ASG → ALB → Route53 — provisioned entirely
+                with Terraform and deployed automatically through Bitbucket Pipelines. Designed for zero-downtime
+                releases and self-healing scale.
+            </p>
+            <div class="tl-tags">
+                <span class="tag">AWS</span><span class="tag">Terraform</span><span class="tag">ECR</span>
+                <span class="tag">Auto Scaling</span><span class="tag">ALB</span><span class="tag">Route53</span>
+                <span class="tag">Bitbucket Pipelines</span>
+            </div>
+
+            <div class="arch-flow reveal">
+                <span class="arch-node"><i class="fab fa-docker"></i> ECR</span>
+                <span class="arch-arrow"><i class="fas fa-arrow-right"></i></span>
+                <span class="arch-node"><i class="fas fa-server"></i> EC2</span>
+                <span class="arch-arrow"><i class="fas fa-arrow-right"></i></span>
+                <span class="arch-node"><i class="fas fa-arrows-up-down"></i> ASG</span>
+                <span class="arch-arrow"><i class="fas fa-arrow-right"></i></span>
+                <span class="arch-node"><i class="fas fa-scale-balanced"></i> ALB</span>
+                <span class="arch-arrow"><i class="fas fa-arrow-right"></i></span>
+                <span class="arch-node"><i class="fas fa-globe"></i> Route53</span>
+            </div>
         </div>
-        <div class="relative z-10 text-center px-6">
-            <h1 class="text-5xl md:text-7xl font-bold mb-6">AWS Infrastructure Deployment</h1>
-            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">Scalable and reliable cloud solutions for modern applications</p>
-            <a href="#project-details" class="inline-block px-8 py-3 bg-white text-black rounded-full hover:bg-opacity-90 transition-colors text-lg font-semibold">
-                Explore Project
-            </a>
-        </div>
-    </section>
+    </header>
 
-    <!-- Project Details -->
-    <section id="project-details" class="py-20">
-        <div class="max-w-7xl mx-auto px-6">
-
-            <div class="bg-white bg-opacity-10 rounded-lg shadow-xl p-8 backdrop-blur-lg mb-12">
-                <h2 class="text-3xl font-semibold mb-6 text-center">Project Overview</h2>
-                <p class="text-gray-300 mb-4">
-                    This project involved deploying and managing AWS infrastructure for .NET and MSSQL applications, focusing on enhancing system scalability and reliability. The goal was to create a robust, efficient, and cost-effective cloud environment that could handle varying workloads while maintaining high performance.
+    <section class="detail-section">
+        <div class="container detail-grid">
+            <div class="detail-card reveal">
+                <h2><i class="fas fa-bullseye"></i>The Mission</h2>
+                <p>
+                    A client running containerized workloads needed infrastructure that could survive instance
+                    failures, absorb traffic spikes, and deploy new versions without downtime — all without a
+                    dedicated ops team babysitting it.
                 </p>
-                <p class="text-gray-300">
-                    By leveraging various AWS services and implementing best practices, we were able to create a flexible and resilient infrastructure that significantly improved the application's performance and reduced operational costs.
+                <p>
+                    The answer: a fully codified AWS stack where Docker images flow from ECR onto EC2 instances
+                    managed by an Auto Scaling Group, fronted by an Application Load Balancer with DNS managed
+                    in Route53. Every resource defined in Terraform, every deploy triggered by a git push.
                 </p>
             </div>
-
-            <div class="grid md:grid-cols-2 gap-8 mb-12">
-                <div class="bg-white bg-opacity-10 rounded-lg shadow-xl p-8 backdrop-blur-lg">
-                    <h2 class="text-2xl font-semibold mb-4">Key Features</h2>
-                    <ul class="list-disc list-inside space-y-2 text-gray-300">
-                        <li>Autoscaling configurations</li>
-                        <li>Integrated AWS services (EC2, RDS, S3, CloudFront)</li>
-                        <li>Cost-efficiency optimizations</li>
-                        <li>Robust monitoring with CloudWatch</li>
-                        <li>Disaster recovery solutions</li>
-                        <li>Enhanced network security</li>
-                    </ul>
-                </div>
-                <div class="bg-white bg-opacity-10 rounded-lg shadow-xl p-8 backdrop-blur-lg">
-                    <h2 class="text-2xl font-semibold mb-4">Technologies Used</h2>
-                    <div class="flex flex-wrap gap-4">
-                        <span class="px-4 py-2 bg-blue-500 bg-opacity-20 text-blue-300 rounded-full">AWS</span>
-                        <span class="px-4 py-2 bg-purple-500 bg-opacity-20 text-purple-300 rounded-full">Terraform</span>
-                        <span class="px-4 py-2 bg-green-500 bg-opacity-20 text-green-300 rounded-full">.NET</span>
-                        <span class="px-4 py-2 bg-red-500 bg-opacity-20 text-red-300 rounded-full">MSSQL</span>
-                        <span class="px-4 py-2 bg-yellow-500 bg-opacity-20 text-yellow-300 rounded-full">CloudWatch</span>
-                        <span class="px-4 py-2 bg-indigo-500 bg-opacity-20 text-indigo-300 rounded-full">Docker</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white bg-opacity-10 rounded-lg shadow-xl p-2 backdrop-blur-lg mb-12">
-                <h2 class="text-3xl font-semibold mb-6">Challenges and Solutions</h2>
-                <div class="space-y-6">
-                    <div>
-                        <h3 class="text-xl font-semibold text-gray-100 mb-2">Scaling during peak loads</h3>
-                        <p class="text-gray-300 mb-2">Challenge: The application experienced unpredictable traffic spikes, leading to performance issues.</p>
-                        <p class="text-gray-300"><strong>Solution:</strong> Implemented AWS Auto Scaling groups with custom CloudWatch alarms to automatically adjust the number of EC2 instances based on CPU utilization and request count metrics.</p>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold text-gray-100 mb-2">Database performance</h3>
-                        <p class="text-gray-300 mb-2">Challenge: The MSSQL database was becoming a bottleneck during high-traffic periods.</p>
-                        <p class="text-gray-300"><strong>Solution:</strong> Migrated to Amazon RDS for SQL Server with Multi-AZ deployment for improved performance and high availability. Implemented read replicas to offload read traffic from the primary database.</p>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold text-gray-100 mb-2">Cost optimization</h3>
-                        <p class="text-gray-300 mb-2">Challenge: Initial cloud costs were higher than expected due to over-provisioning.</p>
-                        <p class="text-gray-300"><strong>Solution:</strong> Utilized AWS Cost Explorer to identify underutilized resources. Implemented AWS Savings Plans and Reserved Instances for predictable workloads, resulting in a 30% reduction in monthly costs.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white bg-opacity-10 rounded-lg shadow-xl p-8 backdrop-blur-lg mb-12">
-                <h2 class="text-3xl font-semibold mb-6">Results and Impact</h2>
-                <ul class="list-disc list-inside space-y-2 text-gray-300">
-                    <li>Achieved 99.99% uptime for critical applications</li>
-                    <li>Reduced average response time by 40%</li>
-                    <li>Scaled to handle 3x the previous peak load without performance degradation</li>
-                    <li>Decreased infrastructure costs by 30% through optimizations and right-sizing</li>
-                    <li>Improved disaster recovery capabilities with RPO of 15 minutes and RTO of 1 hour</li>
+            <div class="detail-card reveal">
+                <h2><i class="fas fa-list-check"></i>What I Built</h2>
+                <ul>
+                    <li><b>Modular Terraform</b> — reusable modules for networking, compute, and DNS, parameterized per environment.</li>
+                    <li><b>Auto Scaling Group</b> with health-check-driven instance replacement and scaling policies tied to load.</li>
+                    <li><b>ALB with target groups</b> and health checks for graceful rolling instance turnover.</li>
+                    <li><b>Bitbucket Pipelines</b> building images, pushing to ECR, and rolling out via launch template refresh.</li>
+                    <li><b>Route53 records</b> aliased to the ALB for clean, zone-managed DNS.</li>
+                    <li>A parallel <b>ECS (EC2 launch type)</b> variant with ALB + ASG for teams preferring managed orchestration.</li>
                 </ul>
             </div>
+        </div>
+    </section>
 
-            <div class="text-center">
-                <a href="index.html#projects" class="inline-block px-8 py-3 bg-white text-black rounded-full hover:bg-opacity-90 transition-colors text-lg font-semibold">
-                    Back to Projects
-                </a>
+    <section class="detail-section">
+        <div class="container">
+            <div class="detail-card reveal">
+                <h2><i class="fas fa-triangle-exclamation"></i>Challenges & Solutions</h2>
+                <div class="challenge">
+                    <h3>Deployments caused brief outages</h3>
+                    <p>Replacing instances naively dropped in-flight requests during releases.</p>
+                    <p class="sol"><b>Solution:</b> ALB connection draining plus ASG instance refresh with health-check gating — new instances must pass checks before old ones terminate, making deploys zero-downtime.</p>
+                </div>
+                <div class="challenge">
+                    <h3>Configuration drift across environments</h3>
+                    <p>Manually-created dev and prod environments kept diverging, causing "works in dev" failures.</p>
+                    <p class="sol"><b>Solution:</b> Single set of Terraform modules with per-environment variable files and remote state — identical infrastructure stamped out per environment, reviewed via pull requests.</p>
+                </div>
+                <div class="challenge">
+                    <h3>Auto-scaling misconfigurations in production</h3>
+                    <p>Inherited scaling policies thrashed — scaling up and down repeatedly under steady load.</p>
+                    <p class="sol"><b>Solution:</b> Re-tuned CloudWatch alarms with proper cooldowns and target-tracking policies based on real traffic patterns, stabilizing the fleet and cutting wasted instance-hours.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-12 bg-white bg-opacity-5">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <div class="text-2xl font-bold mb-6">SM.</div>
-            <div class="flex justify-center space-x-8 mb-8">
-                <a href="https://www.linkedin.com/in/saad-mansoor-minhas/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
-                    <i class="fab fa-linkedin text-xl"></i>
-                </a>
-                <a href="https://github.com/Saad-Mansoor-Minhas" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
-                    <i class="fab fa-github text-xl"></i>
-                </a>
+    <section class="detail-section">
+        <div class="container">
+            <div class="section-label">impact</div>
+            <h2 class="section-title">Results</h2>
+            <div class="results-grid stagger">
+                <div class="result-item reveal"><div class="num">0</div><div class="lbl">Downtime deployments after rollout</div></div>
+                <div class="result-item reveal"><div class="num">100%</div><div class="lbl">Infrastructure defined in Terraform</div></div>
+                <div class="result-item reveal"><div class="num">~min</div><div class="lbl">Push-to-production lead time</div></div>
+                <div class="result-item reveal"><div class="num">24/7</div><div class="lbl">Self-healing via ASG health checks</div></div>
             </div>
-            <p class="text-gray-400">&copy; 2024 Saad Mansoor Minhas. All rights reserved.</p>
+        </div>
+    </section>
+
+    <div class="detail-cta">
+        <a href="index.html#projects" class="btn btn-ghost"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+    </div>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <a href="index.html" class="nav-logo"><span class="prompt">~/</span>saad-minhas</a>
+            <p>&copy; <span class="year">2026</span> Saad Mansoor Minhas · Deployed with <span class="heart">♥</span> on GitHub Pages</p>
+            <div class="footer-socials">
+                <a href="https://github.com/Saad-Mansoor-Minhas" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/saad-mansoor-minhas/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:saadr8840@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
     </footer>
+
+    <button class="back-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

@@ -1,163 +1,160 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kubernetes Cluster Management - Saad Mansoor Minhas</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'poppins': ['Poppins', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-        
-        * {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .nav-blur {
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-
-        .gradient-bg {
-            background: linear-gradient(90deg, #4F46E5 0%, #7C3AED 100%);
-        }
-    </style>
+    <title>Canary Deployments on AKS — Saad Mansoor Minhas</title>
+    <meta name="description" content="Case study: canary release strategy with percentage-based traffic splitting for containerized workloads on Azure Kubernetes Service.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-black text-white">
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 nav-blur bg-black bg-opacity-50">
-        <div class="max-w-6xl mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <a href="index.html" class="text-2xl font-bold text-white">SM.</a>
-                <div class="hidden md:flex space-x-8">
-                    <a href="index.html#about" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">About</a>
-                    <a href="index.html#skills" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Skills</a>
-                    <a href="index.html#experience" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Experience</a>
-                    <a href="index.html#projects" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Projects</a>
-                    <a href="index.html#connect" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Connect</a>
-                </div>
+
+<body>
+    <div class="scroll-progress"></div>
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    <div class="bg-grid"></div>
+
+    <nav class="nav scrolled">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo"><span class="prompt">~/</span>saad-minhas<span class="cursor-blink"></span></a>
+            <button class="nav-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav-links">
+                <a href="index.html#about">About</a>
+                <a href="index.html#experience">Experience</a>
+                <a href="index.html#skills">Skills</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="index.html#contact" class="nav-cta">./contact.sh</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative h-screen flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" alt="Kubernetes Cluster" class="w-full h-full object-cover object-center">
-            <div class="absolute inset-0 bg-black opacity-75"></div>
+    <header class="project-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html#projects"><i class="fas fa-arrow-left"></i> ~/projects</a> / aks-canary-deployments
+            </div>
+            <h1>Canary Deployments <span class="gradient-text">on AKS</span></h1>
+            <p class="lede">
+                A canary release strategy with percentage-based traffic splitting for containerized workloads
+                on Azure Kubernetes Service — prior versions kept warm for instant rollback, turning risky
+                releases into routine, low-stress events.
+            </p>
+            <div class="tl-tags">
+                <span class="tag">AKS</span><span class="tag">Kubernetes</span><span class="tag">Canary Releases</span>
+                <span class="tag">Azure DevOps</span><span class="tag">ACR</span><span class="tag">Traffic Splitting</span>
+            </div>
+
+            <div class="arch-flow reveal">
+                <span class="arch-node"><i class="fas fa-code-merge"></i> Release vN+1</span>
+                <span class="arch-arrow"><i class="fas fa-arrow-right"></i></span>
+                <span class="arch-node"><i class="fas fa-percent"></i> Canary 10%</span>
+                <span class="arch-arrow"><i class="fas fa-arrow-right"></i></span>
+                <span class="arch-node"><i class="fas fa-chart-line"></i> Observe</span>
+                <span class="arch-arrow"><i class="fas fa-arrow-right"></i></span>
+                <span class="arch-node"><i class="fas fa-circle-check"></i> Promote 100%</span>
+                <span class="arch-arrow"><i class="fas fa-rotate-left"></i></span>
+                <span class="arch-node"><i class="fas fa-shield-halved"></i> vN on standby</span>
+            </div>
         </div>
-        <div class="relative z-10 text-center px-6">
-            <h1 class="text-5xl md:text-7xl font-bold mb-6">Kubernetes Cluster Management</h1>
-            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">Orchestrating containerized applications for scalability and efficiency</p>
-            <a href="#project-details" class="inline-block px-8 py-3 bg-white text-black rounded-full hover:bg-opacity-90 transition-colors text-lg font-semibold">
-                Explore Project
-            </a>
-        </div>
-    </section>
+    </header>
 
-    <!-- Project Details -->
-    <section id="project-details" class="py-20">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="bg-white bg-opacity-10 rounded-lg shadow-xl p-8 backdrop-blur-lg mb-12">
-                <h2 class="text-3xl font-semibold mb-6 text-center">Project Overview</h2>
-                <p class="text-gray-300 mb-4">
-                    This project focused on deploying and managing Kubernetes clusters for scalable application hosting and container orchestration. The goal was to create a robust, efficient, and easily manageable infrastructure for microservices-based applications.
+    <section class="detail-section">
+        <div class="container detail-grid">
+            <div class="detail-card reveal">
+                <h2><i class="fas fa-bullseye"></i>The Mission</h2>
+                <p>
+                    At NextGen Technologies, releases to containerized production workloads were all-or-nothing:
+                    a bad deploy meant every user felt it at once, and rolling back meant a scramble.
                 </p>
-                <p class="text-gray-300">
-                    By leveraging Kubernetes' powerful features and implementing best practices, we were able to significantly improve application scalability, resource utilization, and overall system reliability.
+                <p>
+                    I implemented a canary release strategy on AKS where each new version receives a small,
+                    configurable slice of live traffic first. Only after it proves healthy against real users
+                    does it take over — and the previous version stays deployed and warm so rollback is a
+                    traffic switch, not a redeploy.
                 </p>
             </div>
-
-            <div class="grid md:grid-cols-2 gap-8 mb-12">
-                <div class="bg-white bg-opacity-10 rounded-lg shadow-xl p-8 backdrop-blur-lg">
-                    <h2 class="text-2xl font-semibold mb-4">Key Features</h2>
-                    <ul class="list-disc list-inside space-y-2 text-gray-300">
-                        <li>Auto-scaling and load balancing</li>
-                        <li>Containerized application deployments</li>
-                        <li>Resource allocation optimization</li>
-                        <li>High availability configurations</li>
-                        <li>Integrated monitoring and logging</li>
-                        <li>Rolling updates and rollbacks</li>
-                    </ul>
-                </div>
-                <div class="bg-white bg-opacity-10 rounded-lg shadow-xl p-8 backdrop-blur-lg">
-                    <h2 class="text-2xl font-semibold mb-4">Technologies Used</h2>
-                    <div class="flex flex-wrap gap-4">
-                        <span class="px-4 py-2 bg-blue-500 bg-opacity-20 text-blue-300 rounded-full">Kubernetes</span>
-                        <span class="px-4 py-2 bg-green-500 bg-opacity-20 text-green-300 rounded-full">Docker</span>
-                        <span class="px-4 py-2 bg-red-500 bg-opacity-20 text-red-300 rounded-full">Helm</span>
-                        <span class="px-4 py-2 bg-yellow-500 bg-opacity-20 text-yellow-300 rounded-full">Prometheus</span>
-                        <span class="px-4 py-2 bg-purple-500 bg-opacity-20 text-purple-300 rounded-full">Grafana</span>
-                        <span class="px-4 py-2 bg-indigo-500 bg-opacity-20 text-indigo-300 rounded-full">ELK Stack</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white bg-opacity-10 rounded-lg shadow-xl p-8 backdrop-blur-lg mb-12">
-                <h2 class="text-3xl font-semibold mb-6">Challenges and Solutions</h2>
-                <div class="space-y-6">
-                    <div>
-                        <h3 class="text-xl font-semibold text-gray-100 mb-2">Resource management and optimization</h3>
-                        <p class="text-gray-300 mb-2">Challenge: Efficiently allocating resources across diverse workloads and preventing resource contention.</p>
-                        <p class="text-gray-300"><strong>Solution:</strong> Implemented resource quotas, limits, and requests at the namespace and pod levels. Utilized Kubernetes Vertical Pod Autoscaler for automatic resource adjustment.</p>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold text-gray-100 mb-2">Service discovery and load balancing</h3>
-                        <p class="text-gray-300 mb-2">Challenge: Ensuring seamless communication between microservices and efficient load distribution.</p>
-                        <p class="text-gray-300"><strong>Solution:</strong> Leveraged Kubernetes Services and Ingress controllers for intelligent routing. Implemented service mesh (Istio) for advanced traffic management and observability.</p>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold text-gray-100 mb-2">Monitoring and troubleshooting</h3>
-                        <p class="text-gray-300 mb-2">Challenge: Gaining visibility into cluster health and quickly identifying and resolving issues.</p>
-                        <p class="text-gray-300"><strong>Solution:</strong> Deployed Prometheus for metrics collection and Grafana for visualization. Implemented ELK stack (Elasticsearch, Logstash, Kibana) for centralized logging and analysis.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white bg-opacity-10 rounded-lg shadow-xl p-8 backdrop-blur-lg mb-12">
-                <h2 class="text-3xl font-semibold mb-6">Results and Impact</h2>
-                <ul class="list-disc list-inside space-y-2 text-gray-300">
-                    <li>Achieved 99.99% uptime for critical applications</li>
-                    <li>Reduced infrastructure costs by 40% through efficient resource utilization</li>
-                    <li>Improved application deployment time from hours to minutes</li>
-                    <li>Enhanced scalability, handling 3x the previous peak load without performance degradation</li>
-                    <li>Streamlined development workflows, enabling faster feature releases and updates</li>
+            <div class="detail-card reveal">
+                <h2><i class="fas fa-list-check"></i>What I Built</h2>
+                <ul>
+                    <li><b>Percentage-based traffic splitting</b> between stable and canary deployments on AKS.</li>
+                    <li><b>Parallel versioned deployments</b> — prior release kept running for rapid rollback.</li>
+                    <li><b>Azure DevOps pipelines</b> driving image builds to ACR and progressive rollout stages.</li>
+                    <li><b>Health-gated promotion</b> — canaries observed via Azure Monitor before taking full traffic.</li>
+                    <li><b>RBAC governance</b> over cluster access plus automated secret rotation via Key Vault integration.</li>
                 </ul>
             </div>
+        </div>
+    </section>
 
-            <div class="text-center">
-                <a href="index.html#projects" class="inline-block px-8 py-3 bg-white text-black rounded-full hover:bg-opacity-90 transition-colors text-lg font-semibold">
-                    Back to Projects
-                </a>
+    <section class="detail-section">
+        <div class="container">
+            <div class="detail-card reveal">
+                <h2><i class="fas fa-triangle-exclamation"></i>Challenges & Solutions</h2>
+                <div class="challenge">
+                    <h3>Bad releases hit 100% of users instantly</h3>
+                    <p>Standard rolling updates replaced all pods regardless of whether the new version actually behaved under real traffic.</p>
+                    <p class="sol"><b>Solution:</b> Weighted traffic splitting so new versions serve ~10% of requests first, with promotion only after error rates and latency stay within thresholds.</p>
+                </div>
+                <div class="challenge">
+                    <h3>Rollbacks were slow and manual</h3>
+                    <p>Reverting required rebuilding or redeploying the previous image — minutes of degraded service.</p>
+                    <p class="sol"><b>Solution:</b> Keep the prior version's deployment scaled and ready; rollback became an immediate traffic-weight change measured in seconds.</p>
+                </div>
+                <div class="challenge">
+                    <h3>Secrets and access sprawl across the cluster</h3>
+                    <p>Long-lived credentials and broad access made security incidents slow to contain.</p>
+                    <p class="sol"><b>Solution:</b> Established RBAC governance and automated secret rotation across Azure resources — cutting security-incident response time by 30%.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-12 bg-white bg-opacity-5">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <div class="text-2xl font-bold mb-6">SM.</div>
-            <div class="flex justify-center space-x-8 mb-8">
-                <a href="https://www.linkedin.com/in/saad-mansoor-minhas/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
-                    <i class="fab fa-linkedin text-xl"></i>
-                </a>
-                <a href="https://github.com/Saad-Mansoor-Minhas" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
-                    <i class="fab fa-github text-xl"></i>
-                </a>
+    <section class="detail-section">
+        <div class="container">
+            <div class="section-label">impact</div>
+            <h2 class="section-title">Results</h2>
+            <div class="results-grid stagger">
+                <div class="result-item reveal"><div class="num">10%</div><div class="lbl">Initial blast radius for new releases</div></div>
+                <div class="result-item reveal"><div class="num">sec</div><div class="lbl">Rollback time via traffic switch</div></div>
+                <div class="result-item reveal"><div class="num">30%</div><div class="lbl">Faster security-incident response</div></div>
+                <div class="result-item reveal"><div class="num">SLA✓</div><div class="lbl">Performance held while cutting spend 18%</div></div>
             </div>
-            <p class="text-gray-400">&copy; 2024 Saad Mansoor Minhas. All rights reserved.</p>
+        </div>
+    </section>
+
+    <div class="detail-cta">
+        <a href="index.html#projects" class="btn btn-ghost"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+    </div>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <a href="index.html" class="nav-logo"><span class="prompt">~/</span>saad-minhas</a>
+            <p>&copy; <span class="year">2026</span> Saad Mansoor Minhas · Deployed with <span class="heart">♥</span> on GitHub Pages</p>
+            <div class="footer-socials">
+                <a href="https://github.com/Saad-Mansoor-Minhas" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/saad-mansoor-minhas/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:saadr8840@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
     </footer>
+
+    <button class="back-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

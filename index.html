@@ -1,565 +1,531 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saad Mansoor Minhas - DevOps Engineer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'poppins': ['Poppins', 'sans-serif'],
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' }
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
-        * {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .nav-blur {
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-
-        .hover-underline {
-            position: relative;
-        }
-
-        .hover-underline::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
-            left: 0;
-            background: #ffffff;
-            transition: width 0.3s ease;
-        }
-
-        .hover-underline:hover::after {
-            width: 100%;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-        }
-
-        .hero-image {
-            filter: grayscale(100%) contrast(1.2);
-            mix-blend-mode: luminosity;
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateY(20px);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .slide-in {
-            animation: slideIn 0.6s ease forwards;
-        }
-
-        .skill-bar {
-            transition: width 1s ease-in-out;
-        }
-    </style>
+    <title>Saad Mansoor Minhas — DevOps & Cloud Engineer</title>
+    <meta name="description"
+        content="DevOps & Cloud Engineer with 2+ years across AWS and Azure — infrastructure automation, CI/CD, container orchestration, and cost optimization. Open to remote and relocation opportunities.">
+    <meta property="og:title" content="Saad Mansoor Minhas — DevOps & Cloud Engineer">
+    <meta property="og:description"
+        content="Infrastructure automation, CI/CD pipelines, Kubernetes, and cloud cost optimization across AWS & Azure.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="bg-black text-white overflow-x-hidden">
+<body>
+    <div class="scroll-progress"></div>
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    <div class="bg-grid"></div>
+
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 nav-blur bg-black bg-opacity-50">
-        <div class="max-w-7xl mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <a href="#" class="text-2xl font-bold text-white">SM.</a>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#about" class="hover-underline text-sm font-medium">About</a>
-                    <a href="#skills" class="hover-underline text-sm font-medium">Skills</a>
-                    <a href="#experience" class="hover-underline text-sm font-medium">Experience</a>
-                    <a href="#education" class="hover-underline text-sm font-medium">Education</a>
-                    <a href="#projects" class="hover-underline text-sm font-medium">Projects</a>
-                    <a href="#connect" class="hover-underline text-sm font-medium">Connect</a>
-                </div>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo"><span class="prompt">~/</span>saad-minhas<span class="cursor-blink"></span></a>
+            <button class="nav-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#certifications">Certifications</a>
+                <a href="#contact" class="nav-cta">./contact.sh</a>
             </div>
         </div>
     </nav>
 
-<!-- Hero Section -->
-<!-- Hero Section -->
-<section class="relative min-h-[80vh] bg-black overflow-hidden flex items-center">
-    <div class="container mx-auto px-6 py-12 md:py-16">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div class="space-y-8 z-20 mt-8 md:mt-16">
-                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight slide-in">
-                    Handcrafted
-                    <br />
-                    Infrastructure
-                    <br />
-                    <span class="text-white">For The Digital World.</span>
-                </h1>
-                <p class="text-lg sm:text-xl text-gray-400 max-w-xl slide-in" style="animation-delay: 0.2s">
-                    DevOps Engineer & Cloud Architecture Specialist crafting scalable solutions for tomorrow's challenges
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div>
+                    <div class="hero-status">
+                        <span class="status-dot"></span>
+                        Open to remote & relocation opportunities
+                    </div>
+                    <h1>Saad Mansoor<br><span class="gradient-text">Minhas</span></h1>
+                    <div class="hero-role">$ <span class="typed-text"></span><span class="typed-cursor"></span></div>
+                    <p class="hero-desc">
+                        I build and run <strong>cloud infrastructure that doesn't page you at 3 AM</strong> —
+                        2+ years automating AWS &amp; Azure platforms, shipping CI/CD pipelines, orchestrating
+                        Kubernetes workloads, and cutting cloud bills. Currently keeping production green for
+                        <strong>NextGen Technologies</strong> (Arlington, TX — remote).
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">View My Work <i class="fas fa-arrow-right"></i></a>
+                        <a href="mailto:saadr8840@gmail.com" class="btn btn-ghost"><i class="fas fa-envelope"></i> Get In Touch</a>
+                    </div>
+                    <div class="hero-socials">
+                        <a href="https://github.com/Saad-Mansoor-Minhas" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/saad-mansoor-minhas/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:saadr8840@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        <span class="divider"></span>
+                        <span class="loc"><i class="fas fa-location-dot"></i> Islamabad, PK · UTC+5</span>
+                    </div>
+                </div>
+                <div class="terminal">
+                    <div class="terminal-bar">
+                        <span class="t-dot red"></span>
+                        <span class="t-dot yellow"></span>
+                        <span class="t-dot green"></span>
+                        <span class="terminal-title">saad@production: ~/infra</span>
+                    </div>
+                    <div class="terminal-body"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="reveal">
+                    <div class="stat-value" data-count="18" data-suffix="%">0</div>
+                    <div class="stat-label">Cloud Cost Reduction</div>
+                </div>
+                <div class="reveal" data-delay="100">
+                    <div class="stat-value" data-count="30" data-suffix="%">0</div>
+                    <div class="stat-label">Faster Incident Response</div>
+                </div>
+                <div class="reveal" data-delay="200">
+                    <div class="stat-value" data-count="2" data-prefix="" data-suffix="+">0</div>
+                    <div class="stat-label">Years of Experience</div>
+                </div>
+                <div class="reveal" data-delay="300">
+                    <div class="stat-value" data-count="2" data-suffix="">0</div>
+                    <div class="stat-label">Clouds — AWS & Azure</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-label">01 · whoami</div>
+            <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+            <div class="about-grid">
+                <div class="about-photo-wrap reveal-left reveal">
+                    <div class="about-photo">
+                        <img src="profile2.png" alt="Saad Mansoor Minhas">
+                    </div>
+                    <div class="about-badge"><i class="fas fa-circle-check"></i> available_for_hire=true</div>
+                </div>
+                <div class="about-text reveal-right reveal">
+                    <p>
+                        I'm a <strong>DevOps &amp; Cloud Engineer</strong> with hands-on experience across
+                        <strong>AWS and Azure</strong>, spanning infrastructure automation, CI/CD pipelines,
+                        container orchestration, and cost optimization.
+                    </p>
+                    <p>
+                        At <strong>NextGen Technologies</strong> (Arlington, TX — remote) I lead Azure VDI migrations
+                        to Microsoft 365, run canary deployments on AKS with percentage-based traffic splitting, and
+                        own RBAC governance and automated secret rotation at scale. Before that, I built end-to-end
+                        AWS infrastructure and pipelines at <strong>Cyberoide Tech</strong> and cut my teeth on
+                        Terraform, Ansible, and Kubernetes at <strong>Emumba</strong>.
+                    </p>
+                    <p>
+                        I care about measurable outcomes: <strong>18% lower monthly cloud spend</strong>,
+                        <strong>30% faster security-incident response</strong>, and infrastructure that's
+                        version-controlled, repeatable, and boring — in the best way.
+                    </p>
+                    <div class="about-highlights stagger">
+                        <div class="highlight-item reveal">
+                            <i class="fas fa-cloud"></i>
+                            <span><b>Multi-Cloud</b>Production experience on both AWS &amp; Azure</span>
+                        </div>
+                        <div class="highlight-item reveal">
+                            <i class="fas fa-code-branch"></i>
+                            <span><b>CI/CD Everything</b>GitHub Actions, GitLab CI, Jenkins, Azure DevOps, Argo CD</span>
+                        </div>
+                        <div class="highlight-item reveal">
+                            <i class="fas fa-cubes"></i>
+                            <span><b>IaC First</b>Terraform / OpenTofu, Ansible — no click-ops</span>
+                        </div>
+                        <div class="highlight-item reveal">
+                            <i class="fas fa-shield-halved"></i>
+                            <span><b>Security-Minded</b>RBAC governance, secret rotation, network hardening</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section">
+        <div class="container">
+            <div class="section-label">02 · git log --career</div>
+            <h2 class="section-title">Professional <span class="gradient-text">Experience</span></h2>
+            <p class="section-sub">From freelance firefighting to managing enterprise cloud platforms — a track record of shipping reliable infrastructure.</p>
+
+            <div class="timeline">
+                <div class="tl-item current reveal">
+                    <span class="tl-dot"></span>
+                    <div class="tl-card">
+                        <div class="tl-head">
+                            <div class="tl-role">DevOps Engineer L1</div>
+                            <span class="tl-date">May 2025 — Present</span>
+                        </div>
+                        <div class="tl-company"><i class="fas fa-building"></i>NextGen Technologies · Arlington, TX, USA (Remote)</div>
+                        <ul>
+                            <li>Manage Azure infrastructure end-to-end: CI/CD pipelines, VMs, VMSS, Key Vaults, and Managed SQL instances.</li>
+                            <li><b>Leading the migration of Azure Virtual Desktop Infrastructure (VDI) to Microsoft 365</b>, improving user access and reducing operational overhead.</li>
+                            <li>Implemented <b>canary release strategies with percentage-based traffic splitting</b> on AKS, keeping prior versions hot for rapid rollback.</li>
+                            <li>Established RBAC governance and automated secret rotation — <b>cut security-incident response time by 30%</b>.</li>
+                            <li>Optimized cloud resource usage across projects, <b>reducing monthly spend by 18%</b> while holding performance SLAs.</li>
+                            <li>Provide infrastructure escalation support for Azure VMs and cross-functional reliability work.</li>
+                        </ul>
+                        <div class="tl-tags">
+                            <span class="tag">Azure</span><span class="tag">AKS</span><span class="tag">VMSS</span>
+                            <span class="tag">Key Vault</span><span class="tag">Azure DevOps</span><span class="tag">RBAC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tl-item reveal">
+                    <span class="tl-dot"></span>
+                    <div class="tl-card">
+                        <div class="tl-head">
+                            <div class="tl-role">Junior DevOps Engineer</div>
+                            <span class="tl-date">Aug 2024 — Apr 2025</span>
+                        </div>
+                        <div class="tl-company"><i class="fas fa-building"></i>Cyberoide Tech · Islamabad, Pakistan (Remote)</div>
+                        <ul>
+                            <li>Deployed and maintained AWS infrastructure for <b>.NET and MSSQL applications</b>, improving scalability and reliability.</li>
+                            <li>Built end-to-end CI/CD pipelines with <b>GitHub Actions and GitLab CI/CD</b> for automated builds, tests, and deployments across dev and production.</li>
+                            <li>Provisioned Infrastructure as Code with <b>Terraform</b> — repeatable, version-controlled deployments.</li>
+                            <li>Integrated EC2, RDS, S3, IAM, VPC, and ECS into existing application ecosystems for high availability and rapid recovery.</li>
+                            <li>Worked directly with clients to evaluate, optimize, and modernize AWS architectures.</li>
+                        </ul>
+                        <div class="tl-tags">
+                            <span class="tag">AWS</span><span class="tag">Terraform</span><span class="tag">GitHub Actions</span>
+                            <span class="tag">GitLab CI</span><span class="tag">ECS</span><span class="tag">RDS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tl-item reveal">
+                    <span class="tl-dot"></span>
+                    <div class="tl-card">
+                        <div class="tl-head">
+                            <div class="tl-role">DevOps Intern</div>
+                            <span class="tl-date">Jun 2024 — Aug 2024</span>
+                        </div>
+                        <div class="tl-company"><i class="fas fa-building"></i>Emumba Private Limited · Islamabad, Pakistan (Hybrid)</div>
+                        <ul>
+                            <li>Automated cloud-native infrastructure with <b>Terraform</b> — EC2, VPCs, RDS, S3, DynamoDB.</li>
+                            <li>Wrote <b>Ansible playbooks</b> for automated configuration and provisioning using community roles.</li>
+                            <li>Designed multi-stage CI/CD pipelines with GitHub Actions and Jenkins, including encrypted secrets management.</li>
+                            <li>Built Docker images and multi-container environments with Docker Compose.</li>
+                            <li>Deployed Kubernetes clusters; configured iptables/ufw firewalls and load balancers with HAProxy and NGINX.</li>
+                        </ul>
+                        <div class="tl-tags">
+                            <span class="tag">Terraform</span><span class="tag">Ansible</span><span class="tag">Jenkins</span>
+                            <span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">HAProxy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tl-item reveal">
+                    <span class="tl-dot"></span>
+                    <div class="tl-card">
+                        <div class="tl-head">
+                            <div class="tl-role">Freelance DevOps Engineer</div>
+                            <span class="tl-date">May 2023 — Aug 2024</span>
+                        </div>
+                        <div class="tl-company"><i class="fas fa-building"></i>Fiverr · Remote</div>
+                        <ul>
+                            <li><b>Emergency AWS on-call support</b> — resolved urgent DNS issues, deployment failures, and auto-scaling misconfigurations in live production environments.</li>
+                            <li>Designed an <b>ECR → EC2 → ASG → ALB → Route53</b> architecture provisioned via Terraform and automated with Bitbucket Pipelines.</li>
+                            <li>Built AWS ECS (EC2 launch type) infrastructure with ALB and ASG for high availability using modular, reusable Terraform code.</li>
+                        </ul>
+                        <div class="tl-tags">
+                            <span class="tag">AWS</span><span class="tag">Terraform</span><span class="tag">Bitbucket Pipelines</span>
+                            <span class="tag">Route53</span><span class="tag">Incident Response</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-label">03 · cat skills.yaml</div>
+            <h2 class="section-title">Technical <span class="gradient-text">Arsenal</span></h2>
+            <p class="section-sub">The tools I reach for to build, ship, and run production systems.</p>
+
+            <div class="skills-grid stagger">
+                <div class="skill-card reveal">
+                    <div class="skill-card-head">
+                        <div class="skill-icon"><i class="fab fa-aws"></i></div>
+                        <div><h3>AWS</h3><span>cloud_provider: primary</span></div>
+                    </div>
+                    <div class="skill-chips">
+                        <span class="tag">EC2</span><span class="tag">Lambda</span><span class="tag">S3</span>
+                        <span class="tag">VPC</span><span class="tag">IAM</span><span class="tag">ECS</span>
+                        <span class="tag">EKS</span><span class="tag">ECR</span><span class="tag">RDS</span>
+                        <span class="tag">ASG</span><span class="tag">ALB</span><span class="tag">Route53</span>
+                        <span class="tag">SNS</span><span class="tag">CodePipeline</span><span class="tag">CloudFormation</span>
+                    </div>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-card-head">
+                        <div class="skill-icon"><i class="fab fa-microsoft"></i></div>
+                        <div><h3>Azure</h3><span>cloud_provider: current</span></div>
+                    </div>
+                    <div class="skill-chips">
+                        <span class="tag">Azure DevOps</span><span class="tag">AKS</span><span class="tag">ACR</span>
+                        <span class="tag">Azure VMs</span><span class="tag">VMSS</span><span class="tag">VDI</span>
+                        <span class="tag">Key Vaults</span><span class="tag">Managed SQL</span>
+                        <span class="tag">Classic Pipelines</span><span class="tag">Azure Monitor</span>
+                    </div>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-card-head">
+                        <div class="skill-icon"><i class="fas fa-cubes"></i></div>
+                        <div><h3>Containers & Orchestration</h3><span>runtime: containerized</span></div>
+                    </div>
+                    <div class="skill-chips">
+                        <span class="tag">Docker</span><span class="tag">Docker Compose</span>
+                        <span class="tag">Kubernetes</span><span class="tag">kubectl</span>
+                        <span class="tag">Helm</span><span class="tag">Argo CD</span>
+                    </div>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-card-head">
+                        <div class="skill-icon"><i class="fas fa-rocket"></i></div>
+                        <div><h3>CI/CD</h3><span>deploy: automated</span></div>
+                    </div>
+                    <div class="skill-chips">
+                        <span class="tag">GitHub Actions</span><span class="tag">GitLab CI/CD</span>
+                        <span class="tag">Jenkins</span><span class="tag">Bitbucket Pipelines</span>
+                        <span class="tag">Argo CD</span><span class="tag">Azure Pipelines</span>
+                    </div>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-card-head">
+                        <div class="skill-icon"><i class="fas fa-layer-group"></i></div>
+                        <div><h3>IaC & Config Management</h3><span>state: version_controlled</span></div>
+                    </div>
+                    <div class="skill-chips">
+                        <span class="tag">Terraform</span><span class="tag">OpenTofu</span>
+                        <span class="tag">Ansible</span><span class="tag">CloudFormation</span>
+                    </div>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-card-head">
+                        <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
+                        <div><h3>Observability</h3><span>alerts: actionable</span></div>
+                    </div>
+                    <div class="skill-chips">
+                        <span class="tag">Prometheus</span><span class="tag">Grafana</span>
+                        <span class="tag">Kibana</span><span class="tag">SonarQube</span>
+                        <span class="tag">Azure Monitor</span><span class="tag">CloudWatch</span>
+                    </div>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-card-head">
+                        <div class="skill-icon"><i class="fas fa-network-wired"></i></div>
+                        <div><h3>Networking & Security</h3><span>posture: hardened</span></div>
+                    </div>
+                    <div class="skill-chips">
+                        <span class="tag">iptables</span><span class="tag">ufw</span><span class="tag">HAProxy</span>
+                        <span class="tag">NGINX</span><span class="tag">VPNs</span><span class="tag">DNS</span>
+                        <span class="tag">TLS/SSL</span><span class="tag">RBAC</span>
+                    </div>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-card-head">
+                        <div class="skill-icon"><i class="fas fa-terminal"></i></div>
+                        <div><h3>Systems & Scripting</h3><span>shell: bash</span></div>
+                    </div>
+                    <div class="skill-chips">
+                        <span class="tag">Linux (Ubuntu, RHEL)</span><span class="tag">Windows Server</span>
+                        <span class="tag">Bash</span><span class="tag">YAML</span><span class="tag">Python</span>
+                        <span class="tag">Git</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-label">04 · ls ~/projects</div>
+            <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+            <p class="section-sub">Real production work — architectures designed, built, and operated end-to-end.</p>
+
+            <div class="projects-grid stagger">
+                <a href="aws-infrastructure.html" class="project-card reveal">
+                    <div class="project-visual pv-aws">
+                        <i class="fab fa-aws"></i>
+                        <span class="project-flow">ECR <span class="arrow">→</span> EC2 <span class="arrow">→</span> ASG <span class="arrow">→</span> ALB <span class="arrow">→</span> Route53</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>High-Availability AWS Architecture</h3>
+                        <p>Production ECR → EC2 → ASG → ALB → Route53 stack provisioned entirely with Terraform and automated via Bitbucket Pipelines — built for zero-downtime deploys and self-healing scale.</p>
+                        <div class="project-tags">
+                            <span class="tag">AWS</span><span class="tag">Terraform</span>
+                            <span class="tag">Bitbucket Pipelines</span><span class="tag">Auto Scaling</span>
+                        </div>
+                        <span class="project-link">cat case-study.md <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a href="kubernetes-cluster.html" class="project-card reveal">
+                    <div class="project-visual pv-k8s">
+                        <i class="fas fa-dharmachakra"></i>
+                        <span class="project-flow">stable 90% <span class="arrow">⇄</span> canary 10% <span class="arrow">→</span> promote</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>Canary Deployments on AKS</h3>
+                        <p>Percentage-based traffic splitting for containerized workloads on Azure Kubernetes Service — prior versions kept hot for instant rollback, making risky releases routine.</p>
+                        <div class="project-tags">
+                            <span class="tag">AKS</span><span class="tag">Kubernetes</span>
+                            <span class="tag">Canary Releases</span><span class="tag">Azure DevOps</span>
+                        </div>
+                        <span class="project-link">cat case-study.md <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a href="cicd-pipeline.html" class="project-card reveal">
+                    <div class="project-visual pv-cicd">
+                        <i class="fas fa-code-branch"></i>
+                        <span class="project-flow">build <span class="arrow">→</span> test <span class="arrow">→</span> scan <span class="arrow">→</span> deploy</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>End-to-End CI/CD Pipelines</h3>
+                        <p>Multi-stage pipelines with GitHub Actions and GitLab CI/CD for .NET workloads — automated builds, testing, encrypted secrets, and push-button deployments to dev and production.</p>
+                        <div class="project-tags">
+                            <span class="tag">GitHub Actions</span><span class="tag">GitLab CI</span>
+                            <span class="tag">Jenkins</span><span class="tag">Secrets Mgmt</span>
+                        </div>
+                        <span class="project-link">cat case-study.md <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a href="infrastructure-as-code.html" class="project-card reveal">
+                    <div class="project-visual pv-iac">
+                        <i class="fas fa-layer-group"></i>
+                        <span class="project-flow">plan <span class="arrow">→</span> review <span class="arrow">→</span> apply <span class="arrow">→</span> verify</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>Modular Terraform IaC Platform</h3>
+                        <p>Reusable, version-controlled Terraform modules provisioning EC2, VPC, RDS, S3, and DynamoDB across environments — paired with Ansible for configuration management.</p>
+                        <div class="project-tags">
+                            <span class="tag">Terraform</span><span class="tag">Ansible</span>
+                            <span class="tag">AWS</span><span class="tag">Multi-Env</span>
+                        </div>
+                        <span class="project-link">cat case-study.md <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications & Education -->
+    <section id="certifications" class="section">
+        <div class="container">
+            <div class="section-label">05 · ls ~/credentials</div>
+            <h2 class="section-title">Certifications & <span class="gradient-text">Education</span></h2>
+
+            <div class="certs-grid stagger" style="margin-bottom: 26px;">
+                <div class="cert-card reveal">
+                    <div class="cert-icon"><i class="fab fa-aws"></i></div>
+                    <div>
+                        <h3>AWS Cloud Technical Essentials</h3>
+                        <p>Core AWS services, compute, storage, and cloud fundamentals.</p>
+                        <span class="cert-issuer">Coursera / Amazon Web Services</span>
+                    </div>
+                </div>
+                <div class="cert-card reveal">
+                    <div class="cert-icon"><i class="fas fa-cloud"></i></div>
+                    <div>
+                        <h3>AWS Fundamentals Specialization</h3>
+                        <p>Core services, networking, security, and databases on AWS.</p>
+                        <span class="cert-issuer">Coursera</span>
+                    </div>
+                </div>
+                <div class="cert-card reveal">
+                    <div class="cert-icon"><i class="fas fa-infinity"></i></div>
+                    <div>
+                        <h3>DevOps on AWS Specialization</h3>
+                        <p>CI/CD, Infrastructure as Code, monitoring, and microservices.</p>
+                        <span class="cert-issuer">Coursera</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="edu-card reveal">
+                <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div>
+                    <h3>B.S. Computer Science</h3>
+                    <p>Air University Islamabad — Islamabad, Pakistan</p>
+                    <span class="edu-date">Sep 2021 — Jun 2025</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="contact-wrap reveal">
+                <div class="section-label" style="justify-content: center;">06 · ./contact.sh</div>
+                <h2 class="section-title">Let's Build Something <span class="gradient-text">Reliable</span></h2>
+                <p>
+                    Whether you need someone to tame your cloud bill, harden your pipelines, or own your
+                    infrastructure end-to-end — I'm actively seeking international remote and relocation
+                    opportunities. Let's talk.
                 </p>
-                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 slide-in" style="animation-delay: 0.4s">
-                    <a href="#about" class="group relative px-8 py-3 bg-white text-black hover:bg-opacity-90 transition-all duration-300 text-center">
-                        <span class="relative z-10">Explore My Work</span>
-                    </a>
-                    <a href="#connect" class="group relative px-8 py-3 border border-white hover:bg-white hover:text-black transition-all duration-300 text-center">
-                        <span class="relative z-10">Let's Connect</span>
-                    </a>
+                <div class="contact-methods">
+                    <a href="mailto:saadr8840@gmail.com" class="contact-chip"><i class="fas fa-envelope"></i> saadr8840@gmail.com</a>
+                    <a href="https://www.linkedin.com/in/saad-mansoor-minhas/" target="_blank" rel="noopener noreferrer" class="contact-chip"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                    <a href="https://github.com/Saad-Mansoor-Minhas" target="_blank" rel="noopener noreferrer" class="contact-chip"><i class="fab fa-github"></i> GitHub</a>
                 </div>
-            </div>
-            <div class="relative h-full w-full">
-                <div class="absolute right-0 top-1/2 transform -translate-y-1/2 w-4/5 h-[120%] bg-black opacity-30 z-10"></div>
-                <img src="profile2.png" alt="Profile" class="absolute right-0 top-1/2 transform -translate-y-1/2 w-4/5 h-[120%] object-cover object-center hero-image">
-            </div>
-            
-        </div>
-    </div>
-</section>
-
-    <!-- About Section -->
-    <section id="about" class="py-32 bg-white text-black">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-5xl font-bold mb-16">About Me</h2>
-            <div class="grid md:grid-cols-2 gap-16">
-                <div class="space-y-6">
-                    <h3 class="text-2xl font-semibold">Junior DevOps Engineer</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        I'm a passionate DevOps Engineer with a strong focus on AWS, CI/CD, and Infrastructure as Code.
-                        Currently working at Cyberoide Tech, I specialize in deploying and managing AWS infrastructure
-                        for .NET and MSSQL applications, enhancing system scalability and reliability.
-                    </p>
-                    <p class="text-gray-600 leading-relaxed">
-                        My experience includes implementing CI/CD pipelines, collaborating with cross-functional teams,
-                        and integrating AWS services into existing application ecosystems. I'm dedicated to optimizing
-                        resource usage and implementing cost-efficient solutions.
-                    </p>
-                    <p class="text-gray-600 leading-relaxed">
-                        As a Computer Science student at Air University, I'm constantly learning and applying new
-                        technologies to solve complex infrastructure challenges and drive digital transformation.
-                    </p>
-                </div>
-                <div class="space-y-8">
-                    <div class="space-y-4">
-                        <div class="flex justify-between">
-                            <span>AWS Infrastructure</span>
-                            <span>90%</span>
-                        </div>
-                        <div class="h-2 bg-gray-200 rounded-full">
-                            <div class="h-full bg-black rounded-full skill-bar" style="width: 0%" data-width="90%">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="flex justify-between">
-                            <span>CI/CD Implementation</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="h-2 bg-gray-200 rounded-full">
-                            <div class="h-full bg-black rounded-full skill-bar" style="width: 0%" data-width="85%">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="flex justify-between">
-                            <span>Infrastructure as Code</span>
-                            <span>80%</span>
-                        </div>
-                        <div class="h-2 bg-gray-200 rounded-full">
-                            <div class="h-full bg-black rounded-full skill-bar" style="width: 0%" data-width="80%">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="flex justify-between">
-                            <span>Containerization & Orchestration</span>
-                            <span>75%</span>
-                        </div>
-                        <div class="h-2 bg-gray-200 rounded-full">
-                            <div class="h-full bg-black rounded-full skill-bar" style="width: 0%" data-width="75%">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="flex justify-between">
-                            <span>Network & Security Configuration</span>
-                            <span>70%</span>
-                        </div>
-                        <div class="h-2 bg-gray-200 rounded-full">
-                            <div class="h-full bg-black rounded-full skill-bar" style="width: 0%" data-width="70%">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-32 bg-black">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-5xl font-bold mb-16">Skills & Technologies</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                <div class="card p-8 rounded-2xl hover:-translate-y-2 transition-all duration-300">
-                    <i class="fab fa-aws text-4xl mb-6"></i>
-                    <h3 class="text-xl font-semibold mb-4">AWS</h3>
-                    <p class="text-gray-400">EC2, Lambda, S3, VPC, IAM, ECS, SNS, ALB</p>
-                </div>
-                <div class="card p-8 rounded-2xl hover:-translate-y-2 transition-all duration-300">
-                    <i class="fab fa-docker text-4xl mb-6"></i>
-                    <h3 class="text-xl font-semibold mb-4">Docker</h3>
-                    <p class="text-gray-400">Container orchestration and management</p>
-                </div>
-                <div class="card p-8 rounded-2xl hover:-translate-y-2 transition-all duration-300">
-                    <i class="fas fa-network-wired text-4xl mb-6"></i>
-                    <h3 class="text-xl font-semibold mb-4">Kubernetes</h3>
-                    <p class="text-gray-400">Cluster management and deployment</p>
-                </div>
-                <div class="card p-8 rounded-2xl hover:-translate-y-2 transition-all duration-300">
-                    <i class="fas fa-code-branch text-4xl mb-6"></i>
-                    <h3 class="text-xl font-semibold mb-4">CI/CD</h3>
-                    <p class="text-gray-400">GitHub Actions, GitLab CI/CD, Jenkins</p>
-                </div>
-                <div class="card p-8 rounded-2xl hover:-translate-y-2 transition-all duration-300">
-                    <i class="fas fa-server text-4xl mb-6"></i>
-                    <h3 class="text-xl font-semibold mb-4">Infrastructure as Code</h3>
-                    <p class="text-gray-400">Terraform, AWS CloudFormation</p>
-                </div>
-                <div class="card p-8 rounded-2xl hover:-translate-y-2 transition-all duration-300">
-                    <i class="fas fa-shield-alt text-4xl mb-6"></i>
-                    <h3 class="text-xl font-semibold mb-4">Security</h3>
-                    <p class="text-gray-400">Network firewalls, IAM, best practices</p>
-                </div>
-                <div class="card p-8 rounded-2xl hover:-translate-y-2 transition-all duration-300">
-                    <i class="fas fa-terminal text-4xl mb-6"></i>
-                    <h3 class="text-xl font-semibold mb-4">Scripting</h3>
-                    <p class="text-gray-400">Python, Bash, PowerShell</p>
-                </div>
-                <div class="card p-8 rounded-2xl hover:-translate-y-2 transition-all duration-300">
-                    <i class="fas fa-project-diagram text-4xl mb-6"></i>
-                    <h3 class="text-xl font-semibold mb-4">Version Control</h3>
-                    <p class="text-gray-400">Git, GitHub, GitLab</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="py-32 bg-white text-black">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-5xl font-bold mb-16">Experience</h2>
-            <div class="space-y-16">
-                <div class="grid md:grid-cols-[1fr_2px_2fr] gap-8">
-                    <div>
-                        <h3 class="text-2xl font-semibold">Junior DevOps Engineer</h3>
-                        <p class="text-gray-600">Cyberoide Tech</p>
-                        <p class="text-gray-400">August 2024 - Present</p>
-                    </div>
-                    <div class="hidden md:block w-0.5 bg-gray-200 mx-auto"></div>
-                    <div>
-                        <ul class="list-disc list-inside text-gray-600 space-y-2">
-                            <li>Deployed AWS infrastructure for .NET and MSSQL applications, enhancing system
-                                scalability and reliability</li>
-                            <li>Implemented CI/CD pipelines using GitHub Actions and GitLab CI/CD, enabling automated
-                                builds, testing, and deployments</li>
-                            <li>Collaborated with cross-functional teams and clients to evaluate, optimize, and
-                                modernize AWS architectures</li>
-                            <li>Integrated AWS services into existing application ecosystems, ensuring seamless
-                                scalability and high availability</li>
-                            <li>Deployed Infrastructure as Code (IaC) solutions using Terraform, standardizing
-                                configurations and enabling repeatable, scalable, and version-controlled infrastructure
-                                provisioning</li>
-                            <li>Optimized resource usage with autoscaling configurations and cost-efficient storage
-                                solutions, resulting in improved performance and reduced expenses</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="grid md:grid-cols-[1fr_2px_2fr] gap-8">
-                    <div>
-                        <h3 class="text-2xl font-semibold">DevOps Intern</h3>
-                        <p class="text-gray-600">Emumba Private Limited</p>
-                        <p class="text-gray-400">June 2024 - August 2024</p>
-                    </div>
-                    <div class="hidden md:block w-0.5 bg-gray-200 mx-auto"></div>
-                    <div>
-                        <ul class="list-disc list-inside text-gray-600 space-y-2">
-                            <li>Automated infrastructure deployment and management using Terraform, creating and
-                                managing AWS resources like EC2, VPCs, and RDS databases</li>
-                            <li>Wrote and executed Ansible playbooks to automate system configurations, integrating
-                                community roles for efficient provisioning</li>
-                            <li>Designed and implemented CI/CD pipelines with GitHub Actions and Jenkins to streamline
-                                application deployments</li>
-                            <li>Built and managed Docker images and containers for application deployment, utilizing
-                                Docker Compose for multi-container setups</li>
-                            <li>Deployed and scaled applications in Kubernetes clusters, using kubectl and YAML files to
-                                manage resources</li>
-                            <li>Configured network firewalls (iptables, ufw) and set up load balancers with HAProxy and
-                                NGINX</li>
-                            <li>Worked on optimizing cloud infrastructure and cost management on AWS, implementing best
-                                security practices</li>
-                            <li>Developed and tested automated deployment pipelines for Flask applications using Docker,
-                                Ansible, and Python</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="py-32 bg-black">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-5xl font-bold mb-16">Education</h2>
-            <div class="card p-8 rounded-2xl">
-                <h3 class="text-2xl font-semibold mb-2">Bachelor of Science in Computer Science</h3>
-                <p class="text-xl text-gray-400 mb-4">Air University, Islamabad</p>
-                <p class="text-gray-500">September 2021 - May 2025</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <!-- Projects Section -->
-    <section id="projects" class="py-32 bg-white text-black">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-5xl font-bold mb-16">Featured Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                        alt="AWS Infrastructure Deployment"
-                        class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div
-                        class="absolute inset-0 bg-black bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div class="absolute bottom-0 left-0 p-8">
-                            <h3 class="text-2xl font-semibold text-white mb-2">AWS Infrastructure Deployment</h3>
-                            <p class="text-gray-300 mb-4">Scalable and reliable infrastructure for .NET and MSSQL
-                                applications.</p>
-                            <ul class="text-gray-400 mb-4 list-disc list-inside">
-                                <li>Autoscaling configurations</li>
-                                <li>Integrated AWS services</li>
-                                <li>Cost-efficient solutions</li>
-                            </ul>
-                            <a href="aws-infrastructure.html"
-                                class="inline-flex items-center px-6 py-2 border border-white text-white hover:bg-white hover:text-black transition-colors duration-300">
-                                <span>View Details</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                        alt="CI/CD Pipeline Implementation"
-                        class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div
-                        class="absolute inset-0 bg-black bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div class="absolute bottom-0 left-0 p-8">
-                            <h3 class="text-2xl font-semibold text-white mb-2">CI/CD Pipeline Implementation</h3>
-                            <p class="text-gray-300 mb-4">Automated builds, testing, and deployments using modern tools.
-                            </p>
-                            <ul class="text-gray-400 mb-4 list-disc list-inside">
-                                <li>GitHub Actions and GitLab CI/CD</li>
-                                <li>Integrated testing suites</li>
-                                <li>Streamlined workflows</li>
-                            </ul>
-                            <a href="cicd-pipeline.html"
-                                class="inline-flex items-center px-6 py-2 border border-white text-white hover:bg-white hover:text-black transition-colors duration-300">
-                                <span>View Details</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                        alt="Kubernetes Cluster Management"
-                        class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div
-                        class="absolute inset-0 bg-black bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div class="absolute bottom-0 left-0 p-8">
-                            <h3 class="text-2xl font-semibold text-white mb-2">Kubernetes Cluster Management</h3>
-                            <p class="text-gray-300 mb-4">Scalable application hosting and container orchestration.</p>
-                            <ul class="text-gray-400 mb-4 list-disc list-inside">
-                                <li>Auto-scaling implementation</li>
-                                <li>Efficient resource allocation</li>
-                                <li>High-availability setups</li>
-                            </ul>
-                            <a href="kubernetes-cluster.html"
-                                class="inline-flex items-center px-6 py-2 border border-white text-white hover:bg-white hover:text-black transition-colors duration-300">
-                                <span>View Details</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                        alt="Infrastructure as Code Implementation"
-                        class="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div
-                        class="absolute inset-0 bg-black bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div class="absolute bottom-0 left-0 p-8">
-                            <h3 class="text-2xl font-semibold text-white mb-2">Infrastructure as Code Implementation
-                            </h3>
-                            <p class="text-gray-300 mb-4">Standardized and version-controlled infrastructure
-                                provisioning.</p>
-                            <ul class="text-gray-400 mb-4 list-disc list-inside">
-                                <li>Terraform module development</li>
-                                <li>Git-based version control</li>
-                                <li>Multi-environment support</li>
-                            </ul>
-                            <a href="infrastructure-as-code.html"
-                                class="inline-flex items-center px-6 py-2 border border-white text-white hover:bg-white hover:text-black transition-colors duration-300">
-                                <span>View Details</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- Contact Section -->
-    <section id="connect" class="py-32 bg-black">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="card rounded-2xl p-12">
-                <h2 class="text-5xl font-bold mb-16">Let's Connect</h2>
-                <div class="grid md:grid-cols-2 gap-12">
-                    <div>
-                        <p class="text-gray-400 mb-8">Ready to take your infrastructure to the next level? Let's discuss
-                            how we can work together to create scalable, efficient, and innovative solutions for your
-                            organization.</p>
-                        <div class="space-y-6">
-                            <div class="flex items-center space-x-4">
-                                <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div>
-                                    <div class="text-sm text-gray-400">Email</div>
-                                    <div class="text-white">saadr8840@gmail.com</div>
-                                </div>
-                            </div>
-                            <div class="flex items-center space-x-4">
-                                <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div>
-                                    <div class="text-sm text-gray-400">Location</div>
-                                    <div class="text-white">Islamabad, Pakistan</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <form class="space-y-6">
-                        <input type="text" placeholder="Your Name"
-                            class="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-white transition-colors">
-                        <input type="email" placeholder="Your Email"
-                            class="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-white transition-colors">
-                        <textarea rows="4" placeholder="Your Message"
-                            class="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-white transition-colors"></textarea>
-                        <button type="submit"
-                            class="w-full py-4 bg-white text-black hover:bg-opacity-90 transition-opacity">
-                            Send Message
-                        </button>
-                    </form>
-                </div>
+                <a href="mailto:saadr8840@gmail.com?subject=Opportunity%20for%20Saad%20Minhas" class="btn btn-primary">
+                    Start a Conversation <i class="fas fa-paper-plane"></i>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 bg-black border-t border-white/10">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <div class="text-2xl font-bold mb-6">SM.</div>
-            <div class="flex justify-center space-x-8 mb-8">
-                <a href="https://www.linkedin.com/in/saad-mansoor-minhas/" target="_blank" rel="noopener noreferrer"
-                    class="text-gray-400 hover:text-white transition-colors">
-                    <i class="fab fa-linkedin text-xl"></i>
-                </a>
-                <a href="https://github.com/Saad-Mansoor-Minhas" target="_blank" rel="noopener noreferrer"
-                    class="text-gray-400 hover:text-white transition-colors">
-                    <i class="fab fa-github text-xl"></i>
-                </a>
+    <footer class="footer">
+        <div class="container footer-inner">
+            <a href="#" class="nav-logo"><span class="prompt">~/</span>saad-minhas</a>
+            <p>&copy; <span class="year">2026</span> Saad Mansoor Minhas · Deployed with <span class="heart">♥</span> on GitHub Pages</p>
+            <div class="footer-socials">
+                <a href="https://github.com/Saad-Mansoor-Minhas" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/saad-mansoor-minhas/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:saadr8840@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
-            <p class="text-gray-400">&copy; 2024 Saad Mansoor Minhas. All rights reserved.</p>
         </div>
     </footer>
 
-    <script>
-        // Intersection Observer for scroll animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('slide-in');
-                    if (entry.target.classList.contains('skill-bar')) {
-                        entry.target.style.width = entry.target.dataset.width;
-                    }
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
+    <button class="back-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-        document.querySelectorAll('section, .skill-bar').forEach((el) => {
-            observer.observe(el);
-        });
-
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
